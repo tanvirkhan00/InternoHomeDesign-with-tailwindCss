@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+
+  <!-- Google Font Link -->
+
+  <!-- Dm Serif Display Link -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Jost link -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    h1,h2,h3 {
+        font-family: "DM Serif Display", serif;
+    }
+    p {
+        font-family: "Jost", sans-serif;
+    }
+
+    /* Plan Section StyleCss */
+
+    .planSingleBox {
+      width: 358px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .planSingleBox p {
+      margin-top: 20px;
+      margin-bottom: 52px;
+      padding: 0 20px;
+      font-size: 22px;
+      text-align: center;
+    }
+    .planSingleBox h1 {
+      font-size: 25px;
+    }
+    /* End Plan Section */
+    
+  </style>
+</head>
+<body>
+
+  <!-- Start Header Section -->
+
+  <section class="header_section w-full mx-auto">
+    <div class="header-wrap w-[1200px] flex justify-between mx-auto items-center py-[44px]">
+        <div class="single-box flex items-center gap-2">
+            <img src="/Image/Logo.png" alt="">
+            <h1 class="text-4xl">Interno</h1>
+        </div>
+        <div class="single-box">
+            <div class="list flex items-center gap-[31px]">
+                <a  href="#">Home</a>
+                <a href="#">Pages</a>
+                <a href="#">Services</a>
+                <a href="#">Project</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- End Header Section -->
+
+  <!-- Start About Section -->
+
+  <section class="about_section">
+    <div class="about-wrap w-[1200px] mx-auto ">
+        <div class="background-image h-[758px] bg-cover flex flex-col justify-center" style="background-image: url(/Image/Images.png);">
+            <div class="content ml-[50px] w-[434px] flex flex-col gap-[21px]">
+                <h1 class="text-6xl">Let Your Home Be Unique</h1>
+                <p>There are many variations of the passages of lorem Ipsum fromavailable, majority.</p>
+                <div class="button flex items-center px-[48px] py-[26px] bg-black text-white rounded-xl w-[220px] gap-[10px]">
+                   <a class="" href="#">Get Started</a>
+                   <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- End About Section -->
+
+
+  <!-- Start Plan Section -->
+
+  <section class="plan-section w-[1158px] mt-[100px] mx-auto">
+    <div class="planSectionContainer flex items-center justify-between" id="planSectionContainer">
+    </div>
+  </section>
+  <!-- End Plan Section -->
+
+  <!-- Start Work Section -->
+
+  <section class="workSection w-[1200px] mt-[100px] mx-auto">
+    <div class="workSectionWrap flex items-center justify-between">
+      <div class="workSingleBox w-[472px] flex flex-col gap-[45px]">
+        <h1 class="text-5xl ">We Create The Art of Stylish Living Stylishly</h1>
+        <p class="text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using that it has a more-or-less normal.</p>
+        <div class="contact flex items-center gap-[15px]">
+          <div class="call-icon">
+            <i class="fa-solid fa-phone p-5 rounded-full bg-slate-200 text-[32px] text-amber-400"></i>
+          </div>
+          <div class="number">
+            <h3 class="text-2xl">012345678</h3>
+            <p class="text-xl">Call Us Anytime</p>
+          </div>
+        </div>
+        <div class="button">
+          <a class="px-[32px] py-[26px] text-white bg-black rounded-2xl" href="#">Get Free Estimate</a>
+        </div>
+      </div>
+      <div class="workSingleBox">
+        <img src="/Image/workSectionImage.png" alt="">
+      </div>
+    </div>
+  </section>
+  <!-- End Work Section -->
+
+  <!-- Start About Section -->
+
+  <section class="aboutSection">
+    <div class="aboutheading">
+        <h1 style="font-size: 50px; font-weight: 400;">What the People Thinks About Us</h1>
+    </div>
+    <div class="Aboutcontainer" style="display: flex; justify-content: space-between; padding: 0 20px;" id="AboutcontentContainer"></div>
+  </section>
+
+
+  <!-- FontAwsome Kit -->
+  <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+<script>
+  function loadPlanSectionContent() {
+    fetch('/src/workPlan.json')
+    .then(res =>res.json())
+    .then(data =>displayPlanSectionContent(data))
+  }
+
+  function displayPlanSectionContent(planSectionContent) {
+    const planContainer =document.getElementById('planSectionContainer') ;
+
+    for (const singlePlanSection of planSectionContent) {
+      const div =document.createElement ('div');
+      div.classList.add('planSingleBox') 
+      div.innerHTML =`
+       <h1> ${singlePlanSection.title}</h1>
+       <p>${singlePlanSection.paragraph}</p>
+       <a>${singlePlanSection.link}</a>
+      `
+      planContainer.appendChild(div) ;
+    }
+  }
+  loadPlanSectionContent()
+
+
+
+  function loadAboutcontent() {
+        fetch('/src/aboutSection.json')
+        .then(res => res.json())
+        .then(data => DisplayAboutContent(data))
+    }
+
+    function DisplayAboutContent (aboutContents) {
+        const aboutContainer =document.getElementById('AboutcontentContainer') ;
+
+        for (const aboutSingleContent of aboutContents) {
+            const div =document.createElement('div');
+            div.classList.add ('singleBox')
+            div.innerHTML = `
+            <div>
+            <img src = ${aboutSingleContent.image} >
+            <h1> ${aboutSingleContent.name} </h1> 
+            </div>
+            <p> ${aboutSingleContent.address}</p>
+            <p> ${aboutSingleContent.paragraph} </p>
+            `
+            aboutContainer.appendChild(div);
+        }
+    }
+    loadAboutcontent()
+</script>
