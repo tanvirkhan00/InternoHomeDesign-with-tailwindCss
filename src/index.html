@@ -40,7 +40,32 @@
       font-size: 25px;
     }
     /* End Plan Section */
-    
+
+    /* Start About Section */
+
+    .aboutSingleBox {
+      background-color: white;
+      padding: 40px 20px;
+      border-radius: 20px;
+    }
+    .aboutSingleBox h1 {
+      font-size: 25px;
+    }
+    .aboutSingleBox p {
+      font-size: 22px;
+    }
+    /* End About Section */
+
+    /* Project Section */
+    .projectSingleBox {
+      width: 570px;
+    }
+    .projectSingleBox h1 {
+      font-size: 25px;
+    }
+    .projectSingleBox p {
+      font-size: 22px;
+    }
   </style>
 </head>
 <body>
@@ -125,12 +150,67 @@
 
   <!-- Start About Section -->
 
-  <section class="aboutSection">
-    <div class="aboutheading">
-        <h1 style="font-size: 50px; font-weight: 400;">What the People Thinks About Us</h1>
+  <section class="aboutSection w-[1200px] mx-auto mt-[100px] bg-neutral-300 rounded-3xl">
+    <div class="about-wrap px-[20px] py-[50px]">
+        <div class="aboutheading">
+          <h1 class="aboutHeading text-5xl w-[545px] text-center mx-auto">What the People Thinks About Us</h1>
+       </div>
+      <div class="Aboutcontainer flex justify-between mt-[38px] gap-[20px]" id="AboutcontentContainer"></div>
     </div>
-    <div class="Aboutcontainer" style="display: flex; justify-content: space-between; padding: 0 20px;" id="AboutcontentContainer"></div>
   </section>
+
+  <!-- End About Section -->
+
+  <!-- Start Brand Section -->
+
+  <section class="brand-section w-[1090px] mx-auto mt-[100px]">
+    <div class="brand-wrap flex justify-between items-center">
+      <img src="/Image/brand1.svg" alt="">
+      <img src="/Image/brand2.svg" alt="">
+      <img src="/Image/brand3.svg" alt="">
+      <img src="/Image/brand4.svg" alt="">
+      <img src="/Image/brand5.svg" alt="">
+    </div>
+  </section>
+  <!-- End Brand Section -->
+
+  <!-- start Project Section -->
+
+  <section class="projects_section mt-[100px] w-[1200px] mx-auto">
+    <div class="projects-wrap">
+      <div class="projects-heading w-[737px] mx-auto text-center">
+        <h1 class="text-5xl">Follow Our Projects</h1>
+        <p class="text-xl mt-2">It is a long established fact that a reader will be distracted by the of readable content of page lookings at its layouts points.</p>
+      </div>
+      <div class="projectContainer mt-[93px] flex gap-[56px] justify-between flex-wrap" id="projectContainer">
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+  <!-- start Coundoun Section -->
+
+  <section class="coundown_section bg-slate-200">
+    <div class="coundown-wrap">
+      <div class="cowndownSingleBox">
+        <h1>12</h1>
+        <p>Years Of Experience</p>
+      </div>
+      <div class="cowndownSingleBox">
+        <h1>85</h1>
+        <p>Success Projects</p>
+      </div>
+      <div class="cowndownSingleBox">
+        <h1>15</h1>
+        <p>Active Projects</p>
+      </div>
+      <div class="cowndownSingleBox">
+        <h1>95</h1>
+        <p>Happy Customars</p>
+      </div>
+    </div>
+  </section>
+
 
 
   <!-- FontAwsome Kit -->
@@ -139,7 +219,7 @@
 </html>
 
 
-
+<!-- Plan Section Json -->
 <script>
   function loadPlanSectionContent() {
     fetch('/src/workPlan.json')
@@ -162,9 +242,10 @@
     }
   }
   loadPlanSectionContent()
+// End Plan Section Json
 
 
-
+// About Section Json 
   function loadAboutcontent() {
         fetch('/src/aboutSection.json')
         .then(res => res.json())
@@ -176,17 +257,46 @@
 
         for (const aboutSingleContent of aboutContents) {
             const div =document.createElement('div');
-            div.classList.add ('singleBox')
+            div.classList.add ('aboutSingleBox')
             div.innerHTML = `
-            <div>
-            <img src = ${aboutSingleContent.image} >
-            <h1> ${aboutSingleContent.name} </h1> 
+            <div style="align-items: center; display: flex; gap: 23px;">
+              <img src = ${aboutSingleContent.image} >
+              <div>
+              <h1> ${aboutSingleContent.name} </h1> 
+              <p> ${aboutSingleContent.address}</p></div>
             </div>
-            <p> ${aboutSingleContent.address}</p>
-            <p> ${aboutSingleContent.paragraph} </p>
+            <p style="margin-top:25px;"> ${aboutSingleContent.paragraph} </p>
             `
             aboutContainer.appendChild(div);
         }
     }
     loadAboutcontent()
+  // End About Section
+
+  function loadProjectSection() {
+    fetch('/src/projectSection.json')
+    .then(res => res.json())
+    .then(data => displayProjectSection(data))
+  }
+
+  function displayProjectSection (projectSection) {
+    const projectContainer =document.getElementById('projectContainer') ;
+
+    for (const singleProjectContent of projectSection) {
+      const div =document.createElement('div');
+      div.classList.add ('projectSingleBox') 
+      div.innerHTML = `
+      <img src= ${singleProjectContent.image} >
+      <div style="display:flex;justify-content:space-between; align-items:center;margin-top:43px;">
+        <div>
+          <h1> ${singleProjectContent.name}</h1>
+          <p> ${singleProjectContent.paragraph}</p>
+        </div>
+        <i class="fa-solid fa-chevron-right" style="background-color: hsla(30, 27%, 94%, 1); padding:30px 30px; border-radius:100%; margin-right:20px;"></i>
+      </div>
+      `
+      projectContainer.appendChild(div);
+    }
+  }
+  loadProjectSection()
 </script>

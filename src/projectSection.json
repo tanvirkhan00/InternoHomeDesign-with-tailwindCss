@@ -1,0 +1,23 @@
+[
+    {
+      "image": "/Image/projectImg1.png",
+      "name": "Modern Kitchen",
+      "paragraph": "Decor/Architecture"
+    },
+    {
+      "image": "/Image/projectsImg2.png",
+      "name": "Modern Kitchen",
+      "paragraph": "Decor/Architecture"
+    },
+    {
+      "image": "/Image/projectImg3.png",
+      "name": "Modern Kitchen",
+      "paragraph": "Decor/Architecture"
+    },
+    {
+        "image": "/Image/projectImg4.png",
+        "name": "Modern Kitchen",
+        "paragraph": "Decor/Architecture"
+    }
+]
+  
