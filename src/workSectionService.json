@@ -1,0 +1,31 @@
+[
+    {
+      "image": "/Image/WorkImgService1.png",
+      "img": "/Image/WorkIconService1.png",
+      "number": "01",
+      "title": "Concept & Details",
+      "paragraph": "It is a long established fact  will be distracted.Lorem Ipsum is simply dummy from text of the and typesetting indufstry."
+    },
+    {
+      "img": "/Image/WorkIconService2.png",
+      "number":"02",
+      "title": "Idea for Work",
+      "paragraph": "It is a long established fact  will be distracted.Lorem Ipsum is simply dummy from text of the and typesetting indufstry",
+      "image": "/Image/WorkImgService2.png"
+    },
+    {
+      "image": "/Image/WorkImgService3.png",
+      "img": "/Image/WorkIconService3.png",
+      "number": "03",
+      "title": "Design",
+      "paragraph": "It is a long established fact  will be distracted.Lorem Ipsum is simply dummy from text of the and typesetting indufstry"
+    },
+    {
+      "img": "/Image/WorkIconService4.png",
+      "number": "04",
+      "title": "Perfection",
+      "paragraph": "It is a long established fact  will be distracted.Lorem Ipsum is simply dummy from text of the and typesetting indufstry",
+      "image": "/Image/WorkImgService4.png"
+    }
+  ]
+  
