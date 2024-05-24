@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Desing Advices",
+        "date": "29",
+        "h1": "/month",
+        "p1": "General living space advice",
+        "p2": "Rennovation advices",
+        "p3": "Interior design advices",
+        "p4": "Furniture reorganization",
+        "p5": "Up to 5 hours meeting",
+        "link": "Get started"
+    },
+    {
+        "title": "Complete Interior",
+        "date": "39",
+        "h1": "/month",
+        "p1": "Complete home redesign",
+        "p2": "Interior and exterior works",
+        "p3": "Modular interior planning",
+        "p4": "Kitchen design",
+        "p5": "Garages organization",
+        "link": "Get Started"
+    },
+    {
+        "title": "Furniture Design",
+        "date": "59",
+        "h1": "/month",
+        "p1": "Furniture for living room",
+        "p2": "Furniture refurbishment",
+        "p3": "Sofas and amchairs",
+        "p4": "Tables and chairs",
+        "p5": "Kitchens",
+        "link": "Get Started"
+    }
+]
