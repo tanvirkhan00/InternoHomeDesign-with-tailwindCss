@@ -21,7 +21,19 @@
     p {
         font-family: "Jost", sans-serif;
     }
+
+    .articleSingleBox {
+        width: 340px;
+    }
+    .articleSingleBox h3 {
+    margin-top:-40px;
+    margin-left:20px;
+    color: white;
+   }
+    /* Start Article Section */
+
   </style>
+
 </head>
 <body>
 
@@ -56,8 +68,8 @@
     <div class="about-wrap ">
         <div class="background-image h-[356px] bg-cover flex flex-col justify-end" style="background-image: url(/Image/pricingImg.png);">
             <div class="content mx-auto text-center flex flex-col gap-[10px] bg-white z-1 w-[503px] py-[41px] rounded-t-[37px]">
-                <h1 class="text-5xl">Our Project</h1>
-                <p class="text-xl">Home / Project</p>
+                <h1 class="text-5xl">Articles & News</h1>
+                <p class="text-xl">Home / Blog</p>
             </div>
         </div>
     </div>
@@ -65,33 +77,47 @@
 
   <!-- End About Section -->
 
-  <!-- Start Service List Section -->
+  <!-- Start Latest Post Section -->
 
-  <section class="service-list_section mt-[100px]">
-    <div class="serviceList-wrap w-[880px] mx-auto border-[5px] border-amber-200 rounded-2xl">
-        <div class="list flex items-center justify-between ">
-            <h4 class="py-[20px] px-[66px] hover:bg-red-300 hover:rounded-2xl flex-1 ">Bathroom</h4>
-            <h4 class="py-[20px] px-[66px] text-white bg-amber-600 rounded-2xl hover:bg-red-300 hover:rounded-2xl flex-1">Bed Room</h4>
-            <h4 class="py-[20px] px-[66px] hover:bg-red-300 hover:rounded-2xl flex-1">Kitchan</h4>
-            <h4 style="align-items: center;" class="py-[20px] px-[66px] hover:bg-red-300 hover:rounded-2xl flex-1">Living Area</h4>
+  <section class="latest-post_section mt-[100px]">
+    <div class="latestPost-wrap w-[1200px] mx-auto">
+        <div class="heading">
+            <h1 class="text-5xl">Latest Post</h1>
+        </div>
+        <div class="content-box flex items-center justify-between gap-[65px] mt-[27px]">
+            <div class="single-box">
+                <img src="/Image/latestpostimg.png" alt="">
+            </div>
+            <div class="single-box w-[489px]">
+                <h1 class="text-2xl mr-[40px]">Low Cost Latest Invented Interior Designing Ideas</h1>
+                <p class="text-slate-400 mt-[22px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.</p>
+                <p class="text-slate-400 mt-[22px]">Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
+                <div class="date flex justify-between items-center text-slate-400 mt-[41px]">
+                    <p>26 December 2022</p>
+                    <i class="fa-solid fa-chevron-right px-5 py-5 bg-slate-200 rounded-full hover:bg-red-200"></i>
+                </div>
+            </div>
         </div>
     </div>
   </section>
-  
-  <!-- End Service List Section -->
 
-  <!-- Start Bed Room Design -->
+  <!-- End Latest Post Section -->
 
-  <section class="bedRoom-design_section mt-[100px]">
-    <div class="bedroom-wrap w-[1200px] mx-auto">
-      <div class="bedroom-container flex gap-[28px] flex-wrap" id="bedroomContainer"></div>
+  <!-- Start Article & News Section -->
+
+  <section class="articleNews_section mt-[100px] w-[1200px] mx-auto">
+    <div class="articleNews-wrap">
+      <div class="article-heading w-[811px] flex flex-col gap-[12px] mx-auto">
+        <h1 class="text-center text-5xl">Articles & News</h1>
+      </div>
+      <div class="news-container mt-[50px] flex justify-between gap-[27px] flex-wrap" id="newsContainer"></div>
     </div>
   </section>
 
-  <!-- End Bed Room Design -->
+  <!-- End Article & News Section -->
 
-  <!-- Page Row -->
-  <div class="Row-box w-[268px] mx-auto gap-[20px] flex items-center mt-[100px]">
+   <!-- Page Row -->
+   <div class="Row-box w-[268px] mx-auto gap-[20px] flex items-center mt-[100px]">
     <p class="px-7 py-7 rounded-full bg-slate-200 hover:bg-red-200">01</p>
     <p class="px-7 py-7 border-2 border-slate-200 rounded-full hover:bg-red-200">02</p>
     <p class="px-7 py-7 border-2 border-slate-200 rounded-full hover:bg-red-200">03</p>
@@ -160,42 +186,46 @@
 
 
 
-
   <!-- FontAwsome Kit -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
-
 </body>
 </html>
 
 
-
 <script>
 
-  function loadBedroomSection() {
-    fetch('/src/bedroomDesignProjectFile.json')
-    .then(res =>res.json())
-    .then(data =>displayBedroomSectionContent(data))
-  }
-  function displayBedroomSectionContent (bedroomSectionContent) {
-    const bedroomContainer =document.getElementById('bedroomContainer');
 
-    for (const singleBedroomSection of bedroomSectionContent) {
-      const div=document.createElement('div');
-      div.classList.add('bedroomSingleBox')
-      div.innerHTML= `
-        <img src= ${singleBedroomSection.image}>
-        <div style="display:flex; align-items:center; justify-content:space-between">
-          <div>
-           <h1 style="font-size:25px; margin-top:24px;"> ${singleBedroomSection.title} </h1>
-           <h1 style="font-size:22px;"> ${singleBedroomSection.heading} </h1>
-          </div>
-          <div>
-           <i class="fa-solid fa-chevron-right" style="background-color: hsla(30, 27%, 94%, 1); padding:30px 30px; border-radius:100%; margin-right:10px;"></i>
-         </div>
-        </div>
+    // Start Article & News Section
+
+  function loadArticleSection() {
+    fetch ('/src/articleBlogFile.json')
+    .then (res => res.json())
+    .then (data => displayArticleSection(data))
+  }
+
+  function displayArticleSection (articleSection) {
+    const articleContainer = document.getElementById('newsContainer') ;
+
+    for (const singleArticleContent of articleSection) {
+      const div =document.createElement ('div');
+      div.classList.add ('articleSingleBox')
+      div.innerHTML =`
+      <img src= ${singleArticleContent.image} >
+      <div style="background-color:white;">
+        <h3> ${singleArticleContent.title}</h3>
+      </div>
+      <h1 style="font-size:25px; margin-top:30px;"> ${singleArticleContent.paragraph}</h1>
+      <div class="flex justify-between items-center">
+        <p> ${singleArticleContent.date}</p>
+        <i class="fa-solid fa-chevron-right px-5 py-5 bg-slate-200 rounded-full hover:bg-red-200"></i>
+      </div>
       `
-      bedroomContainer.appendChild(div) ;
+      articleContainer.appendChild(div);
     }
   }
-  loadBedroomSection()
+  loadArticleSection()
+
+  // End Article Section
+
+  
 </script>
