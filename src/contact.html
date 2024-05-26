@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 
-   <!-- Google Font Link -->
+  <!-- Google Font Link -->
 
   <!-- Dm Serif Display Link -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,26 +13,14 @@
   <!-- Jost link -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
   <style>
-    h1,h2,h3,h4,h5 {
+    h1,h2,h3 {
         font-family: "DM Serif Display", serif;
     }
     p {
         font-family: "Jost", sans-serif;
     }
-
-    .articleSingleBox {
-        width: 340px;
-    }
-    .articleSingleBox h3 {
-    margin-top:-40px;
-    margin-left:20px;
-    color: white;
-   }
-    /* Start Article Section */
-
-  </style>
+    </style>
 
 </head>
 <body>
@@ -66,10 +54,10 @@
 
   <section class="about_section">
     <div class="about-wrap ">
-        <div class="background-image h-[356px] bg-cover flex flex-col justify-end" style="background-image: url(/Image/pricingImg.png);">
+        <div class="background-image h-[356px] bg-cover flex flex-col justify-end" style="background-image: url(/Image/contactUsImg.png);">
             <div class="content mx-auto text-center flex flex-col gap-[10px] bg-white z-1 w-[503px] py-[41px] rounded-t-[37px]">
-                <h1 class="text-5xl">Articles & News</h1>
-                <p class="text-xl">Home / Blog</p>
+                <h1 class="text-5xl">Contact Us</h1>
+                <p class="text-xl">Home / Contact</p>
             </div>
         </div>
     </div>
@@ -77,58 +65,73 @@
 
   <!-- End About Section -->
 
-  <!-- Start Latest Post Section -->
+  <!-- Start Contact Box -->
 
-  <section class="latest-post_section mt-[100px]">
-    <div class="latestPost-wrap w-[1200px] mx-auto">
-        <div class="heading">
-            <h1 class="text-5xl">Latest Post</h1>
+  <section class="contact_box mt-[100px]">
+    <div class="contact-wrap w-[1200px] mx-auto">
+        <div class="heading w-[683px] mx-auto text-center">
+            <h1 class="text-5xl">We Love meeting new people and helping them</h1>
         </div>
-        <div class="content-box flex items-center justify-between gap-[65px] mt-[27px]">
-            <div class="single-box">
-                <img src="/Image/latestpostimg.png" alt="">
+        <div class="container-box flex justify-between items-center gap-[55px] mt-[100px]">
+            <div class="single-box w-[349px] bg-slate-200 px-[32px] py-[76px] flex flex-col gap-[47px] rounded-[50px]">
+                <div class="gmail flex items-center gap-[10px] text-xl">
+                    <div class="icon h-[52px] w-[52px] bg-white rounded-full text-center py-3"><i class="fa-regular fa-envelope hover:text-red-400"></i></div>
+                    <div class="icon hover:text-red-400">info@yourdomain.com</div>
+                </div>
+                <div class="phn flex items-center gap-[10px] text-xl">
+                    <div class="icon h-[52px] w-[52px] bg-white rounded-full text-center py-3"><i class="fa-solid fa-phone hover:text-red-400"></i></div>
+                    <div class="icon hover:text-red-400">+1(378) 400-1234</div>
+                </div>
+                <div class="net flex items-center gap-[10px] text-xl">
+                    <div class="icon h-[52px] w-[52px] bg-white rounded-full text-center py-3"><i class="fa-solid fa-globe hover:text-red-400"></i></div>
+                    <div class="icon hover:text-red-400">www.yourdomain.com</div>
+                </div>
+                <div class="social-link flex gap-[35px] text-xl">
+                    <i class="fa-brands fa-facebook hover:text-red-400"></i>
+                    <i class="fa-brands fa-twitter hover:text-red-400"></i>
+                    <i class="fa-brands fa-linkedin hover:text-red-400"></i>
+                    <i class="fa-brands fa-instagram hover:text-red-400"></i>
+                </div>
             </div>
-            <div class="single-box w-[489px]">
-                <h1 class="text-2xl mr-[40px]">Low Cost Latest Invented Interior Designing Ideas</h1>
-                <p class="text-slate-400 mt-[22px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.</p>
-                <p class="text-slate-400 mt-[22px]">Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
-                <div class="date flex justify-between items-center text-slate-400 mt-[41px]">
-                    <p>26 December 2022</p>
-                    <i class="fa-solid fa-chevron-right px-5 py-5 bg-slate-200 rounded-full hover:bg-red-200"></i>
+            <div class="single-box w-[797px] flex gap-[39px] flex-wrap">
+                <div class="name-box basis-[45%] flex-1 border-slate-200 border-b-2 py-2">
+                    <input class="w-full py-2" type="text" placeholder="Name">
+                </div>
+                <div class="email-box basis-[45%] flex-1 border-slate-200 border-b-2 py-2">
+                    <input class="w-full py-2" type="text" placeholder="Email">
+                </div>
+                <div class="subject basis-[45%] flex-1 border-slate-200 border-b-2 py-2">
+                    <input class="w-full py-2" type="text" placeholder="Subject">
+                </div>
+                <div class="phone basis-[45%] flex-1 border-slate-200 border-b-2 py-2">
+                    <input class="w-full py-2" type="text" placeholder="Phone">
+                </div>
+                <div class="meesage-box flex basis-[100%] border-slate-200 border-b-2 py-2">
+                    <input class="w-full h-[175px]" type="text" placeholder="Hello I am Interested in .....">
+                </div>
+                <div class="button-box flex items-center gap-[10px] px-[54px] py-[26px] bg-black rounded-[18px] mx-auto hover:bg-red-300">
+                    <a class="text-white hover:text-black" href="#">Sent Now</a>
+                    <i class="fa-solid fa-arrow-right text-red-400 hover:text-black"></i>
                 </div>
             </div>
         </div>
     </div>
   </section>
 
-  <!-- End Latest Post Section -->
+  <!-- End Contact Section -->
 
-  <!-- Start Article & News Section -->
+  <!-- Start Map Section -->
 
-  <section class="articleNews_section mt-[100px] w-[1200px] mx-auto">
-    <div class="articleNews-wrap">
-      <div class="article-heading w-[811px] flex flex-col gap-[12px] mx-auto">
-        <h1 class="text-center text-5xl">Articles & News</h1>
-      </div>
-      <div class="news-container mt-[50px] flex justify-between gap-[27px] flex-wrap" id="newsContainer"></div>
+  <section class="map mt-[100px]">
+    <div class="map-box w-[1200px] mx-auto">
+        <img class="w-full" src="/Image/Map.png" alt="">
     </div>
   </section>
+  <!-- End Map Section -->
 
-  <!-- End Article & News Section -->
+   <!-- Start Footer Section -->
 
-   <!-- Page Row -->
-   <div class="Row-box w-[268px] mx-auto gap-[20px] flex items-center mt-[100px]">
-    <p class="px-7 py-7 rounded-full bg-slate-200 hover:bg-red-200">01</p>
-    <p class="px-7 py-7 border-2 border-slate-200 rounded-full hover:bg-red-200">02</p>
-    <p class="px-7 py-7 border-2 border-slate-200 rounded-full hover:bg-red-200">03</p>
-    <i class="fa-solid fa-chevron-right px-7 py-7 border-2 border-slate-200 rounded-full hover:bg-red-200"></i>
-  </div>
-
-  <!-- End Page Row -->
-
-  <!-- Start Footer Section -->
-
-  <section class="footer_section mt-[100px]">
+   <section class="footer_section mt-[100px]">
     <div class="footer-wrap flex justify-between w-[1200px] mx-auto">
       <div class="footer-singleBox">
         <div class="heading flex items-center gap-2">
@@ -185,47 +188,9 @@
   <!-- End Footer Section -->
 
 
-
   <!-- FontAwsome Kit -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
-
-
-<script>
-
-
-    // Start Article & News Section
-
-  function loadArticleSection() {
-    fetch ('/src/articleBlogFile.json')
-    .then (res => res.json())
-    .then (data => displayArticleSection(data))
-  }
-
-  function displayArticleSection (articleSection) {
-    const articleContainer = document.getElementById('newsContainer') ;
-
-    for (const singleArticleContent of articleSection) {
-      const div =document.createElement ('div');
-      div.classList.add ('articleSingleBox')
-      div.innerHTML =`
-      <img src= ${singleArticleContent.image} >
-      <div style="background-color:white;">
-        <h3> ${singleArticleContent.title}</h3>
-      </div>
-      <h1 style="font-size:25px; margin-top:30px;"> ${singleArticleContent.paragraph}</h1>
-      <div class="flex justify-between items-center">
-        <p> ${singleArticleContent.date}</p>
-        <i class="fa-solid fa-chevron-right px-5 py-5 bg-slate-200 rounded-full hover:bg-red-200"></i>
-      </div>
-      `
-      articleContainer.appendChild(div);
-    }
-  }
-  loadArticleSection()
-
-  // End Article Section
-
-  
-</script>
