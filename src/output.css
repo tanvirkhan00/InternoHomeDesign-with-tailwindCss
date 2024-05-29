@@ -559,6 +559,11 @@ video {
   margin-right: auto;
 }
 
+.my-\[300px\] {
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -631,6 +636,10 @@ video {
   margin-top: 9px;
 }
 
+.mt-\[11px\] {
+  margin-top: 11px;
+}
+
 .flex {
   display: flex;
 }
@@ -657,6 +666,14 @@ video {
 
 .h-\[758px\] {
   height: 758px;
+}
+
+.h-\[799px\] {
+  height: 799px;
+}
+
+.h-\[132px\] {
+  height: 132px;
 }
 
 .w-\[1036px\] {
@@ -795,6 +812,14 @@ video {
   width: 100%;
 }
 
+.w-\[658px\] {
+  width: 658px;
+}
+
+.w-\[132px\] {
+  width: 132px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -813,6 +838,10 @@ video {
 
 .basis-\[60\%\] {
   flex-basis: 60%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-col {
@@ -955,6 +984,42 @@ video {
   gap: 97px;
 }
 
+.gap-\[42px\] {
+  gap: 42px;
+}
+
+.gap-\[100px\] {
+  gap: 100px;
+}
+
+.gap-\[80px\] {
+  gap: 80px;
+}
+
+.gap-\[75px\] {
+  gap: 75px;
+}
+
+.gap-\[72px\] {
+  gap: 72px;
+}
+
+.gap-\[120px\] {
+  gap: 120px;
+}
+
+.gap-\[110px\] {
+  gap: 110px;
+}
+
+.gap-\[115px\] {
+  gap: 115px;
+}
+
+.gap-\[117px\] {
+  gap: 117px;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -1066,6 +1131,16 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
@@ -1211,6 +1286,21 @@ video {
   padding-bottom: 80px;
 }
 
+.px-\[84px\] {
+  padding-left: 84px;
+  padding-right: 84px;
+}
+
+.py-\[55px\] {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.py-\[300px\] {
+  padding-top: 300px;
+  padding-bottom: 300px;
+}
+
 .pr-\[5rem\] {
   padding-right: 5rem;
 }
@@ -1278,6 +1368,10 @@ video {
   line-height: 1.75rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .text-\[22xl\] {
   color: 22xl;
 }
@@ -1325,6 +1419,15 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-rose-800 {
+  --tw-text-opacity: 1;
+  color: rgb(159 18 57 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
 }
 
 .hover\:rounded-2xl:hover {
