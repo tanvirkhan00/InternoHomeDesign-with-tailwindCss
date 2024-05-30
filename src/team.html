@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 
-   <!-- Google Font Link -->
+  <!-- Google Font Link -->
 
   <!-- Dm Serif Display Link -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -22,44 +22,14 @@
        font-family: "Jost", sans-serif;
    }
 
-     /* Plan Section StyleCss */
-
-     .planSingleBox {
-      width: 345px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 5px solid beige;
-      padding: 30px 20px;
-      border-radius: 20px;
-    }
-    
-    .planSingleBox p {
-      margin-top: 20px;
-      margin-bottom: 52px;
-      padding: 0 20px;
-      font-size: 22px;
-      text-align: center;
-    }
-    .planSingleBox h1 {
-      font-size: 25px;
-    }
-    .planSingleBox a:hover {
-      color: red;
-    }
-    /* End Plan Section */
-
-    /* Work Section Css */
-    .workSingleBox {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 51px;
-    }
-    /* End Work Section Css */
-   
- </style>
-
+   .teamSingleBox {
+    text-align: center;
+   }
+   .teamSingleBox h1 {
+    font-size: 25px;
+    margin-top: 17px;
+   }
+   </style>
 </head>
 <body>
 
@@ -94,8 +64,8 @@
     <div class="about-wrap ">
         <div class="background-image h-[356px] bg-cover flex flex-col justify-end" style="background-image: url(/Image/aboutImg.png);">
             <div class="content mx-auto text-center flex flex-col gap-[10px] bg-white z-1 w-[503px] py-[41px] rounded-t-[37px]">
-                <h1 class="text-5xl">Service</h1>
-                <p class="text-xl">Home / Service</p>
+                <h1 class="text-5xl">Our Professional</h1>
+                <p class="text-xl">Home / Team</p>
             </div>
         </div>
     </div>
@@ -103,43 +73,14 @@
 
   <!-- End About Section -->
 
-  <!-- Start Plan Section -->
+  <!-- Start Team Section -->
 
-  <section class="plan-section w-[1158px] mt-[100px] mx-auto">
-    <div class="planSectionContainer flex items-center justify-between flex-wrap gap-[60px]" id="planSectionContainer">
+  <section class="team_section mt-[100px] w-[1200px] mx-auto">
+    <div class="containerBox flex flex-wrap gap-[20px]" id="TeamContainerBox">
     </div>
   </section>
 
-  <!-- End Plan Section -->
-
-  <!-- Start Work Section -->
-
-  <section class="work_section mt-[100px]">
-    <div class="work-wrap w-[1200px] bg-slate-300 py-[100px] px-[100px] rounded-[70px] mx-auto">
-      <div class="work-heading w-[569px] mx-auto text-center">
-        <h1 class="text-5xl">How We Work</h1>
-        <p class="text-[22xl] mt-[20px]">It is a long established fact  will be distracted.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-      </div>
-      <div class="work-container mt-[50px] flex flex-col gap-[70px]" id="workContainer">
-      </div>
-    </div>
-  </section>
-  <!-- End Work Section -->
-
-  <!-- Start Join Section -->
-
-  <section class="join_section mt-[100px] w-[1200px] mx-auto">
-    <div class="joinwrap bg-slate-800 py-[80px] rounded-[70px]">
-      <div class="heading text-center flex flex-col gap-[10px]">
-        <h1 class="text-5xl text-white">Wanna join the interno?</h1>
-        <p class="text-xl text-white">It is a long established fact will be distracted</p>
-        <div class="button mt-[30px]">
-          <a class="bg-orange-200 px-[37px] py-[26px] rounded-2xl hover:text-red-400 hover:bg-slate-200" href="#">Contact With Us <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Join Section -->
+  <!-- End Team Section -->
 
   <!-- Start Footer Section -->
 
@@ -197,10 +138,8 @@
       <p class="text-xl py-[20px]">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>
+  
   <!-- End Footer Section -->
-
-
-
 
 
   <!-- FontAwsome Kit -->
@@ -209,73 +148,38 @@
 </body>
 </html>
 
-
-
-
 <script>
 
+    // Team Section Json
 
-    // <!-- Plan Section Json -->
-
-
-    function loadPlanSectionContent() {
-      fetch('/src/workPlanServiceFile.json')
-      .then(res =>res.json())
-      .then(data =>displayPlanSectionContent(data))
+    function loadTeamSectionContent() {
+        fetch("/src/teamFile.json")
+        .then(res => res.json())
+        .then(data =>displayTeamSectionContent(data))
     }
-  
-    function displayPlanSectionContent(planSectionContent) {
-      const planContainer =document.getElementById('planSectionContainer') ;
-  
-      for (const singlePlanSection of planSectionContent) {
-        const div =document.createElement ('div');
-        div.classList.add('planSingleBox') 
-        div.innerHTML =`
-         <h1> ${singlePlanSection.title}</h1>
-         <p>${singlePlanSection.paragraph}</p>
-         <a >${singlePlanSection.link} <i class="fa-solid fa-arrow-right" style="margin-left:5px;"></i></a>
-        `
-        planContainer.appendChild(div) ;
-      }
+
+    function displayTeamSectionContent(teamSectionContent){
+        const teamContainer =document.getElementById('TeamContainerBox') ;
+
+        for (const singleTeamSectionContent of teamSectionContent) {
+            const div =document.createElement ('div');
+            div.classList.add('teamSingleBox')
+            div.innerHTML = ` 
+               <img src= ${singleTeamSectionContent.img} >
+               <h1> ${singleTeamSectionContent.title}</h1>
+               <p> ${singleTeamSectionContent.address}</p>
+               <div class="flex items-center justify-center mt-2 gap-[20px]">
+                 <i class="fa-brands fa-facebook hover:text-red-400"></i>
+                 <i class="fa-brands fa-twitter hover:text-red-400"></i>
+                 <i class="fa-brands fa-linkedin hover:text-red-400"></i>
+               </div>
+            `
+            teamContainer.appendChild (div) ;
+        }
     }
-    loadPlanSectionContent();
+    loadTeamSectionContent()
 
-  // End Plan Section Json
-
-  // Work Section Json
-
-  function loadWorkSectionContent() {
-    fetch ("/src/workSectionService.json")
-    .then (res =>res.json())
-    .then (data =>displayWorkSection(data))
-  }
-
-  function displayWorkSection(workSectionContent) {
-    const workContainer =document.getElementById("workContainer") ;
-
-    for (const singleWorkContent of workSectionContent) {
-      const div =document.createElement('div');
-      div.classList.add('workSingleBox')
-      div.innerHTML = `
-         <div>
-           <img src= ${singleWorkContent.image} >
-         </div>
-         <div>
-           <div style="display:flex; align-items:center; justify-content:space-between;">
-             <img style="height:92px; width:92px;" src= ${singleWorkContent.img}>
-             <h1 style="font-size:120px; color:white;"> ${singleWorkContent.number}</h1>
-            </div>  
-           <h2 style="font-size:35px;"> ${singleWorkContent.title}</h2>
-           <p style="font-size:22px; margin-top:10px">${singleWorkContent.paragraph}</p>
-         </div> 
-      `
-      workContainer.appendChild(div);
-    }
-  }
-  loadWorkSectionContent()
-
-  // End Work Section Json
-
+    // End Team Section Json
 
 
 </script>
