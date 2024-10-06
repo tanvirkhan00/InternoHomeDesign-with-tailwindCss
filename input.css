@@ -1,0 +1,30 @@
+/* Google Fonts Link */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Spicy+Rice&family=Lobster&family=Protest+Guerrilla&family=SUSE:wght@100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    section{
+        @apply pt-12 pb-4 md:pt-20 ;
+    }
+    body {
+        @apply font-fontSuse bg-slate-200;
+    }
+}
+
+@layer components {
+    .heading-hover {
+        @apply border-b-4 border-transparent ease-linear duration-200 hover:border-limeColor hover:text-brownColor
+    }
+    .footerContent-hover {
+        @apply text-sm ease-linear duration-200 hover:text-redColor
+    }
+    .btn {
+        @apply px-5 py-3 border-2 inline-block rounded-md font-fontBebas text-lg bg-transparent border-greenColor ease-linear duration-200 cursor-pointer hover:bg-black hover:text-white
+    }
+    .icon-hover {
+        @apply  ease-linear duration-200 cursor-pointer hover:scale-105 hover:bg-green-600
+    }
+}
