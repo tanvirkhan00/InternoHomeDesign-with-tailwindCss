@@ -30,6 +30,7 @@ module.exports = {
       },
       backgroundImage: {
         "homeHiro": "url('/Image/Image.png')",
+        "serviceHiro" : "url('/Image/aboutImg.png')",
       },
     },
     container:{

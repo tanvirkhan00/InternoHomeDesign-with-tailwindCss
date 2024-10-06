@@ -10,7 +10,7 @@
         @apply pt-12 pb-4 md:pt-20 ;
     }
     body {
-        @apply font-fontSuse bg-slate-200;
+        @apply font-fontSuse tracking-wider bg-slate-200;
     }
 }
 
@@ -22,9 +22,12 @@
         @apply text-sm ease-linear duration-200 hover:text-redColor
     }
     .btn {
-        @apply px-5 py-3 border-2 inline-block rounded-md font-fontBebas text-lg bg-transparent border-greenColor ease-linear duration-200 cursor-pointer hover:bg-black hover:text-white
+        @apply px-5 py-3 border-2 tracking-wider inline-block rounded-md font-fontBebas text-lg bg-transparent border-greenColor ease-linear duration-200 cursor-pointer hover:bg-black hover:text-white
     }
     .icon-hover {
-        @apply  ease-linear duration-200 cursor-pointer hover:scale-105 hover:bg-green-600
+        @apply bg-darkColor  ease-linear duration-200 cursor-pointer hover:scale-105 hover:bg-green-600
+    }
+    .img-hover {
+        @apply duration-200 ease-linear hover:scale-105
     }
 }

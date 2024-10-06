@@ -53,6 +53,32 @@
       font-weight: 600;
     }
 
+    /* Project Section */
+
+    .projectSingleBox {
+      flex-basis: 45%;
+    }
+    .projectSingleBox h1 {
+      font-family: "Bebas Neue", 'sans-serif';
+      font-size: 25px;
+    }
+    .projectSingleBox p {
+      font-family: "Dancing Script", 'sans-serif';
+      font-weight: 600;
+    }
+
+    /* Article & News */
+
+    .articleSingleBox h1,h3{
+      font-family: "Bebas Neue", 'sans-serif';
+      font-size: 25px;
+    }
+    .articleSingleBox p {
+      font-family: "Dancing Script", 'sans-serif';
+      font-weight: 600;
+      color: rgb(8, 0, 255);
+    }
+
 
     
   </style>
@@ -125,7 +151,7 @@
         <p class="text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using that it has a more-or-less normal.</p>
         <div class="contact flex items-center gap-[15px]">
           <div class="call-icon">
-            <i class="fa-solid fa-phone p-3 rounded-full bg-red-200 text-[32px] text-amber-400 icon-hover"></i>
+            <i class="fa-solid fa-phone p-3 rounded-full text-[20px] text-amber-400 icon-hover"></i>
           </div>
           <div class="number">
             <h3 class="text-2xl">012345678</h3>
@@ -190,10 +216,10 @@
   <section class="projects_section">
     <div class="container">
       <div class="projects-heading w-[737px] mx-auto text-center">
-        <h1 class="text-5xl">Follow Our Projects</h1>
-        <p class="text-xl mt-2">It is a long established fact that a reader will be distracted by the of readable content of page lookings at its layouts points.</p>
+        <h1 class="text-5xl font-fontLobster">Follow Our Projects</h1>
+        <p class="text-xl mt-4">It is a long established fact that a reader will be distracted by the of readable content of page lookings at its layouts points.</p>
       </div>
-      <div class="projectContainer mt-[20px] flex  justify-between flex-wrap" id="projectContainer">
+      <div class="projectContainer mt-[40px] flex  justify-between flex-wrap items-center gap-[20px]" id="projectContainer">
       </div>
     </div>
   </section>
@@ -229,7 +255,7 @@
   <section class="articleNews_section">
     <div class="container">
       <div class="article-heading w-[811px] flex flex-col gap-[12px] mx-auto">
-        <h1 class="text-center text-5xl">Articles & News</h1>
+        <h1 class="text-center text-5xl font-fontLobster">Articles & News</h1>
         <p class="text-center text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
       </div>
       <div class="news-container mt-[50px] flex justify-between gap-[27px]" id="newsContainer"></div>
@@ -246,7 +272,7 @@
         <h1 class="text-5xl text-white">Wanna join the interno?</h1>
         <p class="text-xl text-white">It is a long established fact will be distracted</p>
         <div class="button mt-[20px]">
-          <a class="bg-orange-200 px-[30px] py-[20px] rounded-2xl hover:text-red-400 hover:bg-slate-200" href="/contact.html">Contact With Us <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn text-yellowColor" href="/contact.html">Contact With Us <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -256,23 +282,23 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container flex justify-between">
-      <div class="footer-singleBox">
+    <div class="container flex justify-between flex-wrap gap-[20px]">
+      <div class="footer-singleBox basis-[30%]">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
-          <h1 class="text-2xl">Interno</h1>
+          <h1 class="text-2xl font-fontBebas">Interno</h1>
         </div>
         <p class="text-lg mt-[20px]">It is a long established fact that a reader will be distracted lookings.</p>
-        <div class="social-link mt-[31px] flex gap-[54px]">
-          <i class="fa-brands fa-facebook hover:text-red-400"></i>
-          <i class="fa-brands fa-twitter hover:text-red-400"></i>
-          <i class="fa-brands fa-linkedin hover:text-red-400"></i>
-          <i class="fa-brands fa-instagram hover:text-red-400"></i>
+        <div class="social-link mt-[31px] flex gap-[30px]">
+          <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
         </div>
       </div>
-      <div class="footer-singleBox">
+      <div class="footer-singleBox basis-[20%]">
         <div class="hading">
-          <h1 class="text-xl">Pages</h1>
+          <h1 class="text-xl font-fontBebas">Pages</h1>
         </div>
         <div class="contentList  flex flex-col gap-[10px] mt-[20px]">
           <a class="footerContent-hover" href="/about.html">About Us</a>
@@ -282,9 +308,9 @@
           <a class="footerContent-hover" href="#">Services</a>
         </div>
       </div>
-      <div class="footer-singleBox">
+      <div class="footer-singleBox basis-[20%]">
         <div class="heading">
-          <h1 class="text-xl">Services</h1>
+          <h1 class="text-xl font-fontBebas">Services</h1>
         </div>
         <div class="contentList mt-[20px] flex flex-col gap-[10px]">
           <a class="footerContent-hover" href="#">Kitchen</a>
@@ -294,9 +320,9 @@
           <a class="footerContent-hover" href="#">Bedroom</a>
         </div>
       </div>
-      <div class="footer-singleBox">
+      <div class="footer-singleBox basis-[20%]">
         <div class="heading">
-          <h1 class="text-xl">Contact</h1>
+          <h1 class="text-xl font-fontBebas">Contact</h1>
         </div>
         <div class="address mt-[20px] flex flex-col gap-[10px]">
           <p class="footerContent-hover">55 East Birchood Ave. Brooklyn, New York 11201</p>
@@ -409,13 +435,15 @@
       const div =document.createElement('div');
       div.classList.add ('projectSingleBox') 
       div.innerHTML = `
-      <img src= ${singleProjectContent.image} >
-      <div style="display:flex;justify-content:space-between; align-items:center;margin-top:43px;">
+      <img src= ${singleProjectContent.image} class="img-hover" >
+      <div style="display:flex;justify-content:space-between; align-items:center;margin-top:10px;">
         <div>
           <h1> ${singleProjectContent.name}</h1>
           <p> ${singleProjectContent.paragraph}</p>
         </div>
-        <i class="fa-solid fa-chevron-right" style="background-color: hsla(30, 27%, 94%, 1); padding:30px 30px; border-radius:100%; margin-right:20px;"></i>
+        <div class="icon  ">
+          <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[50px] h-[50px] px-5 py-4"></i>
+        </div>
       </div>
       `
       projectContainer.appendChild(div);
@@ -439,9 +467,9 @@
       const div =document.createElement ('div');
       div.classList.add ('articleSingleBox')
       div.innerHTML =`
-      <img src= ${singleArticleContent.image} >
-      <div style="background-color:white;">
-        <h3> ${singleArticleContent.title}</h3>
+      <div class="img-hover">
+        <img src= ${singleArticleContent.image}>
+        <h3 style="background-color:white;"> ${singleArticleContent.title}</h3>
       </div>
       <h1 style="font-size:25px; margin-top:30px;"> ${singleArticleContent.paragraph}</h1>
       <p> ${singleArticleContent.date}</p>
