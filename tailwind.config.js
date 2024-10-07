@@ -31,6 +31,7 @@ module.exports = {
       backgroundImage: {
         "homeHiro": "url('/Image/Image.png')",
         "serviceHiro" : "url('/Image/aboutImg.png')",
+        "projectHiro" : "url('/Image/pricingImg.png')",
       },
     },
     container:{
