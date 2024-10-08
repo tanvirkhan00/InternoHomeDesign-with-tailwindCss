@@ -35,7 +35,11 @@ module.exports = {
         "contactHiro" : "url('/Image/contactUsImg.png')",
         "aboutHiro" :  "url('/Image/aboutImg.png')",
         "patternImg" : "url('/Image/Pattern.png')",
-        "blogDetailsImg" : "url('Image/blogDetailsImg.png')",
+        "blogDetailsImg" : "url('/Image/blogDetailsImg.png')",
+        "changecatelogHiroImg" : "url('/Image/passwordBoxImg.png')",
+        "licenseHiroImg" : "url('/Image/LicencesImg.png')",
+        "projectDetailsHiroImg" : "url('/Image/ProjectDetailsImg.png')",
+        "projectDetailsImg" : "url('/Image/serviceSingleSearch.png')",
       },
     },
     container:{

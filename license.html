@@ -5,26 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 
-
-  <style>
-
-    /* Bedroom Design */
-
-    .bedroomSingleBox h1 {
-      font-family: "Bebas Neue", 'sans-serif';
-      font-size: 25px;
-    }
-    .bedroomSingleBox h3 {
-      font-family: "Dancing Script", 'sans-serif';
-      font-weight: 600;
-    }
-    .bedroomSingleBox img {
-      height: 400px;
-      width: 500px;
-    }
-
-
-  </style>
 </head>
 <body>
 
@@ -58,14 +38,14 @@
 
   <!-- Start About Section -->
 
-  <section class="about_section bg-projectHiro h-[300px] ">
+  <section class="about_section bg-licenseHiroImg h-[300px] ">
     <div class="container flex justify-center">
       <div class="content text-center flex flex-col justify-center gap-[10px] bg-white w-[503px] h-[150px] rounded-t-[37px]  mt-[70px]">
-        <h1 class="text-5xl font-fontLobster">Project</h1>
+        <h1 class="text-5xl font-fontLobster">License</h1>
         <div class="flex item-center gap-[10px] justify-center">
           <a href="/index.html">Home</a>
           <span>/</span>
-          <a href="/project.html">Project</a>
+          <a href="/license.html">license</a>
         </div>
       </div>
     </div>
@@ -73,40 +53,75 @@
 
   <!-- End About Section -->
 
-  <!-- Start Service List Section -->
+  <!-- Start Photography Section -->
 
-  <section class="service-list_section">
-    <div class="container border-[2px] border-greenColor rounded-2xl p-0">
-        <div class="list flex items-center justify-between">
-            <h4 class="py-[20px] px-[66px] duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Bathroom</h4>
-            <h4 class="py-[20px] px-[66px] text-white bg-skyBlueColor rounded-2xl duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Bed Room</h4>
-            <h4 class="py-[20px] px-[66px] duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Kitchan</h4>
-            <h4 class="py-[20px] px-[66px] duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Living Area</h4>
+  <section class="photography_section">
+    <div class="container">
+        <h1 class="text-5xl font-fontLobster">Photography</h1>
+        <p class="text-[22px] text-slate-400 mt-[25px]">All images used in the <span class="text-orange-400">Interno</span> Webflow Ecommerce Template are licensed for free personal and commercial use. If you'd like to use any specific image, you can check the licenses and download the images for free on <span class="font-extrabold font-fontBebas text-black">Unsplash, Pexels</span>.</p>
+    </div>
+  </section>
+
+  <!-- End Photography Section -->
+
+  <!-- Start Unsplash Section -->
+
+  <section class="unsplash_section">
+    <div class="container">
+        <div class="heading flex flex-col gap-[20px]">
+            <h1 class="text-[35px] font-fontLobster">Unsplash</h1>
+            <p class="text-slate-400 text-[22px]">Image 1, Image 2, Image 3, Image 4, Image 5, Image 6, Image 7, Image 8, Image 9, Image 10, Image 11, Image 12, Image 13, Image 14, Image 15, Image 16, Image 17.</p>
+            <div class="imgBox flex flex-wrap justify-between gap-[20px] mt-[20px] basis-[100%]">
+                <img src="/Image/LicenceUplashImg.png" alt="" class="w-[300px] img-hover">
+                <img src="/Image/LicenceUplashImg1.png" alt="" class="w-[300px] img-hover">
+                <img src="/Image/LicenceUplashImg2.png" alt="" class="w-[300px] img-hover">
+            </div>
         </div>
     </div>
   </section>
   
-  <!-- End Service List Section -->
+  <!-- End Unsplash Section -->
 
-  <!-- Start Bed Room Design -->
 
-  <section class="bedRoom-design_section">
-    <div class="container">
-      <div class="bedroom-container grid grid-cols-2 gap-[30px] justify-between" id="bedroomContainer"></div>
+  <!-- Start Pexels Section -->
+
+  <section class="pexels_section">
+    <div class="container bg-slate-100 py-[50px] rounded-[50px]">
+        <div class="heading flex flex-col gap-[20px]">
+            <h1 class="text-[35px] font-fontLobster">Pexels</h1>
+            <p class="text-slate-400 text-[22px]">Image 1, Image 2, Image 3, Image 4, Image 5, Image 6, Image 7, Image 8, Image 9, Image 10, Image 11, Image 12.</p>
+            <div class="imgBox flex justify-between flex-wrap gap-[20px] mt-[20px]">
+                <img src="/Image/LicencePexelsImg.png" alt="" class="w-[300px] img-hover">
+                <img src="/Image/LicencePexelsImg1.png" alt="" class="w-[300px] img-hover">
+                <img src="/Image/LicencePexelsImg2.png" alt="" class="w-[300px] img-hover">
+            </div>
+        </div>
     </div>
   </section>
 
-  <!-- End Bed Room Design -->
+  <!-- End Pexels Section -->
 
-  <!-- Page Row -->
-  <div class="Row-box gap-[30px] flex items-center justify-center py-[50px]">
-    <p class="icon-hover  text-white rounded-full w-[50px] h-[50px] px-4 py-3">01</p>
-    <p class="icon-hover  text-white rounded-full w-[50px] h-[50px] px-4 py-3">02</p>
-    <p class="icon-hover text-white rounded-full w-[50px] h-[50px] px-4 py-3">03</p>
-    <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[50px] h-[50px] px-5 py-4"></i>
-  </div>
+  <!-- Start Font & Icon Section -->
 
-  <!-- End Page Row -->
+  <section class="fontIcon_section">
+    <div class="container py-[82px] px-[46px] bg-slate-100 rounded-[70px] flex flex-col gap-[10px]">
+        <h1 class="text-[35px]">Font</h1>
+        <div class="flex items-center gap-[43px]">
+            <div class="text-[22px]">
+                <p class="text-slate-400">Interno template uses licensed <span class="text-orange-400">Google Fonts</span></p>
+               <p class="text-slate-400">Please check <span class="text-black font-extrabold">DM Serif Display</span> , <span class="text-black font-extrabold">Bebas Neue</span> and <span class="text-black font-extrabold">SUSE</span></p>
+            </div>
+            <div class=" flex items-center gap-[60px]">
+                <h1 class="text-[85px]">Aa</h1>
+                <p class="text-[85px]">Aa</p>
+            </div>
+        </div>
+        <h1 class="text-[35px]">Icon</h1>
+        <p class="text-[22px] text-slate-400">Icon 1, Icon 2, Icon 3</p>
+    </div>
+  </section>
+
+  <!-- End Font & Icon Section -->
 
   <!-- Start Footer Section -->
 
@@ -169,42 +184,8 @@
 
 
 
-
   <!-- FontAwsome Kit -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
-
-
-
-<script>
-
-  function loadBedroomSection() {
-    fetch('/bedroomDesignProjectFile.json')
-    .then(res =>res.json())
-    .then(data =>displayBedroomSectionContent(data))
-  }
-  function displayBedroomSectionContent (bedroomSectionContent) {
-    const bedroomContainer =document.getElementById('bedroomContainer');
-
-    for (const singleBedroomSection of bedroomSectionContent) {
-      const div=document.createElement('div');
-      div.classList.add('bedroomSingleBox')
-      div.innerHTML= `
-        <img src= ${singleBedroomSection.image} class="img-hover">
-        <div style="display:flex; align-items:center; justify-content:space-between">
-          <div>
-           <h1 style="margin-top:24px;"> ${singleBedroomSection.title} </h1>
-           <h3> ${singleBedroomSection.heading} </h3>
-          </div>
-          <div>
-           <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[50px] h-[50px] px-5 py-4"></i>
-         </div>
-        </div>
-      `
-      bedroomContainer.appendChild(div) ;
-    }
-  }
-  loadBedroomSection()
-</script>
