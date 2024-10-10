@@ -40,6 +40,7 @@ module.exports = {
         "licenseHiroImg" : "url('/Image/LicencesImg.png')",
         "projectDetailsHiroImg" : "url('/Image/ProjectDetailsImg.png')",
         "projectDetailsImg" : "url('/Image/serviceSingleSearch.png')",
+        "singleTeamImg" : "url('/Image/TeamSingleImg.png')",
       },
     },
     container:{

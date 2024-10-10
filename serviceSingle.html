@@ -5,61 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 
-  <!-- Google Font Link -->
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- Dm Serif Display Link -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <!-- Jost link -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-
-  <style>
-    h1,h2,h3,h4,h5 {
-        font-family: "DM Serif Display", serif;
-    }
-    p {
-        font-family: "Jost", sans-serif;
-    }
-  </style>
 </head>
 <body>
 
      <!-- Start Header Section -->
 
-  <section class="header_section w-full mx-auto">
-    <div class="header-wrap w-[1200px] flex justify-between mx-auto items-center py-[44px]">
-        <div class="single-box flex items-center gap-2">
-            <img src="/Image/Logo.png" alt="">
-            <h1 class="text-4xl">Interno</h1>
-        </div>
-        <div class="single-box">
-          <div class="list flex items-center gap-[31px]">
-            <a class="hover:text-red-400" href="/src/index.html">Home</a>
-            <a class="hover:text-red-400" href="#">Pages</a>
-            <a class="hover:text-red-400" href="/src/service.html">Services</a>
-            <a class="hover:text-red-400" href="/src/project.html">Project</a>
-            <a class="hover:text-red-400" href="/src/blog.html">Blog</a>
-            <a class="hover:text-red-400" href="/src/contact.html">Contact</a>
-            <button type="submit"><i class="fa-solid fa-magnifying-glass hover:text-red-400"></i></button>
+     <header class="header_section">
+      <div class="container flex justify-between items-center h-[70px]">
+          <div class="single-box flex items-center gap-2">
+              <img src="/Image/Logo.png" alt="">
+              <h1 class="text-4xl font-fontLobster">Interno</h1>
           </div>
-        </div>
-    </div>
-  </section>
+          <div class="single-box hidden md:block">
+            <div class="list flex items-center gap-[30px]">
+              <a class="heading-hover" href="/index.html">Home</a>
+              <a class="heading-hover" href="/about.html">About</a>
+              <a class="heading-hover" href="/service.html">Services</a>
+              <a class="heading-hover" href="/project.html">Project</a>
+              <a class="heading-hover" href="/blog.html">Blog</a>
+              <a class="heading-hover" href="/contact.html">Contact</a>
+              <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
+            </div>
+          </div>
+          <div class="bar-icon">
+            <i class="fa-solid fa-bars hover:text-redColor"></i>
+          </div>
+      </div>
+    </header>
 
   <!-- End Header Section -->
 
 
   <!-- Start About Section -->
 
-  <section class="about_section">
-    <div class="about-wrap ">
-        <div class="background-image h-[356px] bg-cover flex flex-col justify-end" style="background-image: url(/Image/pricingImg.png);">
-            <div class="content mx-auto text-center flex flex-col gap-[10px] bg-white z-1 w-[503px] py-[41px] rounded-t-[37px]">
-                <h1 class="text-5xl">Service Single</h1>
-                <p class="text-xl">Home / Service Single</p>
-            </div>
+  <section class="about_section bg-serviceHiro h-[300px] ">
+    <div class="container flex justify-center">
+      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white w-[503px] h-[150px] rounded-t-[37px]  mt-[70px]">
+        <h1 class="text-5xl font-fontLobster">Service Deatils</h1>
+        <div class="flex item-center gap-[10px] justify-center">
+          <a href="/index.html">Home</a>
+          <span>/</span>
+          <a href="/serviceSingle.html">Single Service</a>
         </div>
+      </div>
     </div>
   </section>
 
@@ -67,12 +58,10 @@
 
   <!-- Start Service Section -->
 
-  <section class="service_section mt-[100px]">
-    <div class="service-wrap flex justify-between gap-[97px] w-[1200px] mx-auto">
-        <div class="single-box w-[448px] flex-1">
-            <h1 class="text-5xl">We set the trends of modern living Services.</h1>
-        </div>
-        <div class="single-box text-[25px] flex flex-col gap-[28px] w-[655px]">
+  <section class="service_section">
+    <div class="container flex justify-between flex-wrap gap-[20px]">
+        <div class="single-box text-[25px] flex flex-col gap-[28px]">
+            <h1 class="text-5xl font-fontLobster">We set the trends of modern living Services.</h1>
             <p class="text-red-400">It is a long established fact that a reader will be distrated by the of readable content of a page</p>
             <p>when lookings at its layouts the points spriof using that it has a more vless normal.A wonderful serenity has taken pgossession of my entire soul, like thesce sweet morndsings of sphring which I enjoy with my forwhole heart. I am alone, and feel the charm of excgistence in this spot, which was created for the bliss of souls like mine.</p>
             <p>when lookings at its layouts the points spriof using that it has a more less normal.A wonderful serenity has taken pgossession of my entire soul, like thesce sweet morndsings of sphring which I enjoy with my forwhole heart. I am alone, and feel the charm of excgistence in this spot, which was created for the bliss of souls like mine.</p>
@@ -83,13 +72,28 @@
 
    <!-- Start Brand Section -->
 
-   <section class="brand-section w-[1090px] mx-auto mt-[100px]">
-    <div class="brand-wrap flex justify-between items-center">
-      <img src="/Image/brand1.svg" alt="">
-      <img src="/Image/brand2.svg" alt="">
-      <img src="/Image/brand3.svg" alt="">
-      <img src="/Image/brand4.svg" alt="">
-      <img src="/Image/brand5.svg" alt="">
+   <section class="brand-section">
+    <div class="container">
+      <div class="swiper mySwiper ">
+        <div class="swiper-wrapper flex items-center justify-between gap-[50px]">
+          <div class="swiper-slide ">
+            <img src="/Image/brand1.svg" alt="" class="h-full w-full">
+          </div>
+          <div class="swiper-slide ">
+            <img src="/Image/brand2.svg" alt="">
+          </div>
+          <div class="swiper-slide ">
+            <img src="/Image/brand3.svg" alt="">
+          </div>
+          <div class="swiper-slide ">
+            <img src="/Image/brand4.svg" alt="">
+          </div>
+          <div class="swiper-slide ">
+            <img src="/Image/brand5.svg" alt="">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
   </section>
 
@@ -97,9 +101,9 @@
 
   <!-- Start Video Section -->
 
-  <section class="video_section mt-[100px]">
-    <div class="video-wrap w-[1200px] mx-auto">
-        <img src="/Image/ServiceSingleVideoImg.png" alt="">
+  <section class="video_section">
+    <div class="container">
+        <img src="/Image/ServiceSingleVideoImg.png" alt="" class="h-[500px]">
     </div>
   </section>
 
@@ -108,26 +112,26 @@
 
   <!-- Start Work Section -->
 
-  <section class="work_section mt-[100px]">
-    <div class="work-wrap w-[1036px] mx-auto flex justify-between items-center">
-        <div class="single-box">
-            <h1 class="text-5xl">Use of Interior</h1>
-            <div class="paragraph text-[22px] text-slate-400 mt-[23px] flex flex-col gap-[23px]">
-                <p><span class="text-red-400">1.</span> We provide high quality design services</p>
-                <p><span class="text-red-400">2.</span>Project on time and Latest Design.</p>
-                <p><span class="text-red-400">3.</span>  Scientific Skills For getting a better result</p>
-                <p><span class="text-red-400">4.</span>  Renovations Benefit of Service</p>
-                <p><span class="text-red-400">5.</span>  We are confident about our projects</p>
+  <section class="work_section">
+    <div class="container flex justify-between flex-wrap gap-[20px]">
+        <div class="single-box basis-[45%]">
+            <h1 class="text-5xl font-fontLobster">Use of Interior</h1>
+            <div class="paragraph text-[20px] text-slate-400 mt-[20px] flex flex-col gap-[10px]">
+                <p class="singleBox-hover"><span class="text-red-400 ">1.</span> We provide high quality design services</p>
+                <p class="singleBox-hover"><span class="text-red-400">2.</span>Project on time and Latest Design.</p>
+                <p class="singleBox-hover"><span class="text-red-400">3.</span>  Scientific Skills For getting a better result</p>
+                <p class="singleBox-hover"><span class="text-red-400">4.</span>  Renovations Benefit of Service</p>
+                <p class="singleBox-hover"><span class="text-red-400">5.</span>  We are confident about our projects</p>
             </div>
         </div>
-        <div class="single-box">
-            <h1 class="text-5xl">Make An Art</h1>
-            <div class="paragraph text-[22px] text-slate-400 mt-[23px] flex flex-col gap-[23px]">
-                <p><span class="text-red-400">1.</span> We provide high quality design services</p>
-                <p><span class="text-red-400">2.</span>Project on time and Latest Design.</p>
-                <p><span class="text-red-400">3.</span>  Scientific Skills For getting a better result</p>
-                <p><span class="text-red-400">4.</span>  Renovations Benefit of Service</p>
-                <p><span class="text-red-400">5.</span>  We are confident about our projects</p>
+        <div class="single-box basis-[45%]">
+            <h1 class="text-5xl font-fontLobster">Make An Art</h1>
+            <div class="paragraph text-[20px] text-slate-400 mt-[20px] flex flex-col gap-[10px]">
+                <p class="singleBox-hover"><span class="text-red-400">1.</span> We provide high quality design services</p>
+                <p class="singleBox-hover"><span class="text-red-400">2.</span>Project on time and Latest Design.</p>
+                <p class="singleBox-hover"><span class="text-red-400">3.</span>  Scientific Skills For getting a better result</p>
+                <p class="singleBox-hover"><span class="text-red-400">4.</span>  Renovations Benefit of Service</p>
+                <p class="singleBox-hover"><span class="text-red-400">5.</span>  We are confident about our projects</p>
             </div>
         </div>
     </div>
@@ -138,16 +142,16 @@
 
   <!-- Start Result Section -->
 
-  <section class="result_section mt-[100px]">
-    <div class="resultwrap w-[1200px] mx-auto flex items-center justify-between gap-[90px]">
-      <div class="resultSingleBox basis-[60%]">
-        <img class="w-full" src="/Image/ServiceSinglePorfolioImg.png" alt="">
+  <section class="result_section">
+    <div class="container flex items-center justify-between flex-wrap gap-[20px]">
+      <div class="resultSingleBox basis-[50%]">
+        <img class="img-hover" src="/Image/ServiceSinglePorfolioImg.png" alt="">
       </div>
       <div class="resultSingleBox basis-[40%]">
-        <h1 class="text-5xl">We Love design. That,s how we got here.</h1>
-        <p class="text-xl mt-[23px] w-[500px] pr-[5rem]">It is a long established fact that a reader will be distracted by the of readable content.</p>
+        <h1 class="text-[30px] font-fontBebas">We Love design. That,s how we got here.</h1>
+        <p class="text-xl mt-[23px]">It is a long established fact that a reader will be distracted by the of readable content.</p>
         <div class="button mt-[50px]">
-          <a class="px-[41px] py-[26px] bg-black rounded-2xl text-white hover:text-red-400 hover:bg-slate-800" href="#">Our Portfolio <i class="fa-solid fa-arrow-right ml-2 text-red-500"></i></a>
+          <a class="btn" href="#">Our Portfolio <i class="fa-solid fa-arrow-right ml-2"></i></a>
         </div>
       </div>
     </div>
@@ -157,8 +161,8 @@
 
   <!-- start Coundoun Section -->
 
-  <section class="coundown_section bg-slate-200 mt-[100px] w-full">
-    <div class="coundown-wrap w-[1082px] mx-auto flex items-center justify-between py-[100px]">
+  <section class="coundown_section">
+    <div class="container flex items-center justify-between py-[100px]">
       <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 pr-[70px]">
         <h1 class="text-center text-7xl text-orange-300">12</h1>
         <p class="text-xl">Years Of Experience</p>
@@ -182,58 +186,58 @@
 
   <!-- Start Footer Section -->
 
-  <section class="footer_section mt-[100px]">
-    <div class="footer-wrap flex justify-between w-[1200px] mx-auto">
-      <div class="footer-singleBox">
+  <section class="footer_section bg-white">
+    <div class="container flex justify-between flex-wrap gap-[20px]">
+      <div class="footer-singleBox basis-[30%]">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
-          <h1 class="text-4xl">Interno</h1>
+          <h1 class="text-2xl font-fontBebas">Interno</h1>
         </div>
-        <p class="text-xl mt-[18px] w-[393px]">It is a long established fact that a reader will be distracted lookings.</p>
-        <div class="social-link mt-[31px] flex gap-[54px]">
-          <i class="fa-brands fa-facebook hover:text-red-400"></i>
-          <i class="fa-brands fa-twitter hover:text-red-400"></i>
-          <i class="fa-brands fa-linkedin hover:text-red-400"></i>
-          <i class="fa-brands fa-instagram hover:text-red-400"></i>
+        <p class="text-lg mt-[20px]">It is a long established fact that a reader will be distracted lookings.</p>
+        <div class="social-link mt-[31px] flex gap-[30px]">
+          <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
         </div>
       </div>
-      <div class="footer-singleBox">
+      <div class="footer-singleBox basis-[20%]">
         <div class="hading">
-          <h1 class="text-2xl">Pages</h1>
+          <h1 class="text-xl font-fontBebas">Pages</h1>
         </div>
-        <div class="contentList mt-[9px] flex flex-col gap-[20px] text-xl">
-          <a class="hover:text-red-400" href="/src/about.html">About Us</a>
-          <a class="hover:text-red-400" href="#">Our Projects</a>
-          <a class="hover:text-red-400" href="#">Our Team</a>
-          <a class="hover:text-red-400" href="#">Contact Us</a>
-          <a class="hover:text-red-400" href="#">Services</a>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="heading">
-          <h1 class="text-2xl">Services</h1>
-        </div>
-        <div class="contentList mt-[9px] flex flex-col gap-[20px] text-xl">
-          <a class="hover:text-red-400" href="#">Kitchen</a>
-          <a class="hover:text-red-400" href="#">Living Area</a>
-          <a class="hover:text-red-400" href="#">Bathroom</a>
-          <a class="hover:text-red-400" href="#">Dining Hall</a>
-          <a class="hover:text-red-400" href="#">Bedroom</a>
+        <div class="contentList  flex flex-col gap-[10px] mt-[20px]">
+          <a class="footerContent-hover" href="/about.html">About Us</a>
+          <a class="footerContent-hover" href="/plan.html">Plan</a>
+          <a class="footerContent-hover" href="team.html">Our Team</a>
+          <a class="footerContent-hover" href="contact.html">Contact Us</a>
+          <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
         </div>
       </div>
-      <div class="footer-singleBox">
+      <div class="footer-singleBox basis-[20%]">
         <div class="heading">
-          <h1 class="text-2xl">Contact</h1>
+          <h1 class="text-xl font-fontBebas">Services</h1>
         </div>
-        <div class="address mt-[9px] flex flex-col gap-[20px] text-xl">
-          <p class="w-[258px] hover:text-red-400">55 East Birchood Ave. Brooklyn, New York 11201</p>
-          <a class="hover:text-red-400" href="#">kmtanvir1111@gmail.com</a>
-          <p class="hover:text-red-400">(123) 456 - 7890</p>
+        <div class="contentList mt-[20px] flex flex-col gap-[10px]">
+          <a class="footerContent-hover" href="#">Kitchen</a>
+          <a class="footerContent-hover" href="#">Living Area</a>
+          <a class="footerContent-hover" href="#">Bathroom</a>
+          <a class="footerContent-hover" href="#">Dining Hall</a>
+          <a class="footerContent-hover" href="#">Bedroom</a>
+        </div>
+      </div>
+      <div class="footer-singleBox basis-[20%]">
+        <div class="heading">
+          <h1 class="text-xl font-fontBebas">Contact</h1>
+        </div>
+        <div class="address mt-[20px] flex flex-col gap-[10px]">
+          <p class="footerContent-hover">55 East Birchood Ave. Brooklyn, New York 11201</p>
+          <a class="footerContent-hover" href="#">kmtanvir1111@gmail.com</a>
+          <p class="footerContent-hover">(123) 456 - 7890</p>
         </div>
       </div>
     </div>
-    <div class="footer-privacy text-center mt-[100px]">
-      <p class="text-xl py-[20px]">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
+    <div class="footer-privacy text-center mt-[50px]">
+      <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>
   <!-- End Footer Section -->
@@ -241,5 +245,28 @@
 
   <!-- FontAwsome Kit -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+   <!-- Initialize Swiper -->
+   <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 5,
+        spaceBetween: 50,
+        loop:true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+        el: ".swiper-pagination",
+        dynamicBullets: true,
+      },
+    });
+  </script>
+
+
 </body>
 </html>

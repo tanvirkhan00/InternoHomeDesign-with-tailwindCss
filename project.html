@@ -131,10 +131,10 @@
         </div>
         <div class="contentList  flex flex-col gap-[10px] mt-[20px]">
           <a class="footerContent-hover" href="/about.html">About Us</a>
-          <a class="footerContent-hover" href="/project.html">Our Projects</a>
-          <a class="footerContent-hover" href="/team.html">Our Team</a>
-          <a class="footerContent-hover" href="/contact.html">Contact Us</a>
-          <a class="footerContent-hover" href="#">Services</a>
+          <a class="footerContent-hover" href="/plan.html">Plan</a>
+          <a class="footerContent-hover" href="team.html">Our Team</a>
+          <a class="footerContent-hover" href="contact.html">Contact Us</a>
+          <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
         </div>
       </div>
       <div class="footer-singleBox basis-[20%]">
@@ -192,7 +192,8 @@
       const div=document.createElement('div');
       div.classList.add('bedroomSingleBox')
       div.innerHTML= `
-        <img src= ${singleBedroomSection.image} class="img-hover">
+        <a href="projectDetails.html">
+            <img src= ${singleBedroomSection.image} class="img-hover">
         <div style="display:flex; align-items:center; justify-content:space-between">
           <div>
            <h1 style="margin-top:24px;"> ${singleBedroomSection.title} </h1>
@@ -202,8 +203,9 @@
            <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[50px] h-[50px] px-5 py-4"></i>
          </div>
         </div>
+          </a>
       `
-      bedroomContainer.appendChild(div) ;
+      bedroomContainer.appendChild(div);
     }
   }
   loadBedroomSection()

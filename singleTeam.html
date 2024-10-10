@@ -5,62 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 
-  <!-- Google Font Link -->
-
-  <!-- Dm Serif Display Link -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <!-- Jost link -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <style>
-
-    h1,h2,h3 {
-       font-family: "DM Serif Display", serif;
-   }
-   p {
-       font-family: "Jost", sans-serif;
-   }
-   </style>
-
 </head>
 <body>
 
     <!-- Start Header Section -->
 
-  <section class="header_section w-full mx-auto">
-    <div class="header-wrap w-[1200px] flex justify-between mx-auto items-center py-[44px]">
-        <div class="single-box flex items-center gap-2">
-            <img src="/Image/Logo.png" alt="">
-            <h1 class="text-4xl">Interno</h1>
-        </div>
-        <div class="single-box">
-          <div class="list flex items-center gap-[31px]">
-            <a class="hover:text-red-400" href="/src/index.html">Home</a>
-            <a class="hover:text-red-400" href="#">Pages</a>
-            <a class="hover:text-red-400" href="/src/service.html">Services</a>
-            <a class="hover:text-red-400" href="/src/project.html">Project</a>
-            <a class="hover:text-red-400" href="/src/blog.html">Blog</a>
-            <a class="hover:text-red-400" href="/src/contact.html">Contact</a>
-            <button type="submit"><i class="fa-solid fa-magnifying-glass hover:text-red-400"></i></button>
+    <header class="header_section">
+      <div class="container flex justify-between items-center h-[70px]">
+          <div class="single-box flex items-center gap-2">
+              <img src="/Image/Logo.png" alt="">
+              <h1 class="text-4xl font-fontLobster">Interno</h1>
           </div>
-        </div>
-    </div>
-  </section>
+          <div class="single-box hidden md:block">
+            <div class="list flex items-center gap-[30px]">
+              <a class="heading-hover" href="/index.html">Home</a>
+              <a class="heading-hover" href="/about.html">About</a>
+              <a class="heading-hover" href="/service.html">Services</a>
+              <a class="heading-hover" href="/project.html">Project</a>
+              <a class="heading-hover" href="/blog.html">Blog</a>
+              <a class="heading-hover" href="/contact.html">Contact</a>
+              <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
+            </div>
+          </div>
+          <div class="bar-icon">
+            <i class="fa-solid fa-bars hover:text-redColor"></i>
+          </div>
+      </div>
+    </header>
 
   <!-- End Header Section -->
 
 
   <!-- Start About Section -->
 
-  <section class="about_section">
-    <div class="about-wrap ">
-        <div class="background-image h-[356px] bg-cover flex flex-col justify-end" style="background-image: url(/Image/TeamSingleImg.png);">
-            <div class="content mx-auto text-center flex flex-col gap-[10px] bg-white z-1 w-[503px] py-[41px] rounded-t-[37px]">
-                <h1 class="text-5xl">Professional Single</h1>
-                <p class="text-xl">Home / Team Single</p>
-            </div>
+  <section class="about_section bg-singleTeamImg h-[300px] ">
+    <div class="container flex justify-center">
+      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white w-[503px] h-[150px] rounded-t-[37px]  mt-[70px]">
+        <h1 class="text-5xl font-fontLobster">Personal Data</h1>
+        <div class="flex item-center gap-[10px] justify-center">
+          <a href="/index.html">Home</a>
+          <span>/</span>
+          <a href="/singleTeam.html">Single team</a>
         </div>
+      </div>
     </div>
   </section>
 
@@ -68,33 +55,33 @@
 
   <!-- Start Personal Details Section -->
 
-  <section class="personalDetails_section mt-[100px]">
-    <div class="containerBox flex w-[1200px] mx-auto gap-[59px] items-center">
-        <div class="img-box w-[590px]">
-            <img src="/Image/SingleTeamFileImg.png" alt="">
+  <section class="personalDetails_section">
+    <div class="container flex gap-[20px] justify-between flex-wrap items-center">
+        <div class="img-box basis-[48%]">
+            <img src="/Image/SingleTeamFileImg.png" alt="" class="img-hover">
         </div>
-        <div class="information w-[552px]">
-            <h1 class="text-5xl">John Smith</h1>
-            <p class="text-[22px] text-slate-400">Designer</p>
+        <div class="information basis-[48%]">
+            <h1 class="text-5xl font-fontLobster">John Smith</h1>
+            <p class="text-[25px] text-slate-600 font-fontBebas mt-2">Designer</p>
             <p class="text-slate-400 mt-[10px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrpobelie frandomised words which don't look even slightly believable.</p>
             <div class="single-box flex flex-col gap-[30px] mt-[30px]">   
-                <div class="gmail flex items-center gap-[10px] text-xl">
-                    <div class="icon h-[52px] w-[52px] bg-slate-200 rounded-full text-center py-3"><i class="fa-regular fa-envelope text-orange-300 hover:text-red-400"></i></div>
+                <div class="gmail flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
+                    <div class="icon"><i class="fa-regular fa-envelope icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
                     <div class="icon hover:text-red-400">info@yourdomain.com</div>
                 </div>
-                <div class="phn flex items-center gap-[10px] text-xl">
-                    <div class="icon h-[52px] w-[52px] bg-slate-200 rounded-full text-center py-3"><i class="fa-solid fa-phone hover:text-red-400 text-orange-300"></i></div>
+                <div class="phn flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
+                    <div class="icon"><i class="fa-solid fa-phone icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
                     <div class="icon hover:text-red-400">+1(378) 400-1234</div>
                 </div>
-                <div class="net flex items-center gap-[10px] text-xl">
-                    <div class="icon h-[52px] w-[52px] bg-slate-200 rounded-full text-center py-3"><i class="fa-solid fa-globe text-orange-300 hover:text-red-400"></i></div>
+                <div class="net flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
+                    <div class="icon"><i class="fa-solid fa-globe icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
                     <div class="icon hover:text-red-400">www.yourdomain.com</div>
                 </div>
                 <div class="social-link flex gap-[35px] text-xl">
-                    <i class="fa-brands fa-facebook hover:text-red-400"></i>
-                    <i class="fa-brands fa-twitter hover:text-red-400"></i>
-                    <i class="fa-brands fa-linkedin hover:text-red-400"></i>
-                    <i class="fa-brands fa-instagram hover:text-red-400"></i>
+                    <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+                    <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+                    <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+                    <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
                 </div>
             </div>
         </div>
@@ -105,21 +92,21 @@
 
   <!-- Start Short Biography Section -->
 
-  <section class="shortBiography_section mt-[100px]">
-    <div class="container-box w-[1200px] mx-auto">
+  <section class="shortBiography_section">
+    <div class="container">
         <div class="heading">
-            <h1 class="text-5xl">Short Biography</h1>
+            <h1 class="text-5xl font-fontLobster">Short Biography</h1>
         </div>
         <div class="paragraph mt-[20px]">
             <p class="text-slate-400 text-[22px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, njecthumour randomised words which don't look even slightly believable.Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined but the majority have suffered alteration in some form chunks as necessary.</p>
         </div>
-        <div class="box flex gap-[95px] mt-[20px]">
-            <div class="functionality w-[577px]">
-                <h1 class="text-[25px]">Simplicity and Functionality</h1>
+        <div class="box flex flex-wrap justify-between gap-[20px] mt-[20px]">
+            <div class="functionality basis-[48%]">
+                <h1 class="text-[25px] font-fontBebas">Simplicity and Functionality</h1>
                 <p class="text-slate-400 mt-[10px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in belief.</p>
                 <p class="text-slate-400 mt-[10px]">There are many variations of passages of Lorem Ipsum from available, but the majority have suffered alteration in some form, njecthumou</p>
-                <div class="projectDesign mt-[10px] ">
-                    <div class="content flex gap-[240px] text-[22px]">
+                <div class="projectDesign mt-[20px] font-fontBebas">
+                    <div class="content flex gap-[200px] text-[22px]">
                         <h4>Project Design</h4>
                         <h4>65%</h4>
                     </div>
@@ -127,8 +114,8 @@
                         <img src="/Image/Graff.png" alt="">
                     </div>
                 </div>
-                <div class="TeamManagement mt-[10px]">
-                    <div class="content flex items-center gap-[292px] text-[22px]">
+                <div class="TeamManagement mt-[20px] font-fontBebas">
+                    <div class="content flex items-center justify-between text-[22px]">
                         <h4>Team Management</h4>
                         <h4>95%</h4>
                     </div>
@@ -136,8 +123,8 @@
                         <img src="/Image/Graff (1).png" alt="">
                     </div>
                 </div>
-                <div class="Client mt-[10px]">
-                    <div class="content flex items-center gap-[240px] text-[22px]">
+                <div class="Client mt-[20px] font-fontBebas">
+                    <div class="content flex items-center gap-[200px] text-[22px]">
                         <h4>Client Satisfaction</h4>
                         <h4>75%</h4>
                     </div>
@@ -146,21 +133,21 @@
                     </div>
                 </div>
             </div>
-            <div class="Question & Answeer w-[529px]">
-                <h1 class="text-[25px]">Question And Answeer</h1>
-                <p class="text-[22px] text-slate-400 mt-[10px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.</p>
+            <div class="Question & Answeer basis-[48%]">
+                <h1 class="text-[25px] font-fontBebas">Question And Answeer</h1>
+                <p class="text-[20px] text-slate-400 mt-[10px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.</p>
                 <div class="website bg-slate-100 px-[22px] py-[24px] rounded-[18px] mt-[10px]">
                     <div class="flex justify-between items-center text-[22px]">
-                        <h1 class="">Website & Mobile App Design</h1>
+                        <h1 class="font-fontBebas">Website & Mobile App Design</h1>
                        <div class="icon w-[44px] h-[44px] bg-white rounded-full flex justify-center items-center"><i class="fa-solid fa-minus"></i></div>
                     </div>
-                    <p class="text-slate-400 mt-[10px] w-[437px] text-[22px]">Lorem ipsum dolor sit amet, adipiscing fromAliquam eu sem turpmaximus.</p>
+                    <p class="text-slate-400 mt-[10px] w-[437px] text-[20px]">Lorem ipsum dolor sit amet, adipiscing fromAliquam eu sem turpmaximus.</p>
                 </div>
-                <div class="question1 mt-[20px] flex items-center justify-between text-[22px] py-[14px] px-[22px] border-2 border-orange-400 rounded-[18px]">
+                <div class="question1 mt-[20px] flex items-center justify-between text-[22px] py-[14px] px-[22px] border-2 border-orange-400 rounded-[18px] singleBox-hover">
                     <h1>How to Easy Successful Projects ?</h1> 
                     <div class="icon w-[44px] h-[44px] bg-slate-200 rounded-full flex justify-center items-center"><i class="fa-solid fa-plus"></i></div>
                 </div>
-                <div class="question2 mt-[20px] flex items-center justify-between text-[22px] py-[14px] px-[22px] border-2 border-orange-400 rounded-[18px]">
+                <div class="question2 mt-[20px] flex items-center justify-between text-[22px] py-[14px] px-[22px] border-2 border-orange-400 rounded-[18px] singleBox-hover">
                     <h1>International Trade Experience ?</h1>
                     <div class="icon w-[44px] h-[44px] bg-slate-200 rounded-full flex justify-center items-center"><i class="fa-solid fa-plus"></i></div>
                 </div>
@@ -222,20 +209,20 @@
         <h1 class="text-5xl">Contact Me</h1>
       </div>
       <div class="input-box mt-[40px]">
-        <div class="input-box flex flex-wrap gap-[40px]">
-            <div class="name-box basis-[45%] flex-1 border-slate-400 border-b-2 py-2">
-                <input class="w-full py-2" type="text" placeholder="Name">
+        <div class="input-box flex justify-between flex-wrap gap-[40px]">
+            <div class="name-box basis-[45%]">
+                <input class="w-full py-3 px-3 border-2 border-transparent rounded-sm duration-200 hover:border-greenColor" type="text" placeholder="Name">
             </div>
-            <div class="email-box basis-[45%] flex-1 border-slate-400 border-b-2 py-2">
-                <input class="w-full py-2" type="text" placeholder="Email">
+            <div class="email-box basis-[45%]">
+                <input class="w-full py-3 px-3 border-2 border-transparent rounded-sm duration-200 hover:border-greenColor" type="text" placeholder="Email">
             </div>
-            <div class="meesage-box flex basis-[100%] border-slate-400 border-b-2 py-2">
-                <input class="w-full h-[175px]" type="text" placeholder="Sent Your Message">
+            <div class="meesage-box flex basis-[100%]">
+                <input class="w-full h-[175px] px-3 border-2 border-transparent rounded-sm duration-200 hover:border-greenColor" type="text" placeholder="Sent Your Message">
             </div>
         </div>
         <p class="text-red-400 mt-[15px]"><i class="fa-regular fa-square"></i> Save my name,email and website in this browser for the next time i comment.</p>
-        <div class="button-box flex items-center gap-[10px] px-[54px] py-[26px] bg-black rounded-[18px] w-[220px] mt-[30px] mx-auto text-[18px] hover:bg-slate-600 ">
-            <a class="text-white" href="#">Sent Now</a>
+        <div class="btn mt-[20px] gap-[10px] flex items-center text-center mx-auto w-[150px]">
+            <a href="#">Sent Now</a>
             <i class="fa-solid fa-arrow-right text-red-400 text-sm"></i>
         </div>
      </div>
@@ -246,61 +233,60 @@
 
 <!-- Start Footer Section -->
 
-<section class="footer_section mt-[100px]">
-    <div class="footer-wrap flex justify-between w-[1200px] mx-auto">
-      <div class="footer-singleBox">
-        <div class="heading flex items-center gap-2">
-          <img src="/Image/Logo.png" alt="">
-          <h1 class="text-4xl">Interno</h1>
-        </div>
-        <p class="text-xl mt-[18px] w-[393px]">It is a long established fact that a reader will be distracted lookings.</p>
-        <div class="social-link mt-[31px] flex gap-[54px]">
-          <i class="fa-brands fa-facebook hover:text-red-400"></i>
-          <i class="fa-brands fa-twitter hover:text-red-400"></i>
-          <i class="fa-brands fa-linkedin hover:text-red-400"></i>
-          <i class="fa-brands fa-instagram hover:text-red-400"></i>
-        </div>
+<section class="footer_section bg-white">
+  <div class="container flex justify-between flex-wrap gap-[20px]">
+    <div class="footer-singleBox basis-[30%]">
+      <div class="heading flex items-center gap-2">
+        <img src="/Image/Logo.png" alt="">
+        <h1 class="text-2xl font-fontBebas">Interno</h1>
       </div>
-      <div class="footer-singleBox">
-        <div class="hading">
-          <h1 class="text-2xl">Pages</h1>
-        </div>
-        <div class="contentList mt-[9px] flex flex-col gap-[20px] text-xl">
-          <a class="hover:text-red-400" href="/src/about.html">About Us</a>
-          <a class="hover:text-red-400" href="#">Our Projects</a>
-          <a class="hover:text-red-400" href="#">Our Team</a>
-          <a class="hover:text-red-400" href="#">Contact Us</a>
-          <a class="hover:text-red-400" href="#">Services</a>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="heading">
-          <h1 class="text-2xl">Services</h1>
-        </div>
-        <div class="contentList mt-[9px] flex flex-col gap-[20px] text-xl">
-          <a class="hover:text-red-400" href="#">Kitchen</a>
-          <a class="hover:text-red-400" href="#">Living Area</a>
-          <a class="hover:text-red-400" href="#">Bathroom</a>
-          <a class="hover:text-red-400" href="#">Dining Hall</a>
-          <a class="hover:text-red-400" href="#">Bedroom</a>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="heading">
-          <h1 class="text-2xl">Contact</h1>
-        </div>
-        <div class="address mt-[9px] flex flex-col gap-[20px] text-xl">
-          <p class="w-[258px] hover:text-red-400">55 East Birchood Ave. Brooklyn, New York 11201</p>
-          <a class="hover:text-red-400" href="#">kmtanvir1111@gmail.com</a>
-          <p class="hover:text-red-400">(123) 456 - 7890</p>
-        </div>
+      <p class="text-lg mt-[20px]">It is a long established fact that a reader will be distracted lookings.</p>
+      <div class="social-link mt-[31px] flex gap-[30px]">
+        <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+        <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+        <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+        <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
       </div>
     </div>
-    <div class="footer-privacy text-center mt-[100px]">
-      <p class="text-xl py-[20px]">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
+    <div class="footer-singleBox basis-[20%]">
+      <div class="hading">
+        <h1 class="text-xl font-fontBebas">Pages</h1>
+      </div>
+      <div class="contentList  flex flex-col gap-[10px] mt-[20px]">
+        <a class="footerContent-hover" href="/about.html">About Us</a>
+        <a class="footerContent-hover" href="/plan.html">Plan</a>
+        <a class="footerContent-hover" href="team.html">Our Team</a>
+        <a class="footerContent-hover" href="contact.html">Contact Us</a>
+        <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
+      </div>
     </div>
-  </section>
-
+    <div class="footer-singleBox basis-[20%]">
+      <div class="heading">
+        <h1 class="text-xl font-fontBebas">Services</h1>
+      </div>
+      <div class="contentList mt-[20px] flex flex-col gap-[10px]">
+        <a class="footerContent-hover" href="#">Kitchen</a>
+        <a class="footerContent-hover" href="#">Living Area</a>
+        <a class="footerContent-hover" href="#">Bathroom</a>
+        <a class="footerContent-hover" href="#">Dining Hall</a>
+        <a class="footerContent-hover" href="#">Bedroom</a>
+      </div>
+    </div>
+    <div class="footer-singleBox basis-[20%]">
+      <div class="heading">
+        <h1 class="text-xl font-fontBebas">Contact</h1>
+      </div>
+      <div class="address mt-[20px] flex flex-col gap-[10px]">
+        <p class="footerContent-hover">55 East Birchood Ave. Brooklyn, New York 11201</p>
+        <a class="footerContent-hover" href="#">kmtanvir1111@gmail.com</a>
+        <p class="footerContent-hover">(123) 456 - 7890</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-privacy text-center mt-[50px]">
+    <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
+  </div>
+</section>
   <!-- End Footer Section -->
 
   <!-- FontAwsome Kit -->

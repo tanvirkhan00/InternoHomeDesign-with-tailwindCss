@@ -707,6 +707,14 @@ body{
   position: relative;
 }
 
+.-left-\[300px\]{
+  left: -300px;
+}
+
+.top-0{
+  top: 0px;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -796,6 +804,10 @@ body{
   margin-top: 9px;
 }
 
+.inline-block{
+  display: inline-block;
+}
+
 .flex{
   display: flex;
 }
@@ -806,6 +818,10 @@ body{
 
 .hidden{
   display: none;
+}
+
+.h-\[100px\]{
+  height: 100px;
 }
 
 .h-\[100vh\]{
@@ -864,8 +880,8 @@ body{
   height: 100%;
 }
 
-.h-\[100px\]{
-  height: 100px;
+.w-\[100px\]{
+  width: 100px;
 }
 
 .w-\[1036px\]{
@@ -1012,8 +1028,12 @@ body{
   width: 100%;
 }
 
-.w-\[100px\]{
-  width: 100px;
+.w-\[200px\]{
+  width: 200px;
+}
+
+.w-\[150px\]{
+  width: 150px;
 }
 
 .max-w-fit{
@@ -1233,6 +1253,26 @@ body{
   gap: 97px;
 }
 
+.gap-\[220px\]{
+  gap: 220px;
+}
+
+.gap-\[210px\]{
+  gap: 210px;
+}
+
+.gap-\[200px\]{
+  gap: 200px;
+}
+
+.gap-\[190px\]{
+  gap: 190px;
+}
+
+.gap-\[180px\]{
+  gap: 180px;
+}
+
 .gap-x-\[20px\]{
   -moz-column-gap: 20px;
        column-gap: 20px;
@@ -1240,6 +1280,10 @@ body{
 
 .gap-y-\[30px\]{
   row-gap: 30px;
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .rounded-2xl{
@@ -1333,6 +1377,11 @@ body{
   border-color: transparent;
 }
 
+.bg-\[\#fff\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1400,6 +1449,10 @@ body{
   background-image: url('/Image/ProjectDetailsImg.png');
 }
 
+.bg-projectDetailsImg{
+  background-image: url('/Image/serviceSingleSearch.png');
+}
+
 .bg-projectHiro{
   background-image: url('/Image/pricingImg.png');
 }
@@ -1408,8 +1461,8 @@ body{
   background-image: url('/Image/aboutImg.png');
 }
 
-.bg-projectDetailsImg{
-  background-image: url('/Image/serviceSingleSearch.png');
+.bg-singleTeamImg{
+  background-image: url('/Image/TeamSingleImg.png');
 }
 
 .bg-cover{
@@ -1426,14 +1479,6 @@ body{
 
 .p-3{
   padding: 0.75rem;
-}
-
-.p-5{
-  padding: 1.25rem;
-}
-
-.p-10{
-  padding: 2.5rem;
 }
 
 .p-9{
@@ -1538,11 +1583,6 @@ body{
 .py-\[150px\]{
   padding-top: 150px;
   padding-bottom: 150px;
-}
-
-.py-\[15px\]{
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 .py-\[20px\]{
@@ -1794,6 +1834,10 @@ body{
   transition-duration: 200ms;
 }
 
+.duration-500{
+  transition-duration: 500ms;
+}
+
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1835,6 +1879,10 @@ body{
 .hover\:text-redColor:hover{
   --tw-text-opacity: 1;
   color: rgb(204 52 51 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:left-0{
+  left: 0px;
 }
 
 @media (min-width: 768px){
