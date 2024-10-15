@@ -58,9 +58,9 @@
   <!-- Start About Section -->
 
   <section class="about_section bg-projectHiro h-[300px] ">
-    <div class="container flex justify-center">
-      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white w-[503px] h-[150px] rounded-t-[37px]  mt-[70px]">
-        <h1 class="text-5xl font-fontLobster">Article & News</h1>
+    <div class="container flex justify-center items-end h-full">
+      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white rounded-t-[37px] py-[30px] px-[80px] -mb-[16px]">
+        <h1 class="text-[40px] md:text-5xl font-fontLobster">Article & News</h1>
         <div class="flex item-center gap-[10px] justify-center">
           <a href="/index.html">Home</a>
           <span>/</span>
@@ -79,11 +79,11 @@
         <div class="heading">
             <h1 class="text-5xl font-fontLobster text-center">Latest Post</h1>
         </div>
-        <div class="content-box flex items-center justify-between gap-[65px] mt-[40px]">
-            <div class="single-box basis-[50%]">
+        <div class="content-box flex items-center justify-between flex-wrap gap-[65px] mt-[40px]">
+            <div class="single-box basis-[100%] md:basis-[50%] img-hover">
                 <img src="/Image/latestpostimg.png" alt="">
             </div>
-            <div class="single-box flex flex-col gap-[20px] basis-[50%]">
+            <div class="single-box flex flex-col gap-[20px] basis-[100%] md:basis-[50%]">
                 <h1 class="text-4xl font-fontBebas">Low Cost Latest Invented Interior Designing Ideas</h1>
                 <p class="text-slate-400 ">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.</p>
                 <p class="text-slate-400 ">Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
@@ -105,7 +105,7 @@
       <div class="article-heading">
         <h1 class="text-center text-5xl font-fontLobster">Articles & News</h1>
       </div>
-      <div class="news-container mt-[50px] grid grid-cols-3 gap-x-[20px] gap-y-[30px]" id="newsContainer"></div>
+      <div class="news-container mt-[50px] grid grid-cols-1 gap-x-[20px] gap-y-[30px]" id="newsContainer"></div>
     </div>
   </section>
 
@@ -124,8 +124,8 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container flex justify-between flex-wrap gap-[20px]">
-      <div class="footer-singleBox basis-[30%]">
+    <div class="container grid gap-[20px]">
+      <div class="footer-singleBox">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
           <h1 class="text-2xl font-fontBebas">Interno</h1>
@@ -138,7 +138,7 @@
           <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="hading">
           <h1 class="text-xl font-fontBebas">Pages</h1>
         </div>
@@ -150,7 +150,7 @@
           <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Services</h1>
         </div>
@@ -162,7 +162,7 @@
           <a class="footerContent-hover" href="#">Bedroom</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Contact</h1>
         </div>
@@ -173,7 +173,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-privacy text-center mt-[50px]">
+    <div class="footer-privacy text-center mt-[50px] px-[50px]">
       <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>
@@ -205,7 +205,7 @@
       const div =document.createElement ('div');
       div.classList.add ('articleSingleBox')
       div.innerHTML =`
-      <img src= ${singleArticleContent.image} class="img-hover" >
+      <img src= ${singleArticleContent.image} class="img-hover w-full" >
       <div>
         <h3> ${singleArticleContent.title}</h3>
       </div>

@@ -28,6 +28,12 @@
       transform: scale(1.05);
     }
 
+    @media (max-width:768px) {
+      .planSingleBox {
+        flex-basis: 100%;
+      }
+    }
+
     /* About Section */
 
     .aboutSingleBox {
@@ -53,6 +59,12 @@
       font-weight: 600;
     }
 
+    @media (max-width:768px) {
+      .aboutSingleBox {
+        flex-basis: 100%;
+      }
+    }
+
     /* Project Section */
 
     .projectSingleBox {
@@ -67,6 +79,12 @@
       font-weight: 600;
     }
 
+    @media (max-width:768px) {
+      .projectSingleBox {
+        flex-basis: 100%;
+      }
+    }
+
     /* Article & News */
 
     .articleSingleBox h1,h3{
@@ -79,6 +97,12 @@
       color: rgb(8, 0, 255);
     }
 
+
+    @media (max-width:768px) {
+      .articleSingleBox {
+        flex-basis: 100%;
+      }
+    }
 
     
   </style>
@@ -108,7 +132,7 @@
             <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
           </div>
         </div>
-        <div class="bar-icon">
+        <div class="bar-icon md:hidden">
           <i class="fa-solid fa-bars hover:text-redColor"></i>
         </div>
     </div>
@@ -120,7 +144,7 @@
   <section class="about_section bg-homeHiro h-[100vh] bg-cover">
     <div class="container flex  items-center h-full">
       <div class="content ml-[50px] flex flex-col gap-[20px]">
-        <h1 class="text-[50px] font-fontSpicyRice">Let Your Home Be Unique</h1>
+        <h1 class="text-[30px] md:text-[50px] font-fontSpicyRice">Let Your Home Be Unique</h1>
         <p>There are many variations of the passages of lorem Ipsum fromavailable, majority.</p>
         <div class="button">
            <a class="btn" href="#">Get Started <i class="fa-solid fa-arrow-right"></i></a>
@@ -146,7 +170,7 @@
 
   <section class="workSection">
     <div class="container flex items-center justify-between flex-wrap gap-[20px]">
-      <div class="workSingleBox basis-[48%] flex flex-col gap-[45px]">
+      <div class="workSingleBox basis-[100%] md:basis-[48%] flex flex-col gap-[45px]">
         <h1 class="text-5xl ">We Create The Art of Stylish Living Stylishly</h1>
         <p class="text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using that it has a more-or-less normal.</p>
         <div class="contact flex items-center gap-[15px]">
@@ -162,7 +186,7 @@
           <a class="btn" href="/plan.html">Get Free Estimate</a>
         </div>
       </div>
-      <div class="workSingleBox basis-[48%]">
+      <div class="workSingleBox basis-[100%] md:basis-[48%]">
         <img src="/Image/workSectionImage.png" alt="">
       </div>
     </div>
@@ -174,9 +198,9 @@
   <section class="aboutSection">
     <div class="container px-[20px] py-[50px]">
         <div class="aboutheading">
-          <h1 class="aboutHeading text-5xl w-[545px] text-center mx-auto font-fontLobster">What the People Thinks About Us</h1>
+          <h1 class="aboutHeading text-5xl md:w-[545px] text-center mx-auto font-fontLobster">What the People Thinks About Us</h1>
        </div>
-      <div class="Aboutcontainer flex justify-between mt-[38px] gap-[20px]" id="AboutcontentContainer"></div>
+      <div class="Aboutcontainer flex justify-between flex-wrap mt-[38px] gap-[20px]" id="AboutcontentContainer"></div>
     </div>
   </section>
 
@@ -215,7 +239,7 @@
 
   <section class="projects_section">
     <div class="container">
-      <div class="projects-heading w-[737px] mx-auto text-center">
+      <div class="projects-heading md:w-[737px] mx-auto text-center">
         <h1 class="text-5xl font-fontLobster">Follow Our Projects</h1>
         <p class="text-xl mt-4">It is a long established fact that a reader will be distracted by the of readable content of page lookings at its layouts points.</p>
       </div>
@@ -227,7 +251,7 @@
 
   <!-- start Coundoun Section -->
 
-  <section class="coundown_section">
+  <section class="coundown_section hidden md:block">
     <div class="container flex items-center justify-between">
       <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 pr-[70px]">
         <h1 class="text-center text-7xl text-orange-300">12</h1>
@@ -254,11 +278,11 @@
 
   <section class="articleNews_section">
     <div class="container">
-      <div class="article-heading w-[811px] flex flex-col gap-[12px] mx-auto">
+      <div class="article-heading lg:w-[811px] flex flex-col gap-[12px] mx-auto">
         <h1 class="text-center text-5xl font-fontLobster">Articles & News</h1>
         <p class="text-center text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
       </div>
-      <div class="news-container mt-[50px] flex justify-between gap-[27px]" id="newsContainer"></div>
+      <div class="news-container mt-[50px] flex justify-between flex-wrap gap-[27px]" id="newsContainer"></div>
     </div>
   </section>
 
@@ -267,7 +291,7 @@
   <!-- Start Join Section -->
 
   <section class="join_section">
-    <div class="container bg-slate-800 rounded-[20px] py-[50px]">
+    <div class="container bg-slate-800 py-[50px]">
       <div class="heading text-center flex flex-col gap-[10px]">
         <h1 class="text-5xl text-white">Wanna join the interno?</h1>
         <p class="text-xl text-white">It is a long established fact will be distracted</p>
@@ -282,8 +306,8 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container flex justify-between flex-wrap gap-[20px]">
-      <div class="footer-singleBox basis-[30%]">
+    <div class="container  gap-[20px] grid grid-cols-1 gap-y-[20px]">
+      <div class="footer-singleBox">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
           <h1 class="text-2xl font-fontBebas">Interno</h1>
@@ -296,7 +320,7 @@
           <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="hading">
           <h1 class="text-xl font-fontBebas">Pages</h1>
         </div>
@@ -308,7 +332,7 @@
           <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Services</h1>
         </div>
@@ -320,7 +344,7 @@
           <a class="footerContent-hover" href="#">Bedroom</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Contact</h1>
         </div>
@@ -331,11 +355,17 @@
         </div>
       </div>
     </div>
-    <div class="footer-privacy text-center mt-[50px]">
+    <div class="footer-privacy text-center mt-[50px] px-[50px]">
       <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>
   <!-- End Footer Section -->
+
+
+
+
+
+
 
   <!-- FontAwsome Kit -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>

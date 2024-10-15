@@ -27,7 +27,7 @@
               <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
             </div>
           </div>
-          <div class="bar-icon">
+          <div class="bar-icon md:hidden">
             <i class="fa-solid fa-bars hover:text-redColor"></i>
           </div>
       </div>
@@ -39,8 +39,8 @@
   <!-- Start About Section -->
 
   <section class="about_section bg-projectHiro h-[300px] ">
-    <div class="container flex justify-center">
-      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white w-[503px] h-[150px] rounded-t-[37px]  mt-[70px]">
+    <div class="container flex justify-center items-end h-full">
+      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white rounded-t-[37px] py-[30px] px-[80px] -mb-[16px]">
         <h1 class="text-5xl font-fontLobster">Faq's</h1>
         <div class="flex item-center gap-[10px] justify-center">
           <a href="/index.html">Home</a>
@@ -58,10 +58,10 @@
   <section class="answeer_section">
     <div class="container">
       <div class="heading text-center">
-        <h1 class="text-5xl font-fontLobster">Every Question Answered</h1>
+        <h1 class="text-[30px] md:text-5xl font-fontLobster">Every Question Answered</h1>
       </div>
-      <div class="containerBox flex justify-between gap-[60px] mt-[50px] items-center">
-          <div class="singleBox mt-[50px] w-[585px] flex flex-col gap-[20px]">
+      <div class="containerBox flex justify-between flex-wrap gap-[60px] mt-[50px] items-center">
+          <div class="singleBox mt-[50px] md:w-[585px] flex flex-col gap-[20px]">
             <div class="flex justify-between items-center border-b-2 border-red-400 pb-[20px] img-hover">
                 <h1 class="text-[25px] font-fontBebas">What is the Hipocouch interior Design Service?</h1>
                 <div class="icon"><i class="fa-solid fa-chevron-right h-[40px] w-[40px] icon-hover px-4 py-3 text-white rounded-full hover:-translate-y-2"></i></div>
@@ -100,15 +100,15 @@
   <section class="question_section">
     <div class="container">
       <div class="heading text-center">
-        <h1 class="text-5xl font-fontLobster">Project related questions</h1>
+        <h1 class="text-[30px] md:text-5xl font-fontLobster">Project related questions</h1>
       </div>
-      <div class="containerBox flex justify-between gap-[60px] mt-[50px] items-center">
+      <div class="containerBox flex justify-between flex-wrap gap-[60px] mt-[50px] items-center">
           <div class="singleBox">
               <div class="img-box img-hover">
                   <img src="/Image/faqsAnsweerImg.png" alt="">
               </div>
           </div>
-          <div class="singleBox mt-[50px] w-[585px] flex flex-col gap-[20px]">
+          <div class="singleBox mt-[50px] md:w-[585px] flex flex-col gap-[20px]">
               <div class="flex justify-between items-center border-b-2 border-red-400 pb-[20px] img-hover">
                   <h1 class="text-[25px] font-fontBebas">How long does it take?</h1>
                   <div class="icon"><i class="fa-solid fa-chevron-right  h-[40px] w-[40px] icon-hover px-4 py-3 text-white rounded-full hover:-translate-y-2"></i></div>
@@ -140,8 +140,8 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container flex justify-between flex-wrap gap-[20px]">
-      <div class="footer-singleBox basis-[30%]">
+    <div class="container grid gap-[20px]">
+      <div class="footer-singleBox">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
           <h1 class="text-2xl font-fontBebas">Interno</h1>
@@ -154,7 +154,7 @@
           <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="hading">
           <h1 class="text-xl font-fontBebas">Pages</h1>
         </div>
@@ -166,7 +166,7 @@
           <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Services</h1>
         </div>
@@ -178,7 +178,7 @@
           <a class="footerContent-hover" href="#">Bedroom</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Contact</h1>
         </div>
@@ -189,7 +189,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-privacy text-center mt-[50px]">
+    <div class="footer-privacy text-center mt-[50px] px-[50px]">
       <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>

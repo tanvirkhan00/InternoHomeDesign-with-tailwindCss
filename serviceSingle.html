@@ -30,7 +30,7 @@
               <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
             </div>
           </div>
-          <div class="bar-icon">
+          <div class="bar-icon md:hidden">
             <i class="fa-solid fa-bars hover:text-redColor"></i>
           </div>
       </div>
@@ -42,8 +42,8 @@
   <!-- Start About Section -->
 
   <section class="about_section bg-serviceHiro h-[300px] ">
-    <div class="container flex justify-center">
-      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white w-[503px] h-[150px] rounded-t-[37px]  mt-[70px]">
+    <div class="container flex justify-center items-end h-full">
+      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white rounded-t-[37px] py-[30px] px-[50px] -mb-[16px]">
         <h1 class="text-5xl font-fontLobster">Service Deatils</h1>
         <div class="flex item-center gap-[10px] justify-center">
           <a href="/index.html">Home</a>
@@ -61,7 +61,7 @@
   <section class="service_section">
     <div class="container flex justify-between flex-wrap gap-[20px]">
         <div class="single-box text-[25px] flex flex-col gap-[28px]">
-            <h1 class="text-5xl font-fontLobster">We set the trends of modern living Services.</h1>
+            <h1 class="text-[35px] md:text-5xl font-fontLobster">We set the trends of modern living Services.</h1>
             <p class="text-red-400">It is a long established fact that a reader will be distrated by the of readable content of a page</p>
             <p>when lookings at its layouts the points spriof using that it has a more vless normal.A wonderful serenity has taken pgossession of my entire soul, like thesce sweet morndsings of sphring which I enjoy with my forwhole heart. I am alone, and feel the charm of excgistence in this spot, which was created for the bliss of souls like mine.</p>
             <p>when lookings at its layouts the points spriof using that it has a more less normal.A wonderful serenity has taken pgossession of my entire soul, like thesce sweet morndsings of sphring which I enjoy with my forwhole heart. I am alone, and feel the charm of excgistence in this spot, which was created for the bliss of souls like mine.</p>
@@ -114,8 +114,8 @@
 
   <section class="work_section">
     <div class="container flex justify-between flex-wrap gap-[20px]">
-        <div class="single-box basis-[45%]">
-            <h1 class="text-5xl font-fontLobster">Use of Interior</h1>
+        <div class="single-box basis-[100%] md:basis-[45%]">
+            <h1 class="text-[35px] md:text-5xl font-fontLobster">Use of Interior</h1>
             <div class="paragraph text-[20px] text-slate-400 mt-[20px] flex flex-col gap-[10px]">
                 <p class="singleBox-hover"><span class="text-red-400 ">1.</span> We provide high quality design services</p>
                 <p class="singleBox-hover"><span class="text-red-400">2.</span>Project on time and Latest Design.</p>
@@ -124,8 +124,8 @@
                 <p class="singleBox-hover"><span class="text-red-400">5.</span>  We are confident about our projects</p>
             </div>
         </div>
-        <div class="single-box basis-[45%]">
-            <h1 class="text-5xl font-fontLobster">Make An Art</h1>
+        <div class="single-box basis-[100%] md:basis-[45%]">
+            <h1 class="text-[35px] md:text-5xl font-fontLobster">Make An Art</h1>
             <div class="paragraph text-[20px] text-slate-400 mt-[20px] flex flex-col gap-[10px]">
                 <p class="singleBox-hover"><span class="text-red-400">1.</span> We provide high quality design services</p>
                 <p class="singleBox-hover"><span class="text-red-400">2.</span>Project on time and Latest Design.</p>
@@ -144,10 +144,10 @@
 
   <section class="result_section">
     <div class="container flex items-center justify-between flex-wrap gap-[20px]">
-      <div class="resultSingleBox basis-[50%]">
+      <div class="resultSingleBox basis-[100%] md:basis-[50%]">
         <img class="img-hover" src="/Image/ServiceSinglePorfolioImg.png" alt="">
       </div>
-      <div class="resultSingleBox basis-[40%]">
+      <div class="resultSingleBox basis-[100%] md:basis-[40%]">
         <h1 class="text-[30px] font-fontBebas">We Love design. That,s how we got here.</h1>
         <p class="text-xl mt-[23px]">It is a long established fact that a reader will be distracted by the of readable content.</p>
         <div class="button mt-[50px]">
@@ -161,7 +161,7 @@
 
   <!-- start Coundoun Section -->
 
-  <section class="coundown_section">
+  <section class="coundown_section hidden md:block">
     <div class="container flex items-center justify-between py-[100px]">
       <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 pr-[70px]">
         <h1 class="text-center text-7xl text-orange-300">12</h1>
@@ -187,8 +187,8 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container flex justify-between flex-wrap gap-[20px]">
-      <div class="footer-singleBox basis-[30%]">
+    <div class="container grid gap-[20px]">
+      <div class="footer-singleBox">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
           <h1 class="text-2xl font-fontBebas">Interno</h1>
@@ -201,7 +201,7 @@
           <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="hading">
           <h1 class="text-xl font-fontBebas">Pages</h1>
         </div>
@@ -213,7 +213,7 @@
           <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Services</h1>
         </div>
@@ -225,7 +225,7 @@
           <a class="footerContent-hover" href="#">Bedroom</a>
         </div>
       </div>
-      <div class="footer-singleBox basis-[20%]">
+      <div class="footer-singleBox">
         <div class="heading">
           <h1 class="text-xl font-fontBebas">Contact</h1>
         </div>
@@ -236,7 +236,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-privacy text-center mt-[50px]">
+    <div class="footer-privacy text-center mt-[50px] px-[50px]">
       <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>
