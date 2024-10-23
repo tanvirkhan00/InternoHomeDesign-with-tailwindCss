@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,51 +8,51 @@
 
 
   <style>
-
     /* Bedroom Design */
 
     .bedroomSingleBox h1 {
       font-family: "Bebas Neue", 'sans-serif';
       font-size: 25px;
     }
+
     .bedroomSingleBox h3 {
       font-family: "Dancing Script", 'sans-serif';
       font-weight: 600;
     }
+
     .bedroomSingleBox img {
       height: 400px;
       width: 500px;
     }
-
-
   </style>
 </head>
+
 <body>
 
-    <!-- Start Header Section -->
+  <!-- Start Header Section -->
 
-    <header class="header_section">
-      <div class="container flex justify-between items-center h-[70px]">
-          <div class="single-box flex items-center gap-2">
-              <img src="/Image/Logo.png" alt="">
-              <h1 class="text-4xl font-fontLobster">Interno</h1>
-          </div>
-          <div class="single-box hidden md:block">
-            <div class="list flex items-center gap-[30px]">
-              <a class="heading-hover" href="/index.html">Home</a>
-              <a class="heading-hover" href="/about.html">About</a>
-              <a class="heading-hover" href="/service.html">Services</a>
-              <a class="heading-hover" href="/project.html">Project</a>
-              <a class="heading-hover" href="/blog.html">Blog</a>
-              <a class="heading-hover" href="/contact.html">Contact</a>
-              <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
-            </div>
-          </div>
-          <div class="bar-icon md:hidden">
-            <i class="fa-solid fa-bars hover:text-redColor"></i>
-          </div>
+  <header class="header_section">
+    <div class="container flex justify-between items-center h-[70px]">
+      <div class="single-box flex items-center gap-2">
+        <img src="/Image/Logo.png" alt="">
+        <h1 class="text-4xl font-fontLobster">Interno</h1>
       </div>
-    </header>
+      <div class="single-box hidden md:block">
+        <div class="list flex items-center gap-[30px]">
+          <a class="heading-hover" href="/index.html">Home</a>
+          <a class="heading-hover" href="/about.html">About</a>
+          <a class="heading-hover" href="/service.html">Services</a>
+          <a class="heading-hover" href="/project.html">Project</a>
+          <a class="heading-hover" href="/blog.html">Blog</a>
+          <a class="heading-hover" href="/contact.html">Contact</a>
+          <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
+        </div>
+      </div>
+      <div class="bar-icon md:hidden">
+        <i class="fa-solid fa-bars hover:text-redColor"></i>
+      </div>
+    </div>
+  </header>
 
   <!-- End Header Section -->
 
@@ -60,7 +61,8 @@
 
   <section class="about_section bg-projectHiro h-[300px] ">
     <div class="container flex justify-center items-end h-full">
-      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white rounded-t-[37px] py-[30px] px-[80px] -mb-[16px]">
+      <div
+        class="content text-center flex flex-col justify-center gap-[10px] bg-white rounded-t-[37px] py-[30px] px-[80px] -mb-[16px]">
         <h1 class="text-5xl font-fontLobster">Project</h1>
         <div class="flex item-center gap-[10px] justify-center">
           <a href="/index.html">Home</a>
@@ -75,24 +77,29 @@
 
   <!-- Start Service List Section -->
 
-  <section class="service-list_section hidden md:block">
-    <div class="container border-[2px] border-greenColor rounded-2xl p-0">
-        <div class="list flex items-center justify-between">
-            <h4 class="py-[20px] px-[66px] duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Bathroom</h4>
-            <h4 class="py-[20px] px-[66px] text-white bg-skyBlueColor rounded-2xl duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Bed Room</h4>
-            <h4 class="py-[20px] px-[66px] duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Kitchan</h4>
-            <h4 class="py-[20px] px-[66px] duration-200 ease-in-out hover:bg-red-300 hover:rounded-2xl">Living Area</h4>
-        </div>
+  <section class="service-list_section ">
+    <div class="container">
+      <div class="list flex items-center justify-between flex-wrap gap-2 text-center">
+        <h4 class="border-2 border-green-700 w-[160px] py-[20px] duration-200 ease-in-out hover:bg-red-300 rounded-2xl">
+          Bathroom</h4>
+        <h4
+          class="border-2 border-green-700 w-[160px] py-[20px] text-white bg-skyBlueColor rounded-2xl duration-200 ease-in-out hover:bg-red-300">
+          Bed Room</h4>
+        <h4 class="border-2 border-green-700 w-[160px] py-[20px] duration-200 ease-in-out hover:bg-red-300 rounded-2xl">
+          Kitchan</h4>
+        <h4 class="border-2 border-green-700 w-[160px] py-[20px] duration-200 ease-in-out hover:bg-red-300 rounded-2xl">
+          Living Area</h4>
+      </div>
     </div>
   </section>
-  
+
   <!-- End Service List Section -->
 
   <!-- Start Bed Room Design -->
 
   <section class="bedRoom-design_section">
     <div class="container">
-      <div class="bedroom-container grid grid-cols-1 gap-[30px] justify-between" id="bedroomContainer"></div>
+      <div class="bedroom-container grid grid-cols-1 md:grid-cols-2 gap-[30px] justify-between" id="bedroomContainer"></div>
     </div>
   </section>
 
@@ -111,7 +118,7 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container grid gap-[20px]">
+    <div class="container grid md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
       <div class="footer-singleBox">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
@@ -164,7 +171,7 @@
       <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>
-  
+
   <!-- End Footer Section -->
 
 
@@ -174,6 +181,7 @@
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
 
 
@@ -182,16 +190,16 @@
 
   function loadBedroomSection() {
     fetch('/bedroomDesignProjectFile.json')
-    .then(res =>res.json())
-    .then(data =>displayBedroomSectionContent(data))
+      .then(res => res.json())
+      .then(data => displayBedroomSectionContent(data))
   }
-  function displayBedroomSectionContent (bedroomSectionContent) {
-    const bedroomContainer =document.getElementById('bedroomContainer');
+  function displayBedroomSectionContent(bedroomSectionContent) {
+    const bedroomContainer = document.getElementById('bedroomContainer');
 
     for (const singleBedroomSection of bedroomSectionContent) {
-      const div=document.createElement('div');
+      const div = document.createElement('div');
       div.classList.add('bedroomSingleBox')
-      div.innerHTML= `
+      div.innerHTML = `
         <a href="projectDetails.html">
             <img src= ${singleBedroomSection.image} class="img-hover">
         <div style="display:flex; align-items:center; justify-content:space-between">

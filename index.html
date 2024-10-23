@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
+
     /* Plan Section json file Css */
     .planSingleBox {
       flex-basis: 30%;
@@ -56,7 +57,6 @@
     }
     .aboutSingleBox h3 {
       font-family: "Dancing Script", 'sans-serif';
-      font-weight: 600;
     }
 
     @media (max-width:768px) {
@@ -76,7 +76,7 @@
     }
     .projectSingleBox p {
       font-family: "Dancing Script", 'sans-serif';
-      font-weight: 600;
+      font-weight: 500;
     }
 
     @media (max-width:768px) {
@@ -86,6 +86,9 @@
     }
 
     /* Article & News */
+    .articleSingleBox {
+        flex-basis: 48%;
+      }
 
     .articleSingleBox h1,h3{
       font-family: "Bebas Neue", 'sans-serif';
@@ -101,6 +104,11 @@
     @media (max-width:768px) {
       .articleSingleBox {
         flex-basis: 100%;
+      }
+    }
+    @media (max-width:1024px) and (min-width:767px) {
+      .articleSingleBox {
+        flex-basis: 48%;
       }
     }
 
@@ -252,21 +260,21 @@
   <!-- start Coundoun Section -->
 
   <section class="coundown_section hidden md:block">
-    <div class="container flex items-center justify-between">
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 pr-[70px]">
-        <h1 class="text-center text-7xl text-orange-300">12</h1>
+    <div class="container flex items-center justify-between text-center gap-3 flex-wrap">
+      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[24%]">
+        <h1 class="text-7xl text-orange-300">12</h1>
         <p class="text-xl">Years Of Experience</p>
       </div>
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 pr-[70px]">
-        <h1 class="text-center text-7xl text-orange-300">85</h1>
+      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[24%]">
+        <h1 class="text-7xl text-orange-300">85</h1>
         <p class="text-xl">Success Projects</p>
       </div>
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 pr-[70px]">
-        <h1 class="text-center text-7xl text-orange-300">15</h1>
+      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[22%]">
+        <h1 class="text-7xl text-orange-300">15</h1>
         <p class="text-xl">Active Projects</p>
       </div>
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 pr-[70px]">
-        <h1 class="text-center text-7xl text-orange-300">95</h1>
+      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[24%]">
+        <h1 class="text-7xl text-orange-300">95</h1>
         <p class="text-xl">Happy Customars</p>
       </div>
     </div>
@@ -282,7 +290,7 @@
         <h1 class="text-center text-5xl font-fontLobster">Articles & News</h1>
         <p class="text-center text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
       </div>
-      <div class="news-container mt-[50px] flex justify-between flex-wrap gap-[27px]" id="newsContainer"></div>
+      <div class="news-container mt-[50px] flex justify-between flex-wrap gap-[20px]" id="newsContainer"></div>
     </div>
   </section>
 
@@ -306,8 +314,8 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container  gap-[20px] grid grid-cols-1 gap-y-[20px]">
-      <div class="footer-singleBox">
+    <div class="container  gap-[20px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-[20px]">
+      <div class="footer-singleBox basis-[30%]">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
           <h1 class="text-2xl font-fontBebas">Interno</h1>
@@ -436,7 +444,7 @@
             const div =document.createElement('div');
             div.classList.add ('aboutSingleBox')
             div.innerHTML = `
-            <div style="align-items: center; display: flex; gap: 23px;">
+            <div class="flex gap-2 md:flex-col items-center text-center">
               <img src = ${aboutSingleContent.image} >
               <div>
               <h1> ${aboutSingleContent.name} </h1> 
