@@ -59,39 +59,7 @@
   <!-- Start Personal Details Section -->
 
   <section class="personalDetails_section">
-    <div class="container flex gap-[20px] justify-between flex-wrap items-center">
-      <div class="img-box md:basis-[48%]">
-        <img src="/Image/SingleTeamFileImg.png" alt="" class="img-hover">
-      </div>
-      <div class="information md:basis-[48%]">
-        <h1 class="text-5xl font-fontLobster">John Smith</h1>
-        <p class="text-[25px] text-slate-600 font-fontBebas mt-2">Designer</p>
-        <p class="text-slate-400 mt-[10px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
-          turpmaximus.posuere in.Contrpobelie frandomised words which don't look even slightly believable.</p>
-        <div class="single-box flex flex-col gap-[30px] md:gap-[10px] mt-[30px] md:mt-[10px]">
-          <div class="gmail flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
-            <div class="icon"><i
-                class="fa-regular fa-envelope icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
-            <div class="icon hover:text-red-400">info@yourdomain.com</div>
-          </div>
-          <div class="phn flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
-            <div class="icon"><i
-                class="fa-solid fa-phone icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
-            <div class="icon hover:text-red-400">+1(378) 400-1234</div>
-          </div>
-          <div class="net flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
-            <div class="icon"><i
-                class="fa-solid fa-globe icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
-            <div class="icon hover:text-red-400">www.yourdomain.com</div>
-          </div>
-          <div class="social-link flex gap-[35px] text-xl">
-            <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-            <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-            <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-            <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-          </div>
-        </div>
-      </div>
+    <div class="container flex gap-[20px] justify-between flex-wrap items-center" id="profileDeatils">
     </div>
   </section>
 
@@ -248,7 +216,7 @@
           </div>
         </div>
         <div class="single-box bg-white rounded-3xl basis-[48%] md:basis-[23%] relative overflow-hidden group ">
-          <img src="/Image/portfolio.jpg" alt="" class="sm:h-[315px] md:h-[251px] w-full">
+          <img src="/Image/portfolio.jpg" alt="" class="sm:h-[315px] md:h-[251px] lg:h-[341px] w-full">
           <div
             class="content flex flex-col justify-between py-[10px] text-center w-full h-full rounded-3xl absolute -bottom-[500px] bg-[#fff] duration-1000 ease-in-out group-hover:bottom-0">
             <div class="name">
@@ -276,11 +244,11 @@
   <!-- Start Contact Section -->
 
   <section class="contact_section">
-    <div class="container">
+    <div class="container flex flex-col justify-center items-center">
       <div class="heading text-center">
         <h1 class="text-5xl font-fontLobster">Contact Me</h1>
       </div>
-      <div class="input-box mt-[40px]">
+      <div class="input-box mt-[40px] lg:w-[70%]">
         <div class="input-box flex justify-between flex-wrap gap-[20px]">
           <div class="name-box basis-[100%] md:basis-[48%]">
             <input class="w-full py-3 px-3 border-2 border-transparent rounded-sm duration-200 hover:border-greenColor"
@@ -311,7 +279,7 @@
   <!-- Start Footer Section -->
 
   <section class="footer_section bg-white">
-    <div class="container grid md:grid-cols-2 gap-[20px]">
+    <div class="container grid md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
       <div class="footer-singleBox">
         <div class="heading flex items-center gap-2">
           <img src="/Image/Logo.png" alt="">
@@ -364,6 +332,7 @@
       <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
     </div>
   </section>
+
   <!-- End Footer Section -->
 
   <!-- FontAwsome Kit -->
@@ -372,3 +341,62 @@
 </body>
 
 </html>
+
+<script>
+
+  function loadProfileDetails() {
+    fetch("/teamFile.json")
+      .then(res => res.json())
+      .then(data => displayProfileDetails(data))
+  }
+
+  function displayProfileDetails(profileDetailsSection) {
+    const profileContainer = document.getElementById('profileDeatils');
+
+    for (const singleProfile of profileDetailsSection) {
+      const div = document.createElement('div');
+      div.classList.add('singleProfile')
+      div.innerHTML = `
+      <div class="flex items-center justify-between gap-2">
+        <div class="img-box md:basis-[48%]">
+          <img src= ${singleProfile.img} alt="" class="img-hover">
+        </div>
+         <div class="information md:basis-[48%]">
+          <h1 class="text-5xl font-fontLobster">${singleProfile.title}</h1>
+          <p class="text-[25px] text-slate-600 font-fontBebas mt-2">Designer</p>
+          <p class="text-slate-400 mt-[10px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
+          turpmaximus.posuere in.Contrpobelie frandomised words which don't look even slightly believable.</p>
+          <div class="single-box flex flex-col gap-[30px] md:gap-[10px] mt-[30px] md:mt-[10px]">
+          <div class="gmail flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
+            <div class="icon"><i
+                class="fa-regular fa-envelope icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
+            <div class="icon hover:text-red-400">info@yourdomain.com</div>
+          </div>
+          <div class="phn flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
+            <div class="icon"><i
+                class="fa-solid fa-phone icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
+            <div class="icon hover:text-red-400">+1(378) 400-1234</div>
+          </div>
+          <div class="net flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
+            <div class="icon"><i
+                class="fa-solid fa-globe icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
+            <div class="icon hover:text-red-400">www.yourdomain.com</div>
+          </div>
+          <div class="social-link flex gap-[35px] text-xl">
+            <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+            <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+            <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+            <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+           </div>
+         </div>
+        </div>
+      </div>
+    `
+      profileContainer.appendChild(div)
+    }
+  }
+  loadProfileDetails();
+
+
+
+</script>

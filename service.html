@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
 
   <style>
+    /* Plan Section StyleCss */
 
-     /* Plan Section StyleCss */
-
-     .planSingleBox {
+    .planSingleBox {
       flex-basis: 31%;
       display: flex;
       gap: 30px;
@@ -21,14 +21,17 @@
       text-align: center;
       transition: .5s ease-in-out;
     }
+
     .planSingleBox:hover {
       transform: scale(1.05);
       background-color: yellow;
     }
+
     .planSingleBox h1 {
       font-size: 25px;
       font-family: "Bebas Neue", 'sans-serif';
     }
+
     .planSingleBox a:hover {
       color: red;
     }
@@ -39,6 +42,7 @@
         flex-basis: 47%;
       }
     }
+
     /* End Plan Section */
 
     /* Work Section Css */
@@ -48,41 +52,43 @@
       justify-content: space-between;
       gap: 51px;
     }
-    .workSingleBox h1,h2 {
+
+    .workSingleBox h1,
+    h2 {
       font-family: "Lobster", 'sans-serif';
     }
 
     /* End Work Section Css */
-   
- </style>
+  </style>
 
 </head>
+
 <body>
 
-    <!-- Start Header Section -->
+  <!-- Start Header Section -->
 
-    <header class="header_section">
-      <div class="container flex justify-between items-center h-[70px]">
-          <div class="single-box flex items-center gap-2">
-              <img src="/Image/Logo.png" alt="">
-              <h1 class="text-4xl font-fontLobster">Interno</h1>
-          </div>
-          <div class="single-box hidden md:block">
-            <div class="list flex items-center gap-[30px]">
-              <a class="heading-hover" href="/index.html">Home</a>
-              <a class="heading-hover" href="/about.html">About</a>
-              <a class="heading-hover" href="/service.html">Services</a>
-              <a class="heading-hover" href="/project.html">Project</a>
-              <a class="heading-hover" href="/blog.html">Blog</a>
-              <a class="heading-hover" href="/contact.html">Contact</a>
-              <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
-            </div>
-          </div>
-          <div class="bar-icon md:hidden">
-            <i class="fa-solid fa-bars hover:text-redColor"></i>
-          </div>
+  <header class="header_section">
+    <div class="container flex justify-between items-center h-[70px]">
+      <div class="single-box flex items-center gap-2">
+        <img src="/Image/Logo.png" alt="">
+        <h1 class="text-4xl font-fontLobster">Interno</h1>
       </div>
-    </header>
+      <div class="single-box hidden md:block">
+        <div class="list flex items-center gap-[30px]">
+          <a class="heading-hover" href="/index.html">Home</a>
+          <a class="heading-hover" href="/about.html">About</a>
+          <a class="heading-hover" href="/service.html">Services</a>
+          <a class="heading-hover" href="/project.html">Project</a>
+          <a class="heading-hover" href="/blog.html">Blog</a>
+          <a class="heading-hover" href="/contact.html">Contact</a>
+          <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
+        </div>
+      </div>
+      <div class="bar-icon md:hidden">
+        <i class="fa-solid fa-bars hover:text-redColor"></i>
+      </div>
+    </div>
+  </header>
 
   <!-- End Header Section -->
 
@@ -91,7 +97,8 @@
 
   <section class="about_section bg-serviceHiro h-[300px] ">
     <div class="container flex justify-center items-end h-full">
-      <div class="content text-center flex flex-col justify-center gap-[10px] bg-white py-[30px] px-[80px] rounded-t-[37px] -mb-[16px]">
+      <div
+        class="content text-center flex flex-col justify-center gap-[10px] bg-white py-[30px] px-[80px] rounded-t-[37px] -mb-[16px]">
         <h1 class="text-5xl font-fontLobster">Service</h1>
         <div class="flex item-center gap-[10px] justify-center">
           <a href="/index.html">Home</a>
@@ -119,7 +126,8 @@
     <div class="container bg-slate-300 py-[100px] md:px-[100px] rounded-[70px]">
       <div class="work-heading md:w-[569px] mx-auto text-center">
         <h1 class="text-[40px] md:text-5xl font-fontLobster">How We Work</h1>
-        <p class="text-[22px] mt-[20px]">It is a long established fact  will be distracted.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p class="text-[22px] mt-[20px]">It is a long established fact will be distracted.Lorem Ipsum is simply dummy
+          text of the printing and typesetting industry.</p>
       </div>
       <div class="work-container mt-[50px] flex flex-col gap-[20px] md:gap-[70px]" id="workContainer">
       </div>
@@ -135,7 +143,8 @@
         <h1 class="text-5xl text-white">Wanna join the interno?</h1>
         <p class="text-xl text-white">It is a long established fact will be distracted</p>
         <div class="button mt-[30px]">
-          <a class="btn text-yellowColor" href="/contact.html">Contact With Us <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn text-yellowColor" href="/contact.html">Contact With Us <i
+              class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -204,10 +213,12 @@
 
 
 
+
   <!-- FontAwsome Kit -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
 
 </body>
+
 </html>
 
 
@@ -216,50 +227,50 @@
 <script>
 
 
-    // <!-- Plan Section Json -->
+  // <!-- Plan Section Json -->
 
 
-    function loadPlanSectionContent() {
-      fetch('/workPlanServiceFile.json')
-      .then(res =>res.json())
-      .then(data =>displayPlanSectionContent(data))
-    }
-  
-    function displayPlanSectionContent(planSectionContent) {
-      const planContainer =document.getElementById('planSectionContainer') ;
-  
-      for (const singlePlanSection of planSectionContent) {
-        const div =document.createElement ('div');
-        div.classList.add('planSingleBox') 
-        div.innerHTML =`
+  function loadPlanSectionContent() {
+    fetch('/workPlanServiceFile.json')
+      .then(res => res.json())
+      .then(data => displayPlanSectionContent(data))
+  }
+
+  function displayPlanSectionContent(planSectionContent) {
+    const planContainer = document.getElementById('planSectionContainer');
+
+    for (const singlePlanSection of planSectionContent) {
+      const div = document.createElement('div');
+      div.classList.add('planSingleBox')
+      div.innerHTML = `
          <h1> ${singlePlanSection.title}</h1>
          <p>${singlePlanSection.paragraph}</p>
          <a >${singlePlanSection.link} <i class="fa-solid fa-arrow-right" style="margin-left:5px;"></i></a>
         `
-        planContainer.appendChild(div) ;
-      }
+      planContainer.appendChild(div);
     }
-    loadPlanSectionContent();
+  }
+  loadPlanSectionContent();
 
   // End Plan Section Json
 
   // Work Section Json
 
   function loadWorkSectionContent() {
-    fetch ("/workSectionService.json")
-    .then (res =>res.json())
-    .then (data =>displayWorkSection(data))
+    fetch("/workSectionService.json")
+      .then(res => res.json())
+      .then(data => displayWorkSection(data))
   }
 
   function displayWorkSection(workSectionContent) {
-    const workContainer =document.getElementById("workContainer") ;
+    const workContainer = document.getElementById("workContainer");
 
     for (const singleWorkContent of workSectionContent) {
-      const div =document.createElement('div');
+      const div = document.createElement('div');
       div.classList.add('workSingleBox')
       div.innerHTML = `
          <div>
-           <img src= ${singleWorkContent.image} class="img-hover" >
+            <a href="/serviceSingle.html"><img src= ${singleWorkContent.image} class="img-hover" ></a>
          </div>
          <div>
            <div style="display:flex; align-items:center; justify-content:space-between;">
