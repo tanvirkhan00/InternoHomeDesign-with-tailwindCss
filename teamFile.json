@@ -1,40 +1,48 @@
 [
     {
+        "id":1,
         "img": "/Image/TeamImg1.png",
         "title": "Charlotte Levi",
         "address": "Design, Australia"
     },
     {
+        "id":2,
         "img": "/Image/TeamImg2.png",
         "title": "Nattasha Julie",
         "address": "Design, Australia"
     },
     {
+        "id":3,
         "img": "/Image/TeamImg3.png",
         "title": "John Smith",
         "address": "Design, Australia"
     },
     {
+        "id":4,
         "img": "/Image/TeamImg4.png",
         "title": "Nora Owen",
         "address": "Design, Australia"
     },
     {
+        "id":5,
         "img": "/Image/TeamImg5.png",
         "title": "Sofia Carter",
         "address": "Design, Australia"
     },
     {
+        "id":6,
         "img": "/Image/TeamImg6.png",
         "title": "Avery Jackson",
         "address": "Design, Australia"
     },
     {
+        "id":8,
         "img": "/Image/TeamImg7.png",
         "title": "Luna",
         "address": "Design, Australia"
     },
     {
+        "id":9,
         "img": "/Image/TeamImg8.png",
         "title": "Glanna Mateo",
         "address": "Design, Australia"

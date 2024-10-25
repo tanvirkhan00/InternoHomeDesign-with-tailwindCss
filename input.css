@@ -16,7 +16,7 @@
 
 @layer components {
     .heading-hover {
-        @apply border-b-4 border-transparent ease-linear duration-200 hover:border-limeColor hover:text-brownColor;
+        @apply border-b-4 border-transparent ease-linear duration-200 hover:border-limeColor hover:text-yellowColor hover:-translate-y-1;
     }
     .footerContent-hover {
         @apply text-sm ease-linear duration-200 hover:text-redColor;

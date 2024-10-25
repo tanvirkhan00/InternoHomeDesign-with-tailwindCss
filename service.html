@@ -67,26 +67,29 @@
 
   <!-- Start Header Section -->
 
-  <header class="header_section">
-    <div class="container flex justify-between items-center h-[70px]">
-      <div class="single-box flex items-center gap-2">
-        <img src="/Image/Logo.png" alt="">
-        <h1 class="text-4xl font-fontLobster">Interno</h1>
-      </div>
-      <div class="single-box hidden md:block">
-        <div class="list flex items-center gap-[30px]">
-          <a class="heading-hover" href="/index.html">Home</a>
-          <a class="heading-hover" href="/about.html">About</a>
-          <a class="heading-hover" href="/service.html">Services</a>
-          <a class="heading-hover" href="/project.html">Project</a>
-          <a class="heading-hover" href="/blog.html">Blog</a>
-          <a class="heading-hover" href="/contact.html">Contact</a>
-          <button type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
+  <header class="header_section fixed top-0 left-0 w-full z-50 bg-greenColor border-b-2 border-yellowColor bg-opacity-80">
+    <div class="container flex justify-between items-center h-[70px] relative">
+        <div class="single-box flex items-center gap-2">
+            <img src="/Image/Logo.png" alt="">
+            <h1 class="text-4xl font-fontLobster">Interno</h1>
         </div>
-      </div>
-      <div class="bar-icon md:hidden">
-        <i class="fa-solid fa-bars hover:text-redColor"></i>
-      </div>
+        <div class="hidden absolute top-0 left-0 w-full py-14 bg-blueColor text-center md:bg-transparent border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
+          <div class="list flex flex-col md:flex-row gap-[30px]">
+            <a class="heading-hover nav__link" href="/index.html">Home</a>
+            <a class="heading-hover nav__link" href="/about.html">About</a>
+            <a class="heading-hover nav__link" href="/service.html">Services</a>
+            <a class="heading-hover nav__link" href="/project.html">Project</a>
+            <a class="heading-hover nav__link" href="/blog.html">Blog</a>
+            <a class="heading-hover nav__link" href="/contact.html">Contact</a>
+            <button class="nav__link" type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
+          </div>
+          <div class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden" id="nav-close">
+            <i class="fa-solid fa-xmark hover:text-secondaryColor"></i>
+          </div>
+        </div>
+        <div class="bar-icon md:hidden" id="hamburger">
+          <i class="fa-solid fa-bars hover:text-redColor"></i>
+        </div>
     </div>
   </header>
 
@@ -216,6 +219,8 @@
 
   <!-- FontAwsome Kit -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
+
+  <script src="main.js"></script>
 
 </body>
 
