@@ -7,22 +7,22 @@
 
   <style>
 
-   .teamSingleBox {
+   .memberDiv {
     text-align: center;
     flex-basis: 31%;
    }
-   .teamSingleBox h1 {
+   .memberDiv h2 {
     font-family: "Bebas Neue", 'sans-serif';
     font-size: 25px;
     margin-top: 10px;
    }
-   .teamSingleBox p {
+   .memberDiv p {
     font-family: "Dancing Script", 'sans-serif';
     font-weight: 600;
    }
 
    @media (max-width:768px) {
-    .teamSingleBox {
+    .memberDiv {
       flex-basis: 46%;
     }
    }
@@ -80,8 +80,9 @@
 
   <!-- Start Team Section -->
 
-  <section class="team_section">
-    <div class="container flex flex-wrap gap-[20px] gap-y-[40px]" id="TeamContainerBox">
+  <section id="team">
+    <div class="container">
+      <div class="flex flex-wrap gap-4" id="team-list"></div>
     </div>
   </section>
 
@@ -145,6 +146,7 @@
   </section>
   
   <!-- End Footer Section -->
+   
 
 
   <!-- FontAwsome Kit -->

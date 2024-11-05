@@ -12,29 +12,32 @@
 
   <!-- Start Header Section -->
 
-  <header class="header_section fixed top-0 left-0 w-full z-50 bg-greenColor border-b-2 border-yellowColor bg-opacity-80">
+  <header
+    class="header_section fixed top-0 left-0 w-full z-50 bg-greenColor border-b-2 border-yellowColor bg-opacity-80">
     <div class="container flex justify-between items-center h-[70px] relative">
-        <div class="single-box flex items-center gap-2">
-            <img src="/Image/Logo.png" alt="">
-            <h1 class="text-4xl font-fontLobster">Interno</h1>
+      <div class="single-box flex items-center gap-2">
+        <img src="/Image/Logo.png" alt="">
+        <h1 class="text-4xl font-fontLobster">Interno</h1>
+      </div>
+      <div
+        class="hidden absolute top-0 left-0 w-full py-14 bg-blueColor text-center md:bg-transparent border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto"
+        id="nav-menu">
+        <div class="list flex flex-col md:flex-row gap-[30px]">
+          <a class="heading-hover nav__link" href="/index.html">Home</a>
+          <a class="heading-hover nav__link" href="/about.html">About</a>
+          <a class="heading-hover nav__link" href="/service.html">Services</a>
+          <a class="heading-hover nav__link" href="/project.html">Project</a>
+          <a class="heading-hover nav__link" href="/blog.html">Blog</a>
+          <a class="heading-hover nav__link" href="/contact.html">Contact</a>
+          <button class="nav__link" type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
         </div>
-        <div class="hidden absolute top-0 left-0 w-full py-14 bg-blueColor text-center md:bg-transparent border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
-          <div class="list flex flex-col md:flex-row gap-[30px]">
-            <a class="heading-hover nav__link" href="/index.html">Home</a>
-            <a class="heading-hover nav__link" href="/about.html">About</a>
-            <a class="heading-hover nav__link" href="/service.html">Services</a>
-            <a class="heading-hover nav__link" href="/project.html">Project</a>
-            <a class="heading-hover nav__link" href="/blog.html">Blog</a>
-            <a class="heading-hover nav__link" href="/contact.html">Contact</a>
-            <button class="nav__link" type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
-          </div>
-          <div class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden" id="nav-close">
-            <i class="fa-solid fa-xmark hover:text-secondaryColor"></i>
-          </div>
+        <div class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden" id="nav-close">
+          <i class="fa-solid fa-xmark hover:text-secondaryColor"></i>
         </div>
-        <div class="bar-icon md:hidden" id="hamburger">
-          <i class="fa-solid fa-bars hover:text-redColor"></i>
-        </div>
+      </div>
+      <div class="bar-icon md:hidden" id="hamburger">
+        <i class="fa-solid fa-bars hover:text-redColor"></i>
+      </div>
     </div>
   </header>
 
@@ -61,8 +64,18 @@
 
   <!-- Start Personal Details Section -->
 
-  <section class="personalDetails_section">
-    <div class="container flex gap-[20px] justify-between flex-wrap items-center" id="profileDeatils">
+  <section class="member-details">
+    <div class="container flex justify-center">
+      <div id="profile" >
+        <img id="profile-img" alt="Profile Image">
+        <h1 class="text-center text-[25px]" id="profile-title"></h1>
+        <p class="text-center" id="profile-address"></p>
+        <div class="flex items-center justify-center mt-2 gap-[10px]">
+          <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+          <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -344,63 +357,5 @@
   <script src="main.js"></script>
 
 </body>
+
 </html>
-
-<script>
-
-  function loadProfileDetails() {
-    fetch("/teamFile.json")
-      .then(res => res.json())
-      .then(data => displayProfileDetails(data))
-  }
-
-  function displayProfileDetails(profileDetailsSection) {
-    const profileContainer = document.getElementById('profileDeatils');
-
-    for (const singleProfile of profileDetailsSection) {
-      const div = document.createElement('div');
-      div.classList.add('singleProfile')
-      div.innerHTML = `
-      <div class="flex items-center justify-between gap-2">
-        <div class="img-box md:basis-[48%]">
-          <img src= ${singleProfile.img} alt="" class="img-hover">
-        </div>
-         <div class="information md:basis-[48%]">
-          <h1 class="text-5xl font-fontLobster">${singleProfile.title}</h1>
-          <p class="text-[25px] text-slate-600 font-fontBebas mt-2">Designer</p>
-          <p class="text-slate-400 mt-[10px]">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
-          turpmaximus.posuere in.Contrpobelie frandomised words which don't look even slightly believable.</p>
-          <div class="single-box flex flex-col gap-[30px] md:gap-[10px] mt-[30px] md:mt-[10px]">
-          <div class="gmail flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
-            <div class="icon"><i
-                class="fa-regular fa-envelope icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
-            <div class="icon hover:text-red-400">info@yourdomain.com</div>
-          </div>
-          <div class="phn flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
-            <div class="icon"><i
-                class="fa-solid fa-phone icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
-            <div class="icon hover:text-red-400">+1(378) 400-1234</div>
-          </div>
-          <div class="net flex items-center gap-[10px] text-xl singleBox-hover max-w-fit">
-            <div class="icon"><i
-                class="fa-solid fa-globe icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i></div>
-            <div class="icon hover:text-red-400">www.yourdomain.com</div>
-          </div>
-          <div class="social-link flex gap-[35px] text-xl">
-            <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-            <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-            <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-            <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-           </div>
-         </div>
-        </div>
-      </div>
-    `
-      profileContainer.appendChild(div)
-    }
-  }
-  loadProfileDetails();
-
-
-
-</script>
