@@ -1,527 +1,2176 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interno — Dream Home Design</title>
 
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,500&display=swap" rel="stylesheet" />
 
-  <style>
-
-    /* Plan Section json file Css */
-    .planSingleBox {
-      flex-basis: 30%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border: 2px solid green;
-      border-radius: 10px;
-      padding: 20px;
-      transition: .3s ease-in-out;
-    }
-    .planSingleBox h1 {
-      font-size: 20px;
-      font-family: "Spicy Rice", 'sans-serif';
-    }
-    .planSingleBox:hover{
-      transform: scale(1.05);
-    }
-
-    @media (max-width:768px) {
-      .planSingleBox {
-        flex-basis: 100%;
-      }
-    }
-
-    /* About Section */
-
-    .aboutSingleBox {
-      flex-basis: 30%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      border: 2px solid green;
-      border-radius: 10px;
-      padding: 20px;
-      transition: .3s ease-in-out;
-    }
-    .aboutSingleBox:hover {
-      transform: scale(1.05);
-      background-color: yellow;
-    }
-    .aboutSingleBox h1 {
-      font-family: "Bebas Neue", 'sans-serif';
-      font-size: 20px;
-    }
-    .aboutSingleBox h3 {
-      font-family: "Dancing Script", 'sans-serif';
-    }
-
-    @media (max-width:768px) {
-      .aboutSingleBox {
-        flex-basis: 100%;
-      }
-    }
-
-    /* Project Section */
-
-    .projectSingleBox {
-      flex-basis: 45%;
-    }
-    .projectSingleBox h1 {
-      font-family: "Bebas Neue", 'sans-serif';
-      font-size: 25px;
-    }
-    .projectSingleBox p {
-      font-family: "Dancing Script", 'sans-serif';
-      font-weight: 500;
-    }
-
-    @media (max-width:768px) {
-      .projectSingleBox {
-        flex-basis: 100%;
-      }
-    }
-
-    /* Article & News */
-    .articleSingleBox {
-        flex-basis: 48%;
-      }
-
-    .articleSingleBox h1,h3{
-      font-family: "Bebas Neue", 'sans-serif';
-      font-size: 25px;
-    }
-    .articleSingleBox p {
-      font-family: "Dancing Script", 'sans-serif';
-      font-weight: 600;
-      color: rgb(8, 0, 255);
-    }
-
-
-    @media (max-width:768px) {
-      .articleSingleBox {
-        flex-basis: 100%;
-      }
-    }
-    @media (max-width:1024px) and (min-width:767px) {
-      .articleSingleBox {
-        flex-basis: 48%;
-      }
-    }
-
-    
-  </style>
-
-
-<!-- Title Website -->
- <title>Responsive || Dream Home Website</title>
-</head>
-<body>
-
-  <!-- Start Header Section -->
-
-  <header class="header_section fixed top-0 left-0 w-full z-50 bg-greenColor border-b-2 border-yellowColor bg-opacity-80">
-    <div class="container flex justify-between items-center h-[70px] relative">
-        <div class="single-box flex items-center gap-2">
-            <img src="/Image/Logo.png" alt="">
-            <h1 class="text-4xl font-fontLobster">Interno</h1>
-        </div>
-        <div class="hidden absolute top-0 left-0 w-full py-14 bg-blueColor text-center md:bg-transparent border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
-          <div class="list flex flex-col md:flex-row gap-[30px]">
-            <a class="heading-hover nav__link" href="/index.html">Home</a>
-            <a class="heading-hover nav__link" href="/about.html">About</a>
-            <a class="heading-hover nav__link" href="/service.html">Services</a>
-            <a class="heading-hover nav__link" href="/project.html">Project</a>
-            <a class="heading-hover nav__link" href="/blog.html">Blog</a>
-            <a class="heading-hover nav__link" href="/contact.html">Contact</a>
-            <button class="nav__link" type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
-          </div>
-          <div class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden" id="nav-close">
-            <i class="fa-solid fa-xmark hover:text-secondaryColor"></i>
-          </div>
-        </div>
-        <div class="bar-icon md:hidden" id="hamburger">
-          <i class="fa-solid fa-bars hover:text-redColor"></i>
-        </div>
-    </div>
-  </header>
-  <!-- End Header Section -->
-
-  <!-- Start About Section -->
-
-  <section class="about_section bg-homeHiro h-[100vh] bg-cover">
-    <div class="container flex  items-center h-full">
-      <div class="content ml-[50px] flex flex-col gap-[20px]">
-        <h1 class="text-[30px] md:text-[50px] font-fontSpicyRice">Let Your Home Be Unique</h1>
-        <p>There are many variations of the passages of lorem Ipsum fromavailable, majority.</p>
-        <div class="button">
-           <a class="btn" href="#">Get Started <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- End About Section -->
-
-
-  <!-- Start Plan Section -->
-
-  <section class="plan-section">
-    <div class="container">
-      <div class="content flex items-center justify-between flex-wrap gap-[20px]" id="planSectionContainer">
-      </div>
-    </div>
-  </section>
-  <!-- End Plan Section -->
-
-  <!-- Start Work Section -->
-
-  <section class="workSection">
-    <div class="container flex items-center justify-between flex-wrap gap-[20px]">
-      <div class="workSingleBox basis-[100%] md:basis-[48%] flex flex-col gap-[45px]">
-        <h1 class="text-5xl ">We Create The Art of Stylish Living Stylishly</h1>
-        <p class="text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using that it has a more-or-less normal.</p>
-        <div class="contact flex items-center gap-[15px]">
-          <div class="call-icon">
-            <i class="fa-solid fa-phone p-3 rounded-full text-[20px] text-amber-400 icon-hover"></i>
-          </div>
-          <div class="number">
-            <h3 class="text-2xl">012345678</h3>
-            <p class="text-xl">Call Us Anytime</p>
-          </div>
-        </div>
-        <div class="button">
-          <a class="btn" href="/plan.html">Get Free Estimate</a>
-        </div>
-      </div>
-      <div class="workSingleBox basis-[100%] md:basis-[48%]">
-        <img src="/Image/workSectionImage.png" alt="">
-      </div>
-    </div>
-  </section>
-  <!-- End Work Section -->
-
-  <!-- Start About Section -->
-
-  <section class="aboutSection">
-    <div class="container px-[20px] py-[50px]">
-        <div class="aboutheading">
-          <h1 class="aboutHeading text-5xl md:w-[545px] text-center mx-auto font-fontLobster">What the People Thinks About Us</h1>
-       </div>
-      <div class="Aboutcontainer flex justify-between flex-wrap mt-[38px] gap-[20px]" id="AboutcontentContainer"></div>
-    </div>
-  </section>
-
-  <!-- End About Section -->
-
-  <!-- Start Brand Section -->
-
-  <section class="brand-section">
-    <div class="container">
-      <div class="swiper mySwiper ">
-        <div class="swiper-wrapper flex items-center justify-between gap-[50px]">
-          <div class="swiper-slide ">
-            <img src="/Image/brand1.svg" alt="" class="h-full w-full">
-          </div>
-          <div class="swiper-slide ">
-            <img src="/Image/brand2.svg" alt="">
-          </div>
-          <div class="swiper-slide ">
-            <img src="/Image/brand3.svg" alt="">
-          </div>
-          <div class="swiper-slide ">
-            <img src="/Image/brand4.svg" alt="">
-          </div>
-          <div class="swiper-slide ">
-            <img src="/Image/brand5.svg" alt="">
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- End Brand Section -->
-
-  <!-- start Project Section -->
-
-  <section class="projects_section">
-    <div class="container">
-      <div class="projects-heading md:w-[737px] mx-auto text-center">
-        <h1 class="text-5xl font-fontLobster">Follow Our Projects</h1>
-        <p class="text-xl mt-4">It is a long established fact that a reader will be distracted by the of readable content of page lookings at its layouts points.</p>
-      </div>
-      <div class="projectContainer mt-[40px] flex  justify-between flex-wrap items-center gap-[20px]" id="projectContainer">
-      </div>
-    </div>
-  </section>
-  <!-- End Projects Section -->
-
-  <!-- start Coundoun Section -->
-
-  <section class="coundown_section hidden md:block">
-    <div class="container flex items-center justify-between text-center gap-3 flex-wrap">
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[24%]">
-        <h1 class="text-7xl text-orange-300">12</h1>
-        <p class="text-xl">Years Of Experience</p>
-      </div>
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[24%]">
-        <h1 class="text-7xl text-orange-300">85</h1>
-        <p class="text-xl">Success Projects</p>
-      </div>
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[22%]">
-        <h1 class="text-7xl text-orange-300">15</h1>
-        <p class="text-xl">Active Projects</p>
-      </div>
-      <div class="cowndownSingleBox flex flex-col gap-[16px] border-r-2 border-orange-300 basis-[24%]">
-        <h1 class="text-7xl text-orange-300">95</h1>
-        <p class="text-xl">Happy Customars</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- End Cowndown Section -->
-
-  <!-- Start Article & News Section -->
-
-  <section class="articleNews_section">
-    <div class="container">
-      <div class="article-heading lg:w-[811px] flex flex-col gap-[12px] mx-auto">
-        <h1 class="text-center text-5xl font-fontLobster">Articles & News</h1>
-        <p class="text-center text-xl">It is a long established fact that a reader will be distracted by the of readable content of a page when lookings at its layouts the points of using.</p>
-      </div>
-      <div class="news-container mt-[50px] flex justify-between flex-wrap gap-[20px]" id="newsContainer"></div>
-    </div>
-  </section>
-
-  <!-- End Article & News Section -->
-
-  <!-- Start Join Section -->
-
-  <section class="join_section">
-    <div class="container bg-slate-800 py-[50px]">
-      <div class="heading text-center flex flex-col gap-[10px]">
-        <h1 class="text-5xl text-white">Wanna join the interno?</h1>
-        <p class="text-xl text-white">It is a long established fact will be distracted</p>
-        <div class="button mt-[20px]">
-          <a class="btn text-yellowColor" href="/contact.html">Contact With Us <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Join Section -->
-
-  <!-- Start Footer Section -->
-
-  <section class="footer_section bg-white">
-    <div class="container  gap-[20px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-[20px]">
-      <div class="footer-singleBox basis-[30%]">
-        <div class="heading flex items-center gap-2">
-          <img src="/Image/Logo.png" alt="">
-          <h1 class="text-2xl font-fontBebas">Interno</h1>
-        </div>
-        <p class="text-lg mt-[20px]">It is a long established fact that a reader will be distracted lookings.</p>
-        <div class="social-link mt-[31px] flex gap-[30px]">
-          <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-          <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-          <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-          <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="hading">
-          <h1 class="text-xl font-fontBebas">Pages</h1>
-        </div>
-        <div class="contentList  flex flex-col gap-[10px] mt-[20px]">
-          <a class="footerContent-hover" href="/about.html">About Us</a>
-          <a class="footerContent-hover" href="/plan.html">Plan</a>
-          <a class="footerContent-hover" href="team.html">Our Team</a>
-          <a class="footerContent-hover" href="contact.html">Contact Us</a>
-          <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="heading">
-          <h1 class="text-xl font-fontBebas">Services</h1>
-        </div>
-        <div class="contentList mt-[20px] flex flex-col gap-[10px]">
-          <a class="footerContent-hover" href="#">Kitchen</a>
-          <a class="footerContent-hover" href="#">Living Area</a>
-          <a class="footerContent-hover" href="#">Bathroom</a>
-          <a class="footerContent-hover" href="#">Dining Hall</a>
-          <a class="footerContent-hover" href="#">Bedroom</a>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="heading">
-          <h1 class="text-xl font-fontBebas">Contact</h1>
-        </div>
-        <div class="address mt-[20px] flex flex-col gap-[10px]">
-          <p class="footerContent-hover">55 East Birchood Ave. Brooklyn, New York 11201</p>
-          <a class="footerContent-hover" href="#">kmtanvir1111@gmail.com</a>
-          <p class="footerContent-hover">(123) 456 - 7890</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-privacy text-center mt-[50px] px-[50px]">
-      <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
-    </div>
-  </section>
-  <!-- End Footer Section -->
-
-
-
-
-
-
-
-  <!-- FontAwsome Kit -->
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
 
-  <!-- Swiper JS -->
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-   <!-- Initialize Swiper -->
-   <script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 5,
-        spaceBetween: 50,
-        loop:true,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream:   #F5F0E8;
+      --warm:    #EDE5D4;
+      --sand:    #C9B99A;
+      --clay:    #8B6F4E;
+      --dark:    #1C1A17;
+      --charcoal:#2E2B26;
+      --green:   #3A5A40;
+      --green-light: #4E7A57;
+      --gold:    #C8A96E;
+      --white:   #FDFAF5;
+
+      --font-display: 'Cormorant Garamond', serif;
+      --font-heading: 'Playfair Display', serif;
+      --font-body:    'DM Sans', sans-serif;
+
+      --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--clay); border-radius: 10px; }
+
+    /* ─── UTILITY ──────────────────────────────────────── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clay);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--clay);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.4s var(--ease-smooth);
+    }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--green);
+      transform: translateX(-101%);
+      transition: transform 0.4s var(--ease-smooth);
+    }
+    .btn-primary:hover::before { transform: translateX(0); }
+    .btn-primary span, .btn-primary i { position: relative; z-index: 1; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--dark);
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 34px;
+      border: 1px solid var(--dark);
+      cursor: pointer;
+      transition: all 0.3s var(--ease-smooth);
+    }
+    .btn-outline:hover { background: var(--dark); color: var(--cream); }
+
+    /* ─── HEADER ───────────────────────────────────────── */
+    .header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 1000;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      transition: background 0.4s var(--ease-smooth), 
+                  box-shadow 0.4s var(--ease-smooth),
+                  height 0.4s var(--ease-smooth);
+    }
+    .header.scrolled {
+      background: rgba(253, 250, 245, 0.97);
+      box-shadow: 0 1px 0 rgba(28,26,23,0.08);
+      height: 62px;
+      backdrop-filter: blur(12px);
+    }
+    .header-inner {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-icon span {
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dark);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 3px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--clay);
+      transition: width 0.3s var(--ease-smooth);
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--dark);
+      color: var(--cream) !important;
+      padding: 8px 20px !important;
+    }
+    .nav-cta:hover { background: var(--green); color: var(--cream) !important; }
+    .nav-cta::after { display: none !important; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 1100;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--dark);
+      transition: all 0.35s var(--ease-smooth);
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      position: fixed;
+      top: 0; right: 0;
+      width: min(340px, 100vw);
+      height: 100vh;
+      background: var(--dark);
+      z-index: 1050;
+      transform: translateX(100%);
+      transition: transform 0.5s var(--ease-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 48px;
+    }
+    .mobile-nav.open { transform: translateX(0); }
+    .mobile-nav a {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--cream);
+      text-decoration: none;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.4s, transform 0.4s, color 0.3s;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .mobile-nav.open a {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .mobile-nav.open a:nth-child(1) { transition-delay: 0.1s; }
+    .mobile-nav.open a:nth-child(2) { transition-delay: 0.15s; }
+    .mobile-nav.open a:nth-child(3) { transition-delay: 0.2s; }
+    .mobile-nav.open a:nth-child(4) { transition-delay: 0.25s; }
+    .mobile-nav.open a:nth-child(5) { transition-delay: 0.3s; }
+    .mobile-nav.open a:nth-child(6) { transition-delay: 0.35s; }
+    .mobile-nav a:hover { color: var(--gold); }
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(28,26,23,0.6);
+      z-index: 1040;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+      backdrop-filter: blur(4px);
+    }
+    .mobile-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* ─── HERO ─────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 64px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeUp 0.9s var(--ease-smooth) 0.2s forwards;
+    }
+    .hero-eyebrow span {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clay);
+    }
+    .hero-eyebrow-line {
+      width: 48px; height: 1px;
+      background: var(--clay);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 6vw, 88px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--dark);
+      opacity: 0;
+      animation: fadeUp 1s var(--ease-smooth) 0.4s forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--clay);
+    }
+
+    .hero-sub {
+      margin-top: 28px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      max-width: 360px;
+      opacity: 0;
+      animation: fadeUp 1s var(--ease-smooth) 0.6s forwards;
+    }
+
+    .hero-actions {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 1s var(--ease-smooth) 0.8s forwards;
+    }
+    .hero-scroll {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: none;
+    }
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: var(--sand);
+      display: block;
+      animation: scrollDrop 2s ease-in-out infinite;
+    }
+
+    .hero-stats {
+      margin-top: 72px;
+      display: flex;
+      gap: 48px;
+      opacity: 0;
+      animation: fadeUp 1s var(--ease-smooth) 1s forwards;
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clay);
+      margin-top: 4px;
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-img-wrap {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      animation: fadeIn 1.2s var(--ease-smooth) 0.3s forwards;
+    }
+    .hero-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      animation: zoomOut 8s var(--ease-smooth) forwards;
+    }
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--cream) 0%, transparent 30%);
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 60px;
+      right: 48px;
+      background: var(--dark);
+      color: var(--cream);
+      padding: 24px 28px;
+      opacity: 0;
+      animation: fadeUp 1s var(--ease-smooth) 1.2s forwards;
+    }
+    .hero-badge-num {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-badge-text {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      opacity: 0.7;
+    }
+
+    /* ─── SERVICES / PLAN ──────────────────────────────── */
+    .services-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--dark);
+      margin-top: 16px;
+    }
+    .section-title em { font-style: italic; color: var(--clay); }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .service-card {
+      background: var(--warm);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background 0.4s var(--ease-smooth);
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-smooth);
+    }
+    .service-card:hover { background: var(--cream); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-number {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 300;
+      color: var(--sand);
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    .service-card:hover .service-number { color: var(--green-light); }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 20px 0 14px;
+    }
+    .service-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      opacity: 0.8;
+    }
+    .service-arrow {
+      margin-top: 32px;
+      width: 40px; height: 40px;
+      border: 1px solid var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clay);
+      font-size: 14px;
+      transition: all 0.3s var(--ease-smooth);
+    }
+    .service-card:hover .service-arrow {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translate(4px, -4px);
+    }
+
+    /* ─── WORK / ABOUT ─────────────────────────────────── */
+    .work-section {
+      padding: 100px 0;
+      background: var(--dark);
+      color: var(--cream);
+    }
+    .work-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .work-label { color: var(--sand) !important; }
+    .work-label::before { background: var(--sand) !important; }
+    .work-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-top: 20px;
+    }
+    .work-title em { font-style: italic; color: var(--gold); }
+    .work-desc {
+      margin-top: 24px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--sand);
+    }
+    .work-contact {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .work-contact-icon {
+      width: 52px; height: 52px;
+      border: 1px solid var(--clay);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .work-contact-num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--cream);
+    }
+    .work-contact-sub {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sand);
+    }
+    .work-btn {
+      margin-top: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      transition: background 0.3s;
+    }
+    .work-btn:hover { background: var(--cream); }
+
+    .work-img-wrap {
+      position: relative;
+    }
+    .work-img-wrap img {
+      width: 100%;
+      display: block;
+      filter: grayscale(20%);
+      transition: filter 0.5s;
+    }
+    .work-img-wrap:hover img { filter: grayscale(0%); }
+    .work-img-tag {
+      position: absolute;
+      top: 32px;
+      left: -24px;
+      background: var(--green);
+      color: var(--cream);
+      padding: 16px 20px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+    }
+
+    /* ─── TESTIMONIALS ─────────────────────────────────── */
+    .testimonials-section {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      padding: 40px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s, transform 0.3s var(--ease-smooth), box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      border-color: var(--green);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(28,26,23,0.08);
+    }
+    .testimonial-quote {
+      font-family: var(--font-display);
+      font-size: 64px;
+      color: var(--sand);
+      line-height: 0.8;
+      margin-bottom: 20px;
+    }
+    .testimonial-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--charcoal);
+      font-style: italic;
+    }
+    .testimonial-author {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testimonial-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .testimonial-role {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clay);
+    }
+    .testimonial-stars { color: var(--gold); font-size: 13px; margin-top: 4px; }
+
+    /* ─── PROJECTS ─────────────────────────────────────── */
+    .projects-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-top: 60px;
+    }
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--warm);
+      cursor: pointer;
+    }
+    .project-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--ease-smooth);
+    }
+    .project-card:hover img { transform: scale(1.08); }
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(28,26,23,0.85) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .project-card:hover .project-overlay { opacity: 1; }
+    .project-info {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 36px;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s var(--ease-smooth);
+    }
+    .project-card:hover .project-info { transform: translateY(0); opacity: 1; }
+    .project-cat {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .project-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--cream);
+    }
+    .project-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--clay);
+    }
+    .project-placeholder i { font-size: 36px; opacity: 0.4; }
+    .project-placeholder span { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4; }
+
+    /* ─── STATS ────────────────────────────────────────── */
+    .stats-section {
+      padding: 80px 0;
+      background: var(--green);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 40px 20px;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 72px;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1;
+    }
+    .stat-plus { color: var(--gold); }
+    .stat-label {
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.65);
+      margin-top: 10px;
+    }
+
+    /* ─── ARTICLES ─────────────────────────────────────── */
+    .articles-section {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+    .article-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .article-card {
+      cursor: pointer;
+    }
+    .article-img {
+      aspect-ratio: 16/9;
+      background: var(--warm);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .article-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-smooth);
+    }
+    .article-card:hover .article-img img { transform: scale(1.06); }
+    .article-img-placeholder {
+      width: 100%; height: 200px;
+      background: var(--warm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--clay);
+      opacity: 0.5;
+    }
+    .article-meta {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .article-tag {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--green);
+      padding: 4px 12px;
+    }
+    .article-date {
+      font-size: 12px;
+      color: var(--clay);
+      letter-spacing: 0.05em;
+    }
+    .article-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-top: 12px;
+      transition: color 0.3s;
+    }
+    .article-card:hover .article-title { color: var(--clay); }
+    .article-excerpt {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      opacity: 0.75;
+      margin-top: 10px;
+    }
+    .article-read {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clay);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sand);
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .article-card:hover .article-read { color: var(--green); border-color: var(--green); }
+
+    /* ─── STORIES CAROUSEL ─────────────────────────────── */
+    .stories-section {
+      padding: 80px 0;
+      background: var(--dark);
+      overflow: hidden;
+    }
+    .stories-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 44px;
+      padding: 0 32px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .stories-label { color: var(--sand) !important; }
+    .stories-label::before { background: var(--sand) !important; }
+    .stories-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 3.5vw, 44px);
+      font-weight: 300;
+      color: var(--cream);
+      margin-top: 14px;
+      line-height: 1.1;
+    }
+    .stories-title em { font-style: italic; color: var(--gold); }
+    .stories-nav {
+      display: flex;
+      gap: 10px;
+    }
+    .stories-btn {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(201,185,154,0.35);
+      background: transparent;
+      color: var(--sand);
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s var(--ease-smooth);
+    }
+    .stories-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,169,110,0.1); }
+
+    .stories-swiper { overflow: visible; padding: 8px 0 24px; }
+    .stories-swiper .swiper-wrapper { align-items: stretch; }
+
+    .story-card {
+      background: var(--charcoal);
+      border-radius: 0;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s var(--ease-smooth);
+      border-bottom: 3px solid transparent;
+    }
+    .story-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+    .story-card-img {
+      width: 100%; height: 260px;
+      overflow: hidden;
+      background: var(--dark);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .story-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-smooth);
+    }
+    .story-card:hover .story-card-img img { transform: scale(1.07); }
+    .story-icon-placeholder {
+      font-size: 48px;
+      color: rgba(201,185,154,0.2);
+    }
+    .story-card-body { padding: 24px 24px 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .story-category {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .story-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-top: 4px;
+    }
+    .story-meta {
+      margin-top: auto;
+      font-size: 12px;
+      color: var(--sand);
+      opacity: 0.6;
+    }
+
+    /* ─── BRANDS CAROUSEL ──────────────────────────────── */
+    .brands-section {
+      padding: 56px 0;
+      background: var(--white);
+      border-top: 1px solid var(--warm);
+      border-bottom: 1px solid var(--warm);
+      overflow: hidden;
+    }
+    .brands-top {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .brands-swiper { overflow: hidden; }
+    .brand-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+    }
+    .brand-slide img {
+      max-height: 44px;
+      width: auto;
+      filter: grayscale(100%) opacity(35%);
+      transition: filter 0.4s var(--ease-smooth), transform 0.3s var(--ease-smooth);
+    }
+    .brand-slide img:hover { filter: grayscale(0%) opacity(100%); transform: scale(1.08); }
+
+    /* ticker marquee track for brands */
+    .brands-ticker { overflow: hidden; position: relative; }
+    .brands-ticker::before,
+    .brands-ticker::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+    }
+    .brands-ticker::before { left: 0; background: linear-gradient(to right, var(--white), transparent); }
+    .brands-ticker::after  { right: 0; background: linear-gradient(to left, var(--white), transparent); }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    .cta-section {
+      padding: 120px 0;
+      background: var(--dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: var(--font-display);
+      font-size: clamp(100px, 20vw, 200px);
+      font-weight: 600;
+      color: rgba(255,255,255,0.025);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+    .cta-label { color: var(--sand) !important; }
+    .cta-label::before { background: var(--sand) !important; }
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 300;
+      color: var(--cream);
+      margin-top: 20px;
+      line-height: 1.1;
+    }
+    .cta-title em { font-style: italic; color: var(--gold); }
+    .cta-sub {
+      font-size: 16px;
+      color: var(--sand);
+      margin-top: 20px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .cta-actions {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 40px;
+      transition: background 0.3s;
+    }
+    .btn-gold:hover { background: var(--cream); }
+
+    /* ─── FOOTER ───────────────────────────────────────── */
+    .footer {
+      background: var(--charcoal);
+      padding: 80px 0 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 60px;
+    }
+    .footer-brand .logo-text { color: var(--cream); }
+    .footer-brand .logo-icon { background: var(--gold); }
+    .footer-brand .logo-icon span { color: var(--dark); }
+    .footer-about {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--sand);
+      margin-top: 20px;
+      max-width: 260px;
+    }
+    .footer-social {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+    }
+    .social-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(201,185,154,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sand);
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .social-icon:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+
+    .footer-col-title {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--sand);
+      text-decoration: none;
+      transition: color 0.3s, padding-left 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold); padding-left: 6px; }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .footer-contact-item i { color: var(--clay); margin-top: 2px; width: 16px; }
+    .footer-contact-item span { font-size: 14px; color: var(--sand); line-height: 1.5; }
+
+    .footer-bottom {
+      margin-top: 64px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 13px; color: rgba(201,185,154,0.5); }
+
+    /* ─── ANIMATIONS ───────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes zoomOut {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1); }
+    }
+    @keyframes scrollDrop {
+      0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+      50%       { opacity: 0.4; transform: scaleY(0.6); }
+    }
+
+    /* Scroll-reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 140px 40px 80px; }
+
+      .work-inner { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .service-cards { grid-template-columns: 1fr; }
+      .testimonial-cards { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; }
+      .article-cards { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .hero-stats { flex-wrap: wrap; gap: 28px; }
+      .hero-left { padding: 120px 24px 60px; }
+      .container { padding: 0 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════ HEADER ══════════════ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon"><span>I</span></div>
+        <span class="logo-text">Interno</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/service.html">Services</a></li>
+          <li><a href="/project.html">Project</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-overlay" id="overlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/service.html">Services</a>
+    <a href="/project.html">Project</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Interior Design Studio</span>
+      </div>
+      <h1 class="hero-title">
+        Let Your<br>
+        Home Be<br>
+        <em>Unique</em>
+      </h1>
+      <p class="hero-sub">We craft living spaces that express your personality — blending artistry, function, and enduring elegance.</p>
+      <div class="hero-actions">
+        <a href="/project.html" class="btn-primary">
+          <span>Explore Work</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#work" class="hero-scroll">
+          <span class="scroll-line"></span>
+          <span>Scroll</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">12+</div>
+          <div class="hero-stat-label">Years</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">85</div>
+          <div class="hero-stat-label">Projects</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">95%</div>
+          <div class="hero-stat-label">Satisfied</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <!-- Uses your existing image path -->
+        <img src="/Image/workSectionImage.png" alt="Interior Design" />
+        <div class="hero-img-overlay"></div>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-num">15</div>
+        <div class="hero-badge-text">Active Projects</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SERVICES ══════════════ -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">What We Offer</div>
+          <h2 class="section-title">Design Plans<br><em>For Every Vision</em></h2>
+        </div>
+        <a href="/service.html" class="btn-outline">
+          <span>All Services</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-cards reveal" id="planSectionContainer">
+        <!-- Populated by JS or shown as default cards -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ WORK ══════════════ -->
+  <section class="work-section" id="work">
+    <div class="container">
+      <div class="work-inner">
+        <div class="reveal">
+          <div class="section-label work-label">Our Approach</div>
+          <h2 class="work-title">We Create the<br>Art of <em>Stylish</em><br>Living</h2>
+          <p class="work-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using lorem ipsum is that it has a more-or-less normal distribution.</p>
+          <div class="work-contact">
+            <div class="work-contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="work-contact-num">012 345 6789</div>
+              <div class="work-contact-sub">Call Us Anytime</div>
+            </div>
+          </div>
+          <a href="/plan.html" class="work-btn">
+            <span>Get Free Estimate</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="work-img-wrap reveal reveal-delay-2">
+          <img src="/Image/workSectionImage.png" alt="Interior Design" />
+          <div class="work-img-tag">Award Winning Studio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ STORIES CAROUSEL ══════════════ -->
+  <section class="stories-section">
+    <div class="stories-header reveal">
+      <div>
+        <div class="section-label stories-label">Client Stories</div>
+        <h2 class="stories-title">Real Homes,<br><em>Real Stories</em></h2>
+      </div>
+      <div class="stories-nav">
+        <button class="stories-btn" id="storiesPrev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="stories-btn" id="storiesNext"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+      <div class="swiper stories-swiper" id="storiesSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="story-card">
+              <div class="story-card-img">
+                <i class="fa-solid fa-couch story-icon-placeholder"></i>
+              </div>
+              <div class="story-card-body">
+                <span class="story-category">Living Room</span>
+                <h3 class="story-title">A Calm, Modern Retreat in Brooklyn</h3>
+                <p class="story-meta">Sarah & Tom · 2024</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="story-card">
+              <div class="story-card-img">
+                <i class="fa-solid fa-utensils story-icon-placeholder"></i>
+              </div>
+              <div class="story-card-body">
+                <span class="story-category">Kitchen</span>
+                <h3 class="story-title">Open-Plan Kitchen That Became the Heart of the Home</h3>
+                <p class="story-meta">Marcus Family · 2024</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="story-card">
+              <div class="story-card-img">
+                <i class="fa-solid fa-bed story-icon-placeholder"></i>
+              </div>
+              <div class="story-card-body">
+                <span class="story-category">Bedroom</span>
+                <h3 class="story-title">Luxury Feels Without the Luxury Price Tag</h3>
+                <p class="story-meta">Aisha T. · 2023</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="story-card">
+              <div class="story-card-img">
+                <i class="fa-solid fa-bath story-icon-placeholder"></i>
+              </div>
+              <div class="story-card-body">
+                <span class="story-category">Bathroom</span>
+                <h3 class="story-title">Turning a Cramped Bathroom into a Spa Sanctuary</h3>
+                <p class="story-meta">Rivera Residence · 2023</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="story-card">
+              <div class="story-card-img">
+                <i class="fa-solid fa-chair story-icon-placeholder"></i>
+              </div>
+              <div class="story-card-body">
+                <span class="story-category">Dining Room</span>
+                <h3 class="story-title">Gathering Space Reimagined for Family & Friends</h3>
+                <p class="story-meta">Johnson Residence · 2024</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="story-card">
+              <div class="story-card-img">
+                <i class="fa-solid fa-tree story-icon-placeholder"></i>
+              </div>
+              <div class="story-card-body">
+                <span class="story-category">Outdoor</span>
+                <h3 class="story-title">A Terrace Transformed Into an Outdoor Living Room</h3>
+                <p class="story-meta">Chen Family · 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TESTIMONIALS ══════════════ -->
+  <section class="testimonials-section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">Client Stories</div>
+          <h2 class="section-title">What People<br><em>Think About Us</em></h2>
+        </div>
+      </div>
+      <div class="testimonial-cards" id="AboutcontentContainer">
+        <!-- Default testimonials shown if JSON fails -->
+        <div class="testimonial-card reveal">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Interno transformed our house into a dream home. The attention to detail and the understanding of our lifestyle was remarkable.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <div class="testimonial-name">Sarah Johnson</div>
+              <div class="testimonial-role">Brooklyn, NY</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">Exceptional craftsmanship and a team that genuinely listens. Our living space has never felt more cohesive and beautiful.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div>
+              <div class="testimonial-name">Marcus Rivera</div>
+              <div class="testimonial-role">Manhattan, NY</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">They brought a fresh perspective to our renovation while respecting our budget. The result was beyond our expectations.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div>
+              <div class="testimonial-name">Aisha Thompson</div>
+              <div class="testimonial-role">Queens, NY</div>
+              <div class="testimonial-stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ BRANDS ══════════════ -->
+  <section class="brands-section">
+    <div class="brands-top">
+      <p class="section-label" style="justify-content:center;">Trusted By Leading Brands</p>
+    </div>
+    <div class="brands-ticker">
+      <div class="swiper brandsSwiper">
+        <div class="swiper-wrapper" style="align-items:center;">
+          <div class="swiper-slide brand-slide"><img src="/Image/brand1.svg" alt="Brand 1" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand2.svg" alt="Brand 2" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand3.svg" alt="Brand 3" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand4.svg" alt="Brand 4" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand5.svg" alt="Brand 5" /></div>
+          <!-- Duplicate set for seamless loop -->
+          <div class="swiper-slide brand-slide"><img src="/Image/brand1.svg" alt="Brand 1" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand2.svg" alt="Brand 2" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand3.svg" alt="Brand 3" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand4.svg" alt="Brand 4" /></div>
+          <div class="swiper-slide brand-slide"><img src="/Image/brand5.svg" alt="Brand 5" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ PROJECTS ══════════════ -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">Our Portfolio</div>
+          <h2 class="section-title">Follow Our<br><em>Latest Projects</em></h2>
+        </div>
+        <a href="/project.html" class="btn-outline">
+          <span>View All</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="project-grid" id="projectContainer">
+        <!-- Default project cards shown if JSON fails -->
+        <div class="project-card reveal">
+          <div class="project-placeholder">
+            <i class="fa-solid fa-couch"></i>
+            <span>Living Room</span>
+          </div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Interior Design</div>
+            <div class="project-name">Modern Living Room</div>
+          </div>
+        </div>
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-placeholder">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Kitchen</span>
+          </div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Kitchen Design</div>
+            <div class="project-name">Contemporary Kitchen</div>
+          </div>
+        </div>
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-placeholder">
+            <i class="fa-solid fa-bed"></i>
+            <span>Bedroom</span>
+          </div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Bedroom Design</div>
+            <div class="project-name">Luxury Master Suite</div>
+          </div>
+        </div>
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-placeholder">
+            <i class="fa-solid fa-bath"></i>
+            <span>Bathroom</span>
+          </div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Bathroom Design</div>
+            <div class="project-name">Spa Bathroom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ STATS ══════════════ -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-num">12<span class="stat-plus">+</span></div>
+          <div class="stat-label">Years of Experience</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-num">85</div>
+          <div class="stat-label">Success Projects</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-num">15</div>
+          <div class="stat-label">Active Projects</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-num">95<span class="stat-plus">%</span></div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ARTICLES ══════════════ -->
+  <section class="articles-section" id="blog">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <div class="section-label">Latest News</div>
+          <h2 class="section-title">Articles &<br><em>Insights</em></h2>
+        </div>
+        <a href="/blog.html" class="btn-outline">
+          <span>All Articles</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="article-cards" id="newsContainer">
+        <div class="article-card reveal">
+          <div class="article-img">
+            <div class="article-img-placeholder" style="height:240px;">
+              <i class="fa-solid fa-image" style="font-size:32px;"></i>
+            </div>
+          </div>
+          <div class="article-meta">
+            <span class="article-tag">Design Tips</span>
+            <span class="article-date">Feb 14, 2025</span>
+          </div>
+          <h3 class="article-title">10 Ways to Transform Your Living Space This Spring</h3>
+          <p class="article-excerpt">Discover simple yet impactful changes that can breathe new life into your home without a full renovation.</p>
+          <a href="/blog.html" class="article-read"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="article-card reveal reveal-delay-2">
+          <div class="article-img">
+            <div class="article-img-placeholder" style="height:240px;">
+              <i class="fa-solid fa-image" style="font-size:32px;"></i>
+            </div>
+          </div>
+          <div class="article-meta">
+            <span class="article-tag">Trends</span>
+            <span class="article-date">Jan 28, 2025</span>
+          </div>
+          <h3 class="article-title">The Rise of Biophilic Design in Modern Homes</h3>
+          <p class="article-excerpt">How bringing nature indoors is reshaping interior design and improving the wellbeing of homeowners.</p>
+          <a href="/blog.html" class="article-read"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CTA ══════════════ -->
+  <section class="cta-section">
+    <div class="cta-bg-text">Interno</div>
+    <div class="container" style="position:relative;">
+      <div class="section-label cta-label reveal" style="justify-content:center;">Start Your Journey</div>
+      <h2 class="cta-title reveal">Wanna Join<br><em>Interno?</em></h2>
+      <p class="cta-sub reveal">Let's build something beautiful together. Reach out and our team will get back to you within 24 hours.</p>
+      <div class="cta-actions reveal">
+        <a href="/contact.html" class="btn-gold">
+          <span>Contact Us</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="/plan.html" class="btn-outline" style="border-color:var(--sand);color:var(--sand);">
+          <span>View Plans</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-icon"><span>I</span></div>
+            <span class="logo-text">Interno</span>
+          </a>
+          <p class="footer-about">We design interior spaces that are a true reflection of your personality — beautiful, functional, and enduring.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/plan.html">Plan</a></li>
+            <li><a href="/team.html">Our Team</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li><a href="/faq's.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Services</p>
+          <ul class="footer-links">
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Living Area</a></li>
+            <li><a href="#">Bathroom</a></li>
+            <li><a href="#">Dining Hall</a></li>
+            <li><a href="#">Bedroom</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>55 East Birchood Ave. Brooklyn, New York 11201</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6902041d08071f001b58585858290e04080005470a0604">[email&#160;protected]</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>(123) 456-7890</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Interno. Designed by Victorflow Templates.</p>
+        <p class="footer-copy">Privacy Policy · Terms of Use</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════ SCRIPTS ══════════════ -->
+
+  <!-- Swiper Init -->
+  <script>
+    // ── Stories Carousel ──
+    const storiesSwiper = new Swiper('#storiesSwiper', {
+      loop: true,
+      speed: 600,
+      spaceBetween: 20,
+      grabCursor: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
+      navigation: {
+        nextEl: '#storiesNext',
+        prevEl: '#storiesPrev',
+      },
+      breakpoints: {
+        0:    { slidesPerView: 1.2 },
+        480:  { slidesPerView: 1.8 },
+        768:  { slidesPerView: 2.4 },
+        1024: { slidesPerView: 3.2 },
+      }
+    });
+
+    // Hook manual nav buttons
+    document.getElementById('storiesNext').addEventListener('click', () => storiesSwiper.slideNext());
+    document.getElementById('storiesPrev').addEventListener('click', () => storiesSwiper.slidePrev());
+
+    // ── Brands Infinite Ticker ──
+    new Swiper('.brandsSwiper', {
+      loop: true,
+      speed: 3500,
+      spaceBetween: 50,
+      freeMode: true,
+      grabCursor: false,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        0:    { slidesPerView: 2 },
+        480:  { slidesPerView: 3 },
+        768:  { slidesPerView: 4 },
+        1024: { slidesPerView: 5 },
+      }
     });
   </script>
 
+  <!-- ── Sticky Header ── -->
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
 
-<!-- Js Link -->
- <script src="main.js"></script>
+  <!-- ── Mobile Hamburger Menu ── -->
+  <script>
+    const hamburger  = document.getElementById('hamburger');
+    const mobileNav  = document.getElementById('mobileNav');
+    const overlay    = document.getElementById('overlay');
 
-  
+    function openMenu() {
+      hamburger.classList.add('open');
+      mobileNav.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () =>
+      mobileNav.classList.contains('open') ? closeMenu() : openMenu()
+    );
+    overlay.addEventListener('click', closeMenu);
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  </script>
+
+  <!-- ── Scroll Reveal ── -->
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObserver.observe(el));
+  </script>
+
+  <!-- ── JSON Data Loaders (same logic as original) ── -->
+  <script>
+    /* Plan Section */
+    function loadPlanSection() {
+      fetch('/workPlan.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('planSectionContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'service-card reveal reveal-delay-' + (i + 1);
+            d.innerHTML = `
+              <div class="service-number">0${i + 1}</div>
+              <h3 class="service-title">${item.title}</h3>
+              <p class="service-desc">${item.paragraph}</p>
+              <div class="service-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {
+          /* Default service cards if JSON not found */
+          const defaults = [
+            { title: 'Space Planning', desc: 'We carefully analyze and design your space to maximize functionality and flow.'},
+            { title: 'Interior Styling', desc: 'From furniture to décor, we style every room with a cohesive and elegant vision.'},
+            { title: 'Full Renovation', desc: 'End-to-end renovation management — from concept to handover.'},
+          ];
+          const container = document.getElementById('planSectionContainer');
+          container.innerHTML = '';
+          defaults.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'service-card reveal reveal-delay-' + (i + 1);
+            d.innerHTML = `
+              <div class="service-number">0${i + 1}</div>
+              <h3 class="service-title">${item.title}</h3>
+              <p class="service-desc">${item.desc}</p>
+              <div class="service-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        });
+    }
+    loadPlanSection();
+
+    /* Projects Section */
+    function loadProjectSection() {
+      fetch('/projectSection.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('projectContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'project-card reveal' + (i % 2 !== 0 ? ' reveal-delay-2' : '');
+            d.innerHTML = `
+              <img src="${item.image}" alt="${item.name}" />
+              <div class="project-overlay"></div>
+              <div class="project-info">
+                <div class="project-cat">Interior Design</div>
+                <div class="project-name">${item.name}</div>
+              </div>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {/* default cards already in HTML */});
+    }
+    loadProjectSection();
+
+    /* Articles Section */
+    function loadArticleSection() {
+      fetch('/articleNewsSection.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('newsContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'article-card reveal' + (i % 2 !== 0 ? ' reveal-delay-2' : '');
+            d.innerHTML = `
+              <div class="article-img">
+                <img src="${item.image}" alt="${item.title}" />
+              </div>
+              <div class="article-meta">
+                <span class="article-tag">Design</span>
+                <span class="article-date">${item.date || ''}</span>
+              </div>
+              <h3 class="article-title">${item.paragraph}</h3>
+              <a href="/blog.html" class="article-read"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {/* default articles already in HTML */});
+    }
+    loadArticleSection();
+
+    /* Testimonials / About Section */
+    function loadTestimonials() {
+      fetch('/aboutSection.json')
+        .then(r => r.json())
+        .then(data => {
+            const container = document.getElementById('AboutcontentContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const initial = item.name ? item.name[0] : '?';
+            const d = document.createElement('div');
+            d.className = 'testimonial-card reveal reveal-delay-' + (i + 1);
+            d.innerHTML = `
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-text">${item.paragraph}</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">${initial}</div>
+                <div>
+                  <div class="testimonial-name">${item.name}</div>
+                  <div class="testimonial-role">${item.address}</div>
+                  <div class="testimonial-stars">★★★★★</div>
+                </div>
+              </div>
+              `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {/* default testimonials already in HTML */});
+    }
+    loadTestimonials();
+  </script>
+
+  <!-- ══════════════ SCRIPTS ══════════════ -->
+
+  <!-- Swiper Init -->
+  <script>
+    new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 60,
+      loop: true,
+      centeredSlides: true,
+      autoplay: { delay: 2500, disableOnInteraction: false },
+      breakpoints: {
+        0:   { slidesPerView: 2 },
+        640: { slidesPerView: 3 },
+        1024:{ slidesPerView: 4 },
+      }
+    });
+  </script>
+
+  <!-- ── Sticky Header ── -->
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
+
+  <!-- ── Mobile Hamburger Menu ── -->
+  <script>
+    const hamburger  = document.getElementById('hamburger');
+    const mobileNav  = document.getElementById('mobileNav');
+    const overlay    = document.getElementById('overlay');
+
+    function openMenu() {
+      hamburger.classList.add('open');
+      mobileNav.classList.add('open');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () =>
+      mobileNav.classList.contains('open') ? closeMenu() : openMenu()
+    );
+    overlay.addEventListener('click', closeMenu);
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  </script>
+
+  <!-- ── Scroll Reveal ── -->
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObserver.observe(el));
+  </script>
+
+  <!-- ── JSON Data Loaders (same logic as original) ── -->
+  <script>
+    /* Plan Section */
+    function loadPlanSection() {
+      fetch('/workPlan.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('planSectionContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'service-card reveal reveal-delay-' + (i + 1);
+            d.innerHTML = `
+              <div class="service-number">0${i + 1}</div>
+              <h3 class="service-title">${item.title}</h3>
+              <p class="service-desc">${item.paragraph}</p>
+              <div class="service-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {
+          /* Default service cards if JSON not found */
+          const defaults = [
+            { title: 'Space Planning', desc: 'We carefully analyze and design your space to maximize functionality and flow.'},
+            { title: 'Interior Styling', desc: 'From furniture to décor, we style every room with a cohesive and elegant vision.'},
+            { title: 'Full Renovation', desc: 'End-to-end renovation management — from concept to handover.'},
+          ];
+          const container = document.getElementById('planSectionContainer');
+          container.innerHTML = '';
+          defaults.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'service-card reveal reveal-delay-' + (i + 1);
+            d.innerHTML = `
+              <div class="service-number">0${i + 1}</div>
+              <h3 class="service-title">${item.title}</h3>
+              <p class="service-desc">${item.desc}</p>
+              <div class="service-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        });
+    }
+    loadPlanSection();
+
+    /* Projects Section */
+    function loadProjectSection() {
+      fetch('/projectSection.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('projectContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'project-card reveal' + (i % 2 !== 0 ? ' reveal-delay-2' : '');
+            d.innerHTML = `
+              <img src="${item.image}" alt="${item.name}" />
+              <div class="project-overlay"></div>
+              <div class="project-info">
+                <div class="project-cat">Interior Design</div>
+                <div class="project-name">${item.name}</div>
+              </div>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {/* default cards already in HTML */});
+    }
+    loadProjectSection();
+
+    /* Articles Section */
+    function loadArticleSection() {
+      fetch('/articleNewsSection.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('newsContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const d = document.createElement('div');
+            d.className = 'article-card reveal' + (i % 2 !== 0 ? ' reveal-delay-2' : '');
+            d.innerHTML = `
+              <div class="article-img">
+                <img src="${item.image}" alt="${item.title}" />
+              </div>
+              <div class="article-meta">
+                <span class="article-tag">Design</span>
+                <span class="article-date">${item.date || ''}</span>
+              </div>
+              <h3 class="article-title">${item.paragraph}</h3>
+              <a href="/blog.html" class="article-read"><span>Read More</span><i class="fa-solid fa-arrow-right"></i></a>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {/* default articles already in HTML */});
+    }
+    loadArticleSection();
+
+    /* Testimonials / About Section */
+    function loadTestimonials() {
+      fetch('/aboutSection.json')
+        .then(r => r.json())
+        .then(data => {
+          const container = document.getElementById('AboutcontentContainer');
+          container.innerHTML = '';
+          data.forEach((item, i) => {
+            const initial = item.name ? item.name[0] : '?';
+            const d = document.createElement('div');
+            d.className = 'testimonial-card reveal reveal-delay-' + (i + 1);
+            d.innerHTML = `
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-text">${item.paragraph}</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">${initial}</div>
+                <div>
+                  <div class="testimonial-name">${item.name}</div>
+                  <div class="testimonial-role">${item.address}</div>
+                  <div class="testimonial-stars">★★★★★</div>
+                </div>
+              </div>
+            `;
+            container.appendChild(d);
+            revealObserver.observe(d);
+          });
+        })
+        .catch(() => {/* default testimonials already in HTML */});
+    }
+    loadTestimonials();
+  </script>
+
 </body>
 </html>
-
-
-<!-- Plan Section Json -->
-<script>
-  function loadPlanSectionContent() {
-    fetch('/workPlan.json')
-    .then(res =>res.json())
-    .then(data =>displayPlanSectionContent(data))
-  }
-
-  function displayPlanSectionContent(planSectionContent) {
-    const planContainer =document.getElementById('planSectionContainer') ;
-
-    for (const singlePlanSection of planSectionContent) {
-      const div =document.createElement ('div');
-      div.classList.add('planSingleBox') 
-      div.innerHTML =`
-       <h1> ${singlePlanSection.title}</h1>
-       <p>${singlePlanSection.paragraph}</p>
-      `
-      planContainer.appendChild(div) ;
-    }
-  }
-  loadPlanSectionContent()
-
-// End Plan Section Json
-
-
-// About Section Json 
-  function loadAboutcontent() {
-        fetch('/aboutSection.json')
-        .then(res => res.json())
-        .then(data => DisplayAboutContent(data))
-    }
-
-    function DisplayAboutContent (aboutContents) {
-        const aboutContainer =document.getElementById('AboutcontentContainer') ;
-
-        for (const aboutSingleContent of aboutContents) {
-            const div =document.createElement('div');
-            div.classList.add ('aboutSingleBox')
-            div.innerHTML = `
-            <div class="flex gap-2 md:flex-col items-center text-center">
-              <img src = ${aboutSingleContent.image} >
-              <div>
-              <h1> ${aboutSingleContent.name} </h1> 
-              <h3> ${aboutSingleContent.address}</h3></div>
-            </div>
-            <p style="margin-top:25px;"> ${aboutSingleContent.paragraph} </p>
-            `
-            aboutContainer.appendChild(div);
-        }
-    }
-    loadAboutcontent()
-  // End About Section
-
-    // Start Project Section
-
-  function loadProjectSection() {
-    fetch('/projectSection.json')
-    .then(res => res.json())
-    .then(data => displayProjectSection(data))
-  }
-
-  function displayProjectSection (projectSection) {
-    const projectContainer =document.getElementById('projectContainer') ;
-
-    for (const singleProjectContent of projectSection) {
-      const div =document.createElement('div');
-      div.classList.add ('projectSingleBox') 
-      div.innerHTML = `
-      <img src= ${singleProjectContent.image} class="img-hover" >
-      <div style="display:flex;justify-content:space-between; align-items:center;margin-top:10px;">
-        <div>
-          <h1> ${singleProjectContent.name}</h1>
-          <p> ${singleProjectContent.paragraph}</p>
-        </div>
-        <div class="icon  ">
-          <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[50px] h-[50px] px-5 py-4"></i>
-        </div>
-      </div>
-      `
-      projectContainer.appendChild(div);
-    }
-  }
-  loadProjectSection()
-  // End Project Section
-
-  // Start Article & News Section
-
-  function loadArticleSection() {
-    fetch ('/articleNewsSection.json')
-    .then (res => res.json())
-    .then (data => displayArticleSection(data))
-  }
-
-  function displayArticleSection (articleSection) {
-    const articleContainer = document.getElementById('newsContainer') ;
-
-    for (const singleArticleContent of articleSection) {
-      const div =document.createElement ('div');
-      div.classList.add ('articleSingleBox')
-      div.innerHTML =`
-      <div class="img-hover">
-        <img src= ${singleArticleContent.image}>
-        <h3 style="background-color:white;"> ${singleArticleContent.title}</h3>
-      </div>
-      <h1 style="font-size:25px; margin-top:30px;"> ${singleArticleContent.paragraph}</h1>
-      <p> ${singleArticleContent.date}</p>
-      `
-      articleContainer.appendChild(div);
-    }
-  }
-  loadArticleSection()
-  // End Article Section
-</script>
