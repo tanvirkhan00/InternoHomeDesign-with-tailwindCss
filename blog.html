@@ -1,237 +1,664 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Interno Design Studio</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
 
   <style>
-    .articleSingleBox {
-      position: relative;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream:       #F5F0E8;
+      --warm:        #EDE5D4;
+      --sand:        #C9B99A;
+      --clay:        #8B6F4E;
+      --dark:        #1C1A17;
+      --charcoal:    #2E2B26;
+      --green:       #3A5A40;
+      --green-light: #4E7A57;
+      --gold:        #C8A96E;
+      --white:       #FDFAF5;
+      --font-display:'Cormorant Garamond', serif;
+      --font-body:   'DM Sans', sans-serif;
+      --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .articleSingleBox h3 {
-      margin-top: -40px;
-      margin-left: 20px;
-      color: white;
-      background-color: black;
-      position: absolute;
-      padding: 5px 10px;
-      border-radius: 5px;
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--dark); overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--clay); border-radius: 10px; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+    .section-label {
+      font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--clay); display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::before { content: ''; width: 32px; height: 1px; background: var(--clay); }
+
+    .reveal {
+      opacity: 0; transform: translateY(36px);
+      transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .rd1 { transition-delay: 0.08s; }
+    .rd2 { transition-delay: 0.16s; }
+    .rd3 { transition-delay: 0.24s; }
+    .rd4 { transition-delay: 0.32s; }
+
+    /* ─── HEADER ─── */
+    .header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      z-index: 1000; height: 75px; display: flex; align-items: center;
+      background: rgba(253,250,245,0.98);
+      box-shadow: 0 1px 0 rgba(28,26,23,0.08);
+      backdrop-filter: blur(12px);
+      transition: height 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .header.scrolled { height: 62px; box-shadow: 0 2px 20px rgba(28,26,23,0.12); }
+    .header-inner {
+      max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: var(--dark); display: flex; align-items: center; justify-content: center; }
+    .logo-icon span { color: var(--gold); font-family: var(--font-display); font-size: 20px; font-weight: 600; }
+    .logo-text { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--dark); letter-spacing: 0.05em; }
+    .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--dark); text-decoration: none; position: relative; padding-bottom: 3px;
+    }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--clay); transition: width 0.3s var(--ease); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--clay); }
+    .nav-cta { background: var(--dark) !important; color: var(--cream) !important; padding: 8px 20px !important; transition: background 0.3s !important; }
+    .nav-cta:hover { background: var(--green) !important; }
+    .nav-cta::after { display: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 26px; height: 2px; background: var(--dark); transition: all 0.35s var(--ease); transform-origin: center; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-nav {
+      position: fixed; top: 0; right: 0; width: min(340px,100vw); height: 100vh;
+      background: var(--dark); z-index: 1050; transform: translateX(100%);
+      transition: transform 0.5s var(--ease); display: flex; flex-direction: column;
+      justify-content: center; padding: 60px 48px;
+    }
+    .mobile-nav.open { transform: translateX(0); }
+    .mobile-nav a {
+      font-family: var(--font-display); font-size: 36px; font-weight: 300;
+      color: var(--cream); text-decoration: none; opacity: 0; transform: translateX(30px);
+      transition: opacity 0.4s, transform 0.4s, color 0.3s; margin-bottom: 20px; display: block;
+    }
+    .mobile-nav.open a { opacity: 1; transform: translateX(0); }
+    .mobile-nav.open a:nth-child(1){transition-delay:.10s} .mobile-nav.open a:nth-child(2){transition-delay:.15s}
+    .mobile-nav.open a:nth-child(3){transition-delay:.20s} .mobile-nav.open a:nth-child(4){transition-delay:.25s}
+    .mobile-nav.open a:nth-child(5){transition-delay:.30s} .mobile-nav.open a:nth-child(6){transition-delay:.35s}
+    .mobile-nav a:hover { color: var(--gold); }
+    .mobile-overlay { position: fixed; inset: 0; background: rgba(28,26,23,0.6); z-index: 1040; opacity: 0; pointer-events: none; transition: opacity 0.4s; backdrop-filter: blur(4px); }
+    .mobile-overlay.open { opacity: 1; pointer-events: all; }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      height: 520px; position: relative;
+      display: flex; align-items: flex-end; overflow: hidden;
+      background: var(--dark);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(125deg, #1C1A17 0%, #2E2B26 45%, #8B6F4E 100%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    .hero-circle {
+      position: absolute; right: -120px; top: -120px;
+      width: 600px; height: 600px; border-radius: 50%;
+      border: 1px solid rgba(200,169,110,0.08);
+    }
+    .hero-circle-2 {
+      position: absolute; right: -60px; top: -60px;
+      width: 400px; height: 400px; border-radius: 50%;
+      border: 1px solid rgba(200,169,110,0.05);
+    }
+    .hero-content { position: relative; z-index: 2; width: 100%; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px 64px; }
+    .breadcrumb { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .breadcrumb a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); text-decoration: none; transition: color 0.3s; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb span { color: var(--clay); font-size: 12px; }
+    .breadcrumb .current { color: var(--gold); }
+    .hero-title {
+      font-family: var(--font-display); font-size: clamp(60px, 9vw, 110px);
+      font-weight: 300; color: var(--cream); line-height: 0.92;
+      opacity: 0; animation: fadeUp 1s var(--ease) 0.2s forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-size: 15px; color: var(--sand); max-width: 440px; line-height: 1.7; margin-top: 22px;
+      opacity: 0; animation: fadeUp 1s var(--ease) 0.45s forwards;
+    }
+    .hero-count {
+      position: absolute; right: 32px; bottom: 64px; text-align: right;
+      opacity: 0; animation: fadeIn 1s var(--ease) 0.7s forwards;
+    }
+    .hero-count-num {
+      font-family: var(--font-display); font-size: 80px; font-weight: 300;
+      color: rgba(200,169,110,0.25); line-height: 1;
+    }
+    .hero-count-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sand); opacity: 0.5; }
+
+    /* ─── FEATURED POST ─── */
+    .featured-section { padding: 80px 0 0; }
+    .featured-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 520px; }
+    .featured-image {
+      position: relative; overflow: hidden; background: var(--warm);
+    }
+    .featured-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+    .featured-image:hover img { transform: scale(1.05); }
+    .featured-image-placeholder {
+      width: 100%; height: 100%; min-height: 480px;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--warm) 0%, var(--sand) 100%);
+    }
+    .featured-image-placeholder i { font-size: 64px; color: var(--clay); opacity: 0.3; }
+    .featured-tag {
+      position: absolute; top: 28px; left: 28px;
+      background: var(--gold); color: var(--dark);
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 6px 16px; font-weight: 500;
+    }
+    .featured-body {
+      background: var(--dark); padding: 64px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .featured-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .featured-cat {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .featured-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--clay); }
+    .featured-date { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand); opacity: 0.6; }
+    .featured-title {
+      font-family: var(--font-display); font-size: clamp(30px, 3.5vw, 48px);
+      font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 20px;
+    }
+    .featured-title em { font-style: italic; color: var(--gold); }
+    .featured-excerpt { font-size: 15px; color: var(--sand); line-height: 1.8; opacity: 0.75; margin-bottom: 40px; }
+    .featured-link {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--cream); text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 6px;
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .featured-link:hover { color: var(--gold); border-color: var(--gold); }
+    .featured-link i { font-size: 11px; transition: transform 0.3s; }
+    .featured-link:hover i { transform: translateX(4px); }
+
+    /* ─── ARTICLES GRID ─── */
+    .articles-section { padding: 80px 0 100px; }
+    .articles-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; flex-wrap: wrap; gap: 20px; }
+    .articles-title {
+      font-family: var(--font-display); font-size: clamp(36px, 4vw, 52px);
+      font-weight: 300; color: var(--dark); line-height: 1.05;
+    }
+    .articles-title em { font-style: italic; color: var(--clay); }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 32px;
     }
 
-    /* End Article Section */
+    .article-card { display: flex; flex-direction: column; cursor: pointer; }
+    .article-image {
+      position: relative; overflow: hidden; background: var(--warm);
+      aspect-ratio: 4/3;
+    }
+    .article-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); display: block; }
+    .article-card:hover .article-image img { transform: scale(1.06); }
+    .article-image-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--warm) 0%, var(--cream) 100%);
+    }
+    .article-image-placeholder i { font-size: 40px; color: var(--clay); opacity: 0.25; }
+    .article-badge {
+      position: absolute; top: 16px; left: 16px;
+      background: rgba(28,26,23,0.75); backdrop-filter: blur(6px);
+      font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--sand); padding: 5px 12px;
+      transition: opacity 0.3s;
+    }
+    .article-card:hover .article-badge { opacity: 0; }
+    .article-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(28,26,23,0.7) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.4s var(--ease);
+    }
+    .article-card:hover .article-overlay { opacity: 1; }
+    .article-arrow {
+      position: absolute; bottom: 20px; right: 20px;
+      width: 38px; height: 38px;
+      border: 1px solid rgba(255,255,255,0.4);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--cream); font-size: 11px;
+      opacity: 0; transform: translate(6px, 6px);
+      transition: all 0.4s var(--ease);
+    }
+    .article-card:hover .article-arrow { opacity: 1; transform: translate(0, 0); }
+
+    .article-body { padding: 24px 0 0; flex: 1; }
+    .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .article-cat {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+    }
+    .article-sep { width: 16px; height: 1px; background: var(--sand); opacity: 0.4; }
+    .article-date { font-size: 11px; letter-spacing: 0.1em; color: var(--sand); opacity: 0.6; }
+    .article-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 400;
+      color: var(--dark); line-height: 1.2; margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+    .article-card:hover .article-title { color: var(--clay); }
+    .article-excerpt { font-size: 13px; color: var(--sand); line-height: 1.75; opacity: 0.8; }
+    .article-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 18px; padding-top: 18px;
+      border-top: 1px solid var(--warm);
+    }
+    .article-read-more {
+      font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--clay); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.3s, gap 0.3s;
+    }
+    .article-read-more:hover { color: var(--dark); gap: 12px; }
+    .article-read-more i { font-size: 10px; }
+
+    /* ─── PAGINATION ─── */
+    .pagination-wrap {
+      display: flex; align-items: center; justify-content: center; gap: 6px; padding-top: 60px;
+    }
+    .page-btn {
+      width: 44px; height: 44px; border: 1px solid var(--warm);
+      background: none; cursor: pointer;
+      font-family: var(--font-display); font-size: 17px;
+      color: var(--clay); display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s var(--ease);
+    }
+    .page-btn:hover { border-color: var(--clay); color: var(--dark); }
+    .page-btn.active { background: var(--dark); border-color: var(--dark); color: var(--cream); }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      padding: 100px 0; background: var(--dark); text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-bg-word {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      font-family: var(--font-display); font-size: clamp(80px,16vw,200px);
+      font-weight: 600; color: rgba(255,255,255,0.03);
+      white-space: nowrap; pointer-events: none;
+    }
+    .cta-label { color: var(--sand) !important; justify-content: center; }
+    .cta-label::before { background: var(--sand) !important; }
+    .cta-title {
+      font-family: var(--font-display); font-size: clamp(36px,5vw,64px);
+      font-weight: 300; color: var(--cream); margin-top: 18px; line-height: 1.1; position: relative;
+    }
+    .cta-title em { font-style: italic; color: var(--gold); }
+    .cta-sub { font-size: 15px; color: var(--sand); max-width: 440px; margin: 16px auto 0; line-height: 1.75; position: relative; }
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: var(--dark);
+      font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; padding: 16px 40px; margin-top: 44px;
+      position: relative; transition: background 0.3s;
+    }
+    .cta-btn:hover { background: var(--cream); }
+
+    /* ─── FOOTER ─── */
+    .footer { background: var(--charcoal); padding: 80px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; }
+    .footer-brand .logo-text { color: var(--cream); }
+    .footer-brand .logo-icon { background: var(--gold); }
+    .footer-brand .logo-icon span { color: var(--dark); }
+    .footer-about { font-size: 14px; line-height: 1.8; color: var(--sand); margin-top: 20px; max-width: 260px; }
+    .footer-social { margin-top: 28px; display: flex; gap: 12px; }
+    .social-icon { width: 36px; height: 36px; border: 1px solid rgba(201,185,154,0.3); display: flex; align-items: center; justify-content: center; color: var(--sand); font-size: 14px; text-decoration: none; transition: all 0.3s; }
+    .social-icon:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+    .footer-col-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); margin-bottom: 24px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-size: 14px; color: var(--sand); text-decoration: none; transition: color 0.3s, padding-left 0.3s; }
+    .footer-links a:hover { color: var(--gold); padding-left: 6px; }
+    .footer-contact-item { display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start; }
+    .footer-contact-item i { color: var(--clay); margin-top: 2px; width: 16px; }
+    .footer-contact-item span { font-size: 14px; color: var(--sand); line-height: 1.5; }
+    .footer-bottom { margin-top: 64px; border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 13px; color: rgba(201,185,154,0.5); }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+    @media (max-width: 1024px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .featured-inner { grid-template-columns: 1fr; }
+      .featured-body { padding: 40px 32px; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .container, .header-inner, .hero-inner { padding-left: 20px; padding-right: 20px; }
+      .hero-count { display: none; }
+    }
   </style>
-
 </head>
-
 <body>
 
-  <!-- Start Header Section -->
-
-  <header class="header_section fixed top-0 left-0 w-full z-50 bg-greenColor border-b-2 border-yellowColor bg-opacity-80">
-    <div class="container flex justify-between items-center h-[70px] relative">
-        <div class="single-box flex items-center gap-2">
-            <img src="/Image/Logo.png" alt="">
-            <h1 class="text-4xl font-fontLobster">Interno</h1>
-        </div>
-        <div class="hidden absolute top-0 left-0 w-full py-14 bg-blueColor text-center md:bg-transparent border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto" id="nav-menu">
-          <div class="list flex flex-col md:flex-row gap-[30px]">
-            <a class="heading-hover nav__link" href="/index.html">Home</a>
-            <a class="heading-hover nav__link" href="/about.html">About</a>
-            <a class="heading-hover nav__link" href="/service.html">Services</a>
-            <a class="heading-hover nav__link" href="/project.html">Project</a>
-            <a class="heading-hover nav__link" href="/blog.html">Blog</a>
-            <a class="heading-hover nav__link" href="/contact.html">Contact</a>
-            <button class="nav__link" type="submit"><i class="fa-solid fa-magnifying-glass heading-hover"></i></button>
-          </div>
-          <div class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden" id="nav-close">
-            <i class="fa-solid fa-xmark hover:text-secondaryColor"></i>
-          </div>
-        </div>
-        <div class="bar-icon md:hidden" id="hamburger">
-          <i class="fa-solid fa-bars hover:text-redColor"></i>
-        </div>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/index.html" class="logo">
+        <div class="logo-icon"><span>I</span></div>
+        <span class="logo-text">Interno</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/service.html">Services</a></li>
+          <li><a href="/project.html">Project</a></li>
+          <li><a href="/blog.html" class="active">Blog</a></li>
+          <li><a href="/contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- End Header Section -->
+  <div class="mobile-overlay" id="overlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/service.html">Services</a>
+    <a href="/project.html">Project</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
 
-
-  <!-- Start About Section -->
-
-  <section class="about_section bg-projectHiro h-[300px] ">
-    <div class="container flex justify-center items-end h-full">
-      <div
-        class="content text-center flex flex-col justify-center gap-[10px] bg-white rounded-t-[37px] py-[30px] px-[80px] -mb-[16px]">
-        <h1 class="text-[40px] md:text-5xl font-fontLobster">Article & News</h1>
-        <div class="flex item-center gap-[10px] justify-center">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-circle-2"></div>
+    <div class="hero-count">
+      <div class="hero-count-num" id="heroCount">—</div>
+      <div class="hero-count-label">Articles</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="breadcrumb">
           <a href="/index.html">Home</a>
           <span>/</span>
-          <a href="/blog.html">Blog</a>
+          <span class="current">Blog</span>
         </div>
+        <h1 class="hero-title">Articles<br><em>&amp; News</em></h1>
+        <p class="hero-sub">Insights, ideas, and inspiration from the world of interior design — curated for curious minds.</p>
       </div>
     </div>
   </section>
 
-  <!-- End About Section -->
-
-  <!-- Start Latest Post Section -->
-
-  <section class="latest-post_section">
+  <!-- FEATURED POST -->
+  <section class="featured-section">
     <div class="container">
-      <div class="heading">
-        <h1 class="text-5xl font-fontLobster text-center">Latest Post</h1>
+      <div class="featured-inner reveal" id="featuredPost">
+        <!-- Populated by JS -->
       </div>
-      <div class="content-box flex items-center justify-between flex-wrap gap-[20px] mt-[40px]">
-        <div class="single-box basis-[100%] md:basis-[47%] img-hover">
-          <img src="/Image/latestpostimg.png" alt="">
+    </div>
+  </section>
+
+  <!-- ARTICLES GRID -->
+  <section class="articles-section">
+    <div class="container">
+      <div class="articles-header">
+        <div>
+          <div class="section-label reveal">Latest Articles</div>
+          <h2 class="articles-title reveal rd1">All <em>Stories</em></h2>
         </div>
-        <div class="single-box flex flex-col gap-[20px] basis-[100%] md:basis-[47%]">
-          <h1 class="text-4xl font-fontBebas">Low Cost Latest Invented Interior Designing Ideas</h1>
-          <p class="text-slate-400 ">Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim
-            maximus.posuere in.Contrary to popular belief.</p>
-          <p class="text-slate-400 ">Lorem Ipsum is not simply random text. It has roots in a piece of classica.</p>
-          <div class="date flex justify-between items-center text-slate-400">
-            <p>26 December 2022</p>
-            <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[50px] h-[50px] px-5 py-4"></i>
+        <p class="reveal rd2" style="font-size:13px; color:var(--sand); max-width:260px; line-height:1.7; text-align:right;">
+          Showing <strong id="articleCount" style="color:var(--dark);">0</strong> articles on design, living, and craft.
+        </p>
+      </div>
+      <div class="articles-grid" id="articlesGrid"></div>
+      <div class="pagination-wrap" id="pagination"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="cta-bg-word">Stories</div>
+    <div class="container" style="position:relative;">
+      <div class="section-label cta-label reveal" style="justify-content:center;">Work With Us</div>
+      <h2 class="cta-title reveal">Ready to<br><em>Transform?</em></h2>
+      <p class="cta-sub reveal">Let's create something extraordinary together. Reach out and we'll start with a free consultation.</p>
+      <a href="/contact.html" class="cta-btn reveal">
+        <span>Get In Touch</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/index.html" class="logo">
+            <div class="logo-icon"><span>I</span></div>
+            <span class="logo-text">Interno</span>
+          </a>
+          <p class="footer-about">We design interior spaces that are a true reflection of your personality — beautiful, functional, and enduring.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
+        <div>
+          <p class="footer-col-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/plan.html">Plan</a></li>
+            <li><a href="/team.html">Our Team</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+            <li><a href="/faq's.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Services</p>
+          <ul class="footer-links">
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Living Area</a></li>
+            <li><a href="#">Bathroom</a></li>
+            <li><a href="#">Dining Hall</a></li>
+            <li><a href="#">Bedroom</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Contact</p>
+          <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>55 East Birchood Ave. Brooklyn, New York 11201</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>kmtanvir1111@gmail.com</span></div>
+          <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>(123) 456-7890</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Interno. Designed by Victorflow Templates.</p>
+        <p class="footer-copy">Privacy Policy · Terms of Use</p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- End Latest Post Section -->
+  <script>
+    const ARTICLES_DATA = [
+      { image:"/Image/articleImgBlog1.png", title:"Kitchen Design", paragraph:"Let's Get Solution For Building Construction Work", date:"26 December, 2022", category:"Kitchen" },
+      { image:"/Image/articleImgBlog2.png", title:"Living Design",  paragraph:"Low Cost Latest Invented Interior Designing Ideas.",  date:"22 December, 2022", category:"Living" },
+      { image:"/Image/articleImgBlog3.png", title:"Interior Design", paragraph:"Best For Any Office & Business Interior Solution",     date:"25 December, 2022", category:"Interior" },
+      { image:"/Image/articleImgBlog4.png", title:"Kitchen Design", paragraph:"Let's Get Solution For Building Construction Work",   date:"26 December, 2022", category:"Kitchen" },
+      { image:"/Image/articleImgBlog5.png", title:"Living Design",  paragraph:"Low Cost Latest Invented Interior Designing Ideas.",  date:"22 December, 2022", category:"Living" },
+      { image:"/Image/articleImgBlog6.png", title:"Interior Design", paragraph:"Best For Any Office & Business Interior Solution",   date:"25 December, 2022", category:"Interior" },
+    ];
 
-  <!-- Start Article & News Section -->
+    const ITEMS_PER_PAGE = 5;
+    let currentPage = 1;
 
-  <section class="articleNews_section">
-    <div class="container">
-      <div class="article-heading">
-        <h1 class="text-center text-5xl font-fontLobster">Articles & News</h1>
-      </div>
-      <div class="news-container mt-[50px] grid grid-cols-1 md:grid-cols-2 gap-x-[20px] gap-y-[30px]"
-        id="newsContainer"></div>
-    </div>
-  </section>
+    const articlesGrid   = document.getElementById('articlesGrid');
+    const featuredPost   = document.getElementById('featuredPost');
+    const heroCount      = document.getElementById('heroCount');
+    const articleCount   = document.getElementById('articleCount');
+    const pagination     = document.getElementById('pagination');
 
-  <!-- End Article & News Section -->
+    function init() {
+      heroCount.textContent    = ARTICLES_DATA.length;
+      articleCount.textContent = ARTICLES_DATA.length;
 
-  <!-- Page Row -->
-  <div class="Row-box gap-[30px] flex items-center justify-center py-[50px]">
-    <p class="icon-hover  text-white rounded-full w-[50px] h-[50px] px-4 py-3">01</p>
-    <p class="icon-hover  text-white rounded-full w-[50px] h-[50px] px-4 py-3">02</p>
-    <p class="icon-hover text-white rounded-full w-[50px] h-[50px] px-4 py-3">03</p>
-    <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[50px] h-[50px] px-5 py-4"></i>
-  </div>
-
-  <!-- End Page Row -->
-
-  <!-- Start Footer Section -->
-
-  <section class="footer_section bg-white">
-    <div class="container grid md:grid-cols-2 lg:grid-cols-4  gap-[20px]">
-      <div class="footer-singleBox">
-        <div class="heading flex items-center gap-2">
-          <img src="/Image/Logo.png" alt="">
-          <h1 class="text-2xl font-fontBebas">Interno</h1>
+      // Featured = first item
+      const featured = ARTICLES_DATA[0];
+      featuredPost.innerHTML = `
+        <div class="featured-image">
+          ${featured.image
+            ? `<img src="${featured.image}" alt="${featured.title}" loading="lazy" />`
+            : `<div class="featured-image-placeholder"><i class="fa-solid fa-pen-nib"></i></div>`}
+          <span class="featured-tag">Featured</span>
         </div>
-        <p class="text-lg mt-[20px]">It is a long established fact that a reader will be distracted lookings.</p>
-        <div class="social-link mt-[31px] flex gap-[30px]">
-          <i class="fa-brands fa-facebook icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-          <i class="fa-brands fa-twitter icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-          <i class="fa-brands fa-linkedin icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
-          <i class="fa-brands fa-instagram icon-hover p-2 text-white rounded-full hover:-translate-y-2"></i>
+        <div class="featured-body">
+          <div class="featured-meta">
+            <span class="featured-cat">${featured.category}</span>
+            <div class="featured-dot"></div>
+            <span class="featured-date">${featured.date}</span>
+          </div>
+          <h2 class="featured-title">${featured.paragraph.replace(/Interior|Design|Living|Kitchen/, m => `<em>${m}</em>`)}</h2>
+          <p class="featured-excerpt">An in-depth look at modern interior approaches — exploring space, texture, and the artful balance between comfort and form.</p>
+          <a href="/blogDetails.html" class="featured-link">
+            Read Article <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="hading">
-          <h1 class="text-xl font-fontBebas">Pages</h1>
-        </div>
-        <div class="contentList  flex flex-col gap-[10px] mt-[20px]">
-          <a class="footerContent-hover" href="/about.html">About Us</a>
-          <a class="footerContent-hover" href="/plan.html">Plan</a>
-          <a class="footerContent-hover" href="team.html">Our Team</a>
-          <a class="footerContent-hover" href="contact.html">Contact Us</a>
-          <a class="footerContent-hover" href="/faq's.html">Faq'a</a>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="heading">
-          <h1 class="text-xl font-fontBebas">Services</h1>
-        </div>
-        <div class="contentList mt-[20px] flex flex-col gap-[10px]">
-          <a class="footerContent-hover" href="#">Kitchen</a>
-          <a class="footerContent-hover" href="#">Living Area</a>
-          <a class="footerContent-hover" href="#">Bathroom</a>
-          <a class="footerContent-hover" href="#">Dining Hall</a>
-          <a class="footerContent-hover" href="#">Bedroom</a>
-        </div>
-      </div>
-      <div class="footer-singleBox">
-        <div class="heading">
-          <h1 class="text-xl font-fontBebas">Contact</h1>
-        </div>
-        <div class="address mt-[20px] flex flex-col gap-[10px]">
-          <p class="footerContent-hover">55 East Birchood Ave. Brooklyn, New York 11201</p>
-          <a class="footerContent-hover" href="#">kmtanvir1111@gmail.com</a>
-          <p class="footerContent-hover">(123) 456 - 7890</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-privacy text-center mt-[50px] px-[50px]">
-      <p class="text-sm">Copyright © Interno | Designed by Victorflow Templates - Powered by Webflow</p>
-    </div>
-  </section>
-  <!-- End Footer Section -->
+      `;
 
+      renderArticles();
+    }
 
+    function renderArticles() {
+      const rest   = ARTICLES_DATA.slice(1); // skip featured
+      const total  = rest.length;
+      const start  = (currentPage - 1) * ITEMS_PER_PAGE;
+      const page   = rest.slice(start, start + ITEMS_PER_PAGE);
 
-  <!-- FontAwsome Kit -->
-  <script src="https://kit.fontawesome.com/862c32b35b.js" crossorigin="anonymous"></script>
+      articlesGrid.innerHTML = '';
+      page.forEach((article, idx) => {
+        const card = document.createElement('a');
+        card.href  = '/blogDetails.html';
+        card.className = `article-card reveal rd${(idx % 3) + 1}`;
+        card.style.textDecoration = 'none';
+        card.innerHTML = `
+          <div class="article-image">
+            ${article.image
+              ? `<img src="${article.image}" alt="${article.title}" loading="lazy">`
+              : `<div class="article-image-placeholder"><i class="fa-solid fa-pen-nib"></i></div>`}
+            <span class="article-badge">${article.category}</span>
+            <div class="article-overlay"></div>
+            <div class="article-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span class="article-cat">${article.category}</span>
+              <div class="article-sep"></div>
+              <span class="article-date">${article.date}</span>
+            </div>
+            <h3 class="article-title">${article.paragraph}</h3>
+            <p class="article-excerpt">Exploring the nuances of ${article.title.toLowerCase()} — from material choices to the art of spatial harmony.</p>
+            <div class="article-footer">
+              <span class="article-read-more">Read More <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+        `;
+        articlesGrid.appendChild(card);
+      });
 
-  <script src="main.js"></script>
+      // Observe reveal items
+      articlesGrid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      renderPagination(total);
+    }
 
+    function renderPagination(total) {
+      const pages = Math.ceil(total / ITEMS_PER_PAGE);
+      pagination.innerHTML = '';
+      if (pages <= 1) return;
+
+      const prev = document.createElement('button');
+      prev.className = 'page-btn'; prev.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+      prev.disabled = currentPage === 1;
+      prev.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderArticles(); } });
+      pagination.appendChild(prev);
+
+      for (let i = 1; i <= pages; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+        btn.textContent = String(i).padStart(2,'0');
+        btn.addEventListener('click', () => { currentPage = i; renderArticles(); });
+        pagination.appendChild(btn);
+      }
+
+      const next = document.createElement('button');
+      next.className = 'page-btn'; next.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+      next.disabled = currentPage === pages;
+      next.addEventListener('click', () => { if (currentPage < pages) { currentPage++; renderArticles(); } });
+      pagination.appendChild(next);
+    }
+
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const overlay   = document.getElementById('overlay');
+    const openMenu  = () => { hamburger.classList.add('open'); mobileNav.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; };
+    const closeMenu = () => { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; };
+    hamburger.addEventListener('click', () => mobileNav.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // Reveal observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    init();
+  </script>
 </body>
 </html>
-
-
-<script>
-
-
-  // Start Article & News Section
-
-  function loadArticleSection() {
-    fetch('/articleBlogFile.json')
-      .then(res => res.json())
-      .then(data => displayArticleSection(data))
-  }
-
-  function displayArticleSection(articleSection) {
-    const articleContainer = document.getElementById('newsContainer');
-
-    for (const singleArticleContent of articleSection) {
-      const div = document.createElement('div');
-      div.classList.add('articleSingleBox')
-      div.innerHTML = `
-      <a href="/blogDeatils.html"><img src= ${singleArticleContent.image} class="img-hover w-full" ></a> 
-      <div>
-        <h3> ${singleArticleContent.title}</h3>
-      </div>
-      <h1 class="font-fontBebas" style="font-size:25px; margin-top:30px;"> ${singleArticleContent.paragraph}</h1>
-      <div class="flex justify-between items-center">
-        <p> ${singleArticleContent.date}</p>
-        <i class="fa-solid fa-chevron-right icon-hover  text-white rounded-full w-[40px] h-[40px] px-4 py-3"></i>
-      </div>
-      `
-      articleContainer.appendChild(div);
-    }
-  }
-  loadArticleSection()
-
-  // End Article Section
-
-
-</script>

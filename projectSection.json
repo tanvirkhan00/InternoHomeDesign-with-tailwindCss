@@ -6,17 +6,17 @@
     },
     {
       "image": "/Image/projectsImg2.png",
-      "name": "Modern Kitchen",
+      "name": "Modern Bedroom",
       "paragraph": "Decor/Architecture"
     },
     {
       "image": "/Image/projectImg3.png",
-      "name": "Modern Kitchen",
+      "name": "Modern Reading Room",
       "paragraph": "Decor/Architecture"
     },
     {
         "image": "/Image/projectImg4.png",
-        "name": "Modern Kitchen",
+        "name": "Modern Waiting Room",
         "paragraph": "Decor/Architecture"
     }
 ]
